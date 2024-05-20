@@ -1,12 +1,15 @@
 "use client";
 import fleet from "@/public/graphics/images/fleet.webp";
 import falcon7x from "@/public/graphics/images/Falcon-7X-JetHouse.webp";
+import global6500 from "@/public/graphics/images/Global-6500.webp";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
 const Fleet = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay(20000)]);
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 10000 }),
+  ]);
   return (
     <section
       className={
@@ -40,7 +43,7 @@ const Fleet = () => {
               className={"embla__slide f100"}
             />
             <Image
-              src={falcon7x}
+              src={global6500}
               alt={"Falcon 7X"}
               className={"embla__slide f100"}
             />
