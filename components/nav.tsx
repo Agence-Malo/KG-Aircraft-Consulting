@@ -250,7 +250,7 @@ export const Navbar = ({ invert }: { invert: number }) => {
       initial={{ y: "-100%" }}
       animate={{ y: "0" }}
       transition={{ duration: 1.5, ease: "easeOut" }}
-      className={`fixed containerize pt-[2vh] flex justify-between items-center`}
+      className={`fixed z-30 containerize pt-[2vh] flex justify-between items-center`}
     >
       <button
         onClick={() => openView("nav")}

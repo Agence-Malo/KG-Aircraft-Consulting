@@ -56,3 +56,16 @@
     @apply flex justify-center items-center bg-white text-blue-950 md:px-[0.5vw] px-[2vw] py-[1vh];
   }
 }
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  min-width: 0;
+}
+.f100 {
+  flex: 0 0 100%;
+}
+
