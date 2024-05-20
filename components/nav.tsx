@@ -145,7 +145,7 @@ const Nav = () => {
       animate={{ x: "0" }}
       exit={{ x: "-100%" }}
       transition={{ duration: 0.2, ease: "easeInOut" }}
-      className={`fixed left-0 top-0 z-10 h-[100dvh] lg:w-[44vw] w-full lg:px-[2vw] px-[4vw] py-[2vh] bg-blue-950 text-white flex justify-between items-start flex-col overflow-x-hidden overflow-y-auto`}
+      className={`fixed left-0 top-0 z-40 h-[100dvh] lg:w-[44vw] w-full lg:px-[2vw] px-[4vw] py-[2vh] bg-blue-950 text-white flex justify-between items-start flex-col overflow-x-hidden overflow-y-auto`}
     >
       <div className={"w-full flex flex-col justify-center items-start"}>
         <div className={"w-full flex justify-end items-center"}>
