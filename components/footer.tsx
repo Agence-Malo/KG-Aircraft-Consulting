@@ -5,7 +5,7 @@ import { Tooltip } from "@nextui-org/react";
 
 const Footer = () => {
   return (
-    <footer className="w-full h-[280px] flex flex-row items-center justify-around bg-blue-950 text-white">
+    <footer className="w-full max-lg:px-5 h-[280px] flex flex-row items-center justify-around bg-blue-950 text-white">
       <div className=" w-[1/3] flex flex-col items-center justify-center">
         <Image
           src={logo}
@@ -31,18 +31,18 @@ const Footer = () => {
           </svg>
         </a>
       </div>
-      <div className="w-[1/3] relative flex flex-col font-light items-center justify-center">
+      <div className="w-[1/3] max-lg:hidden relative flex flex-col font-light items-center justify-center">
         <h1 className="text-2xl font-bold my-4">Quick Links </h1>
-        <a href={"/"} className={"text-white/70 font-semibold"}>
+        <a href={"#"} className={"text-white/70 font-semibold"}>
           Home
         </a>
-        <a href={"/about"} className={"text-white/70"}>
+        <a href={"#"} className={"text-white/70"}>
           About Us
         </a>
-        <a href={"/services"} className={"text-white/70"}>
+        <a href={"#"} className={"text-white/70"}>
           Our Team
         </a>
-        <a href={"/fleet"} className={"text-white/70"}>
+        <a href={"#"} className={"text-white/70"}>
           Contact
         </a>
         <p className={" w-fit my-2"}>© 2024 All Rights Reserved. </p>
@@ -61,7 +61,7 @@ const Footer = () => {
           T: +32 476 26 42 68
           <br />
           <br />
-          Pravicy Policy
+          Privacy policy
         </p>
       </div>
     </footer>

@@ -5,10 +5,10 @@ import { Accordion, AccordionItem } from "@nextui-org/react";
 
 const WhyJethouse = () => {
   return (
-    <div className="flex px-5 h-[85vh] py-5 flex-row bg-blue-50 text-blue-950  w-full">
+    <div className="flex px-5 h-fit py-5 flex-row bg-blue-50 text-blue-950  w-full">
       <div className={"w-1/2 max-lg:w-full px-[6vw]"}>
         <p className="text-3xl my-1 font-light">&mdash; Why Jethouse?</p>
-        <p className=" text-5xl font-semibold">
+        <p className=" text-5xl  font-semibold">
           The Passion To Deliver <br />A Good Service
         </p>
         <Accordion

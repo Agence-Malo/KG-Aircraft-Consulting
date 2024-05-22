@@ -20,12 +20,12 @@ const Fleet = () => {
         src={fleet}
         alt={"Photo from plane cabin looking towards the sunset"}
         className={
-          "w-2/3 h-[85vh] left-0 object-cover absolute overflow-y-clip z-10"
+          "w-2/3 h-[85vh] left-0 object-cover absolute overflow-y-clip z-0"
         }
       />
       <div
         className={
-          "flex h-[60vh] px-10 w-[40vw] bg-white flex-col justify-center items-start z-20"
+          "flex h-[60vh] max-lg:w-[70vw] px-10 w-[40vw] bg-white flex-col justify-center items-start z-10"
         }
       >
         <h4>&mdash; Our fleet</h4>

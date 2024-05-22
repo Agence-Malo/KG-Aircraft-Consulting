@@ -8,6 +8,10 @@ import management from "@/public/graphics/images/services/management.webp";
 import charter from "@/public/graphics/images/services/charter.webp";
 import consulting from "@/public/graphics/images/services/consulting.webp";
 import Image, { StaticImageData } from "next/image";
+import { AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
 
 const Banner = ({
   heading,
@@ -63,6 +67,13 @@ const Services = () => {
   const [service, setService] = useState<
     "management" | "charter" | "consulting" | null
   >(null);
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+    AutoScroll({
+      loop: true,
+      speed: 1,
+      align: "start",
+    }),
+  ]);
   const Close = () => {
     return (
       <button
@@ -86,15 +97,17 @@ const Services = () => {
   };
   const comps = {
     management: (
-      <div
-        className={
-          service == "management"
-            ? "animated-entry w-full h-screen text-white"
-            : "hidden"
-        }
+      <motion.div
+        initial={{ x: "-100%", opacity: 0 }}
+        animate={{ x: "0", opacity: 100 }}
+        exit={{ x: "-100%", opacity: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className={"w-full h-screen text-white"}
       >
         <Image
-          className={"w-full min-h-full h-auto absolute -z-10"}
+          className={
+            "w-full min-h-full max-md:-left-[50%] min-w-[1200px] h-auto absolute -z-10"
+          }
           src={management}
           alt={"management"}
         />
@@ -102,7 +115,7 @@ const Services = () => {
         <div className={"w-full h-full bg-blue-900/50 text-white/80"}>
           <div
             className={
-              "w-[50%] pt-20 pl-[15%] flex flex-col items-start text-start"
+              "w-[50%] pt-20 pl-[15%] max-md:w-[80%] flex flex-col items-start text-start"
             }
           >
             <h1 className={"font-light py-10"}>Aircraft Management</h1>
@@ -116,56 +129,149 @@ const Services = () => {
           </div>
           <h1
             className={
-              "font-light absolute text-3xl text-start pl-[15%] bottom-[50%]"
+              "font-light absolute text-3xl max-md:text-2xl text-start pl-[15%] bottom-[40%] max-md:bottom-[30%] max-md:w-[90%]"
             }
           >
             Aircraft Management & Aircraft CAMO
           </h1>
           <div
+            ref={emblaRef}
             className={
-              "w-screen absolute bottom-[25%] h-[20%] px-10 gap-x-5 flex justify-center items-center text-white/80"
+              "w-screen embla absolute bottom-[15%] max-md:bottom-[5%] h-[20%] flex justify-center items-center text-white/80"
             }
           >
-            <div className={"w-full h-full flex bg-blue-950"}>
-              <p className={"text-xl font-light px-5 mx-auto my-auto"}>
-                Operational Management <br /> of the aircraft Flight <br />
-                Coordination
-              </p>
-            </div>
-            <div className={"w-full h-full flex bg-blue-950"}>
-              <p className={"text-xl font-light px-5 mx-auto my-auto"}>
-                Financial, Fiscal, Legal <br /> & Administrative <br /> support
-              </p>
-            </div>
-            <div className={"w-full h-full flex bg-blue-950"}>
-              <p className={"text-xl font-light px-5 mx-auto my-auto"}>
-                Provision of <br /> Operational <br /> Control
-              </p>
-            </div>
-            <div className={"w-full h-full flex bg-blue-950"}>
-              <p className={"text-xl font-light px-5 mx-auto my-auto"}>
-                Control & <br /> Reporting
-              </p>
-            </div>
-            <div className={"w-full h-full flex bg-blue-950"}>
-              <p className={"text-xl font-light px-5 mx-auto my-auto"}>
-                CAMO by <br /> JetHouse
-              </p>
+            <div className={"embla__container w-full h-full"}>
+              <div
+                className={"w-fit h-full embla__slide mx-10 flex bg-blue-950"}
+              >
+                <p
+                  className={
+                    "text-xl w-[300px] font-light px-5 mx-auto my-auto"
+                  }
+                >
+                  Operational Management <br /> of the aircraft Flight <br />
+                  Coordination
+                </p>
+              </div>
+              <div
+                className={"w-fit h-full embla__slide mx-10 flex bg-blue-950"}
+              >
+                <p
+                  className={
+                    "text-xl w-[300px] font-light px-5 mx-auto my-auto"
+                  }
+                >
+                  Financial, Fiscal, Legal <br /> & Administrative <br />{" "}
+                  support
+                </p>
+              </div>
+              <div
+                className={"w-fit h-full embla__slide mx-10 flex bg-blue-950"}
+              >
+                <p
+                  className={
+                    "text-xl w-[300px] font-light px-5 mx-auto my-auto"
+                  }
+                >
+                  Provision of <br /> Operational <br /> Control
+                </p>
+              </div>
+              <div
+                className={"w-fit h-full embla__slide mx-10 flex bg-blue-950"}
+              >
+                <p
+                  className={
+                    "text-xl w-[300px] font-light px-5 mx-auto my-auto"
+                  }
+                >
+                  Control & <br /> Reporting
+                </p>
+              </div>
+              <div
+                className={"w-fit h-full embla__slide mx-10 flex bg-blue-950"}
+              >
+                <p
+                  className={
+                    "text-xl w-[300px] font-light px-5 mx-auto my-auto"
+                  }
+                >
+                  CAMO by <br /> JetHouse
+                </p>
+              </div>
+              <div
+                className={"w-fit h-full embla__slide mx-10 flex bg-blue-950"}
+              >
+                <p
+                  className={
+                    "text-xl w-[300px] font-light px-5 mx-auto my-auto"
+                  }
+                >
+                  Operational Management <br /> of the aircraft Flight <br />
+                  Coordination
+                </p>
+              </div>
+              <div
+                className={"w-fit h-full embla__slide mx-10 flex bg-blue-950"}
+              >
+                <p
+                  className={
+                    "text-xl w-[300px] font-light px-5 mx-auto my-auto"
+                  }
+                >
+                  Financial, Fiscal, Legal <br /> & Administrative <br />{" "}
+                  support
+                </p>
+              </div>
+              <div
+                className={"w-fit h-full embla__slide mx-10 flex bg-blue-950"}
+              >
+                <p
+                  className={
+                    "text-xl w-[300px] font-light px-5 mx-auto my-auto"
+                  }
+                >
+                  Provision of <br /> Operational <br /> Control
+                </p>
+              </div>
+              <div
+                className={"w-fit h-full embla__slide mx-10 flex bg-blue-950"}
+              >
+                <p
+                  className={
+                    "text-xl w-[300px] font-light px-5 mx-auto my-auto"
+                  }
+                >
+                  Control & <br /> Reporting
+                </p>
+              </div>
+              <div
+                className={"w-fit h-full embla__slide mx-10 flex bg-blue-950"}
+              >
+                <p
+                  className={
+                    "text-xl w-[300px] font-light px-5 mx-auto my-auto"
+                  }
+                >
+                  CAMO by <br /> JetHouse
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     ),
     charter: (
-      <div
-        className={
-          service == "charter"
-            ? "animated-fade w-full h-screen text-white"
-            : "hidden"
-        }
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 100 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className={"w-full h-screen text-white"}
       >
         <Image
-          className={"w-full min-h-full h-auto absolute -z-10"}
+          className={
+            "w-full min-h-full max-md:-left-[50%] min-w-[1200px] h-auto absolute -z-10"
+          }
           src={charter}
           alt={"charter"}
         />
@@ -173,7 +279,7 @@ const Services = () => {
         <div className={"w-full h-full bg-blue-900/50 text-white/80"}>
           <div
             className={
-              "w-[50%] pt-20 pl-[15%] flex flex-col items-start text-start"
+              "w-[50%] pt-20 pl-[15%] max-md:w-[80%] flex flex-col items-start text-start"
             }
           >
             <h1 className={"font-light py-10"}>Private Jet Charter</h1>
@@ -185,18 +291,20 @@ const Services = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     ),
     consulting: (
-      <div
-        className={
-          service == "consulting"
-            ? "animated-entry-right w-full h-screen text-white"
-            : "hidden"
-        }
+      <motion.div
+        initial={{ x: "100%", opacity: 0 }}
+        animate={{ x: "0", opacity: 100 }}
+        exit={{ x: "100%", opacity: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className={"w-full h-screen text-white"}
       >
         <Image
-          className={"w-full min-h-full h-auto absolute -z-10"}
+          className={
+            "w-full min-h-full max-md:-left-[50%] min-w-[1200px] h-auto absolute -z-10"
+          }
           src={consulting}
           alt={"consulting"}
         />
@@ -204,7 +312,7 @@ const Services = () => {
         <div className={"w-full h-full bg-blue-900/50 text-white/80"}>
           <div
             className={
-              "w-[50%] pt-20 pl-[15%] flex flex-col items-start text-start"
+              "w-[50%] pt-20 pl-[15%] max-md:w-[80%] flex flex-col items-start text-start"
             }
           >
             <h1 className={"font-light py-10"}>Consulting Services</h1>
@@ -217,7 +325,7 @@ const Services = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     ),
   };
 
@@ -227,11 +335,13 @@ const Services = () => {
         "w-full h-max flex flex-col justify-center items-center text-center mt-[10vh] md:mt-[28vh] lg:mt-0"
       }
     >
-      {service ? (
-        <div className={"w-screen h-screen inset-0 fixed z-50"}>
-          {comps[service]}
-        </div>
-      ) : null}
+      <AnimatePresence>
+        {service && (
+          <div className={"w-screen h-screen inset-0 fixed z-50"}>
+            {comps[service]}
+          </div>
+        )}
+      </AnimatePresence>
       <div
         className={
           "containerize flex flex-col justify-center items-center py-[12vh]"
