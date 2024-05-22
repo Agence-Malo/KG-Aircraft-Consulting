@@ -1,6 +1,9 @@
 import Hero from "@/components/hero";
 import { Navbar } from "@/components/nav";
 import dynamic from "next/dynamic";
+import WhyJethouse from "@/components/WhyJethouse";
+import Expertise from "@/components/expertise";
+import Footer from "@/components/footer";
 
 const View = dynamic(() => import("@/components/view"));
 const Quote = dynamic(() => import("@/components/quote"));
@@ -11,16 +14,21 @@ const Stripe = dynamic(() => import("@/components/tempStripe"));
 
 const Home = () => {
   return (
-    <main className="w-full flex flex-col items-center justify-start">
-      <Navbar invert={100} />
-      <View />
-      <Hero />
-      <Quote />
-      <About />
-      <Services />
-      <Fleet />
-      <Stripe />
-    </main>
+    <>
+      <main className="w-full flex flex-col items-center justify-start">
+        <Navbar invert={100} />
+        <View />
+        <Hero />
+        <Quote />
+        <About />
+        <Services />
+        <Fleet />
+        <Stripe />
+        <WhyJethouse />
+        <Expertise />
+        <Footer />
+      </main>
+    </>
   );
 };
 

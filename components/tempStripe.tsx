@@ -8,7 +8,13 @@ import { getWeatherData } from "@/app/actions";
 import AutoScroll from "embla-carousel-auto-scroll";
 
 const Strip = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [AutoScroll()]);
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+    AutoScroll({
+      loop: true,
+      speed: 2,
+      align: "start",
+    }),
+  ]);
   const cities = [
     "Paris",
     "Brussels",
@@ -27,28 +33,20 @@ const Strip = () => {
       console.log(res);
     });
   }, []);
+
   return (
     <section
       className={
-        "w-full h-[15vh] mb-[5vh] border-red-500 border-1 text-blue-950 bg-blue-50"
+        "w-full h-[15vh] pb-[10vh] text-blue-950 bg-blue-50 font-semibold flex"
       }
     >
-      <div className="embla">
-        <div className="embla__viewport" ref={emblaRef}>
-          <div className="embla__container">
-            {temperatures.map((temp, index) => (
-              <div
-                key={index}
-                className={
-                  "embla__slide w-fit self-center border-1 border-red-600"
-                }
-              >
-                <p className={"embla__slide__number text-4xl f50 w-[30vw]"}>
-                  {temp}
-                </p>
-              </div>
-            ))}
-          </div>
+      <div className="embla my-auto" ref={emblaRef}>
+        <div className="embla__container">
+          {temperatures.map((temp, index) => (
+            <div key={index} className={"embla__slide w-fit mx-4 self-center"}>
+              <p className={"text-6xl w-fit"}>{temp}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

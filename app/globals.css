@@ -63,9 +63,52 @@
   display: flex;
 }
 .embla__slide {
-  min-width: 0;
-}
-.f100 {
-  flex: 0 0 100%;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px;
 }
 
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%); /* Start from the left beyond the viewport */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.animated-entry {
+  animation: slideInFromLeft 0.5s ease-out forwards; /* Adjust duration and easing to taste */
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%); /* Start from the right beyond the viewport */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.animated-entry-right {
+  animation: slideInFromRight 0.5s ease-out forwards; /* Adjust duration and easing to taste */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animated-fade {
+  animation: fadeIn 0.5s ease-out forwards; /* Adjust duration and easing to taste */
+}
