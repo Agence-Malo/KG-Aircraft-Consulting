@@ -24,7 +24,7 @@
   }
 
   label {
-    @apply text-sm font-normal cursor-pointer;
+    @apply text-sm font-normal;
   }
 }
 

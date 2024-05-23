@@ -8,7 +8,14 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {},
+  theme: {
+    extend: {
+      backgroundImage: {
+        "about-hero": "url('/graphics/images/about/hero.webp')",
+        malta: "url('/graphics/images/about/malta.webp')",
+      },
+    },
+  },
   darkMode: "class",
   plugins: [nextui()],
 };

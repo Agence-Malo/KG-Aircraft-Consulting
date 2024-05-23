@@ -68,7 +68,7 @@ const Contact = () => {
       exit={{ y: "100%" }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className={
-        "fixed lg:bottom-0 lg:top-auto top-0 left-0 z-10 bg-blue-950 lg:h-[86vh] h-[100dvh] overflow-y-auto w-full flex flex-col justify-start items-center lg:px-[2vw] px-[4vw] py-[2vh] lg:gap-[2vh] text-white"
+        "fixed lg:bottom-0 lg:top-auto top-0 left-0 z-30 bg-blue-950 lg:h-[86vh] h-[100dvh] overflow-y-auto w-full flex flex-col justify-start items-center lg:px-[2vw] px-[4vw] py-[2vh] lg:gap-[2vh] text-white"
       }
     >
       <div

@@ -30,7 +30,6 @@ const Strip = () => {
   useEffect(() => {
     getWeatherData(cities).then((res) => {
       setTemperatures(res);
-      console.log(res);
     });
   }, []);
 

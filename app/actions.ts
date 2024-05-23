@@ -28,7 +28,7 @@ export const submit = async ({
   }
 
   await resend.emails.send({
-    from: "Contact Form JetHouse <onboarding@resend.dev>",
+    from: "${rawFormData.name} <onboarding@resend.dev>",
     to: "gregory442005@gmail.com",
     reply_to: rawFormData.email,
     subject: "Contact Request",
