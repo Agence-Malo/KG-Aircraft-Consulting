@@ -18,7 +18,7 @@ const About = () => {
       />
       <div
         className={
-          "flex flex-col justify-start items-start gap-[3vh] text-blue-950"
+          "px-[8vw] lg:px-0 flex flex-col justify-start items-start gap-[3vh] text-blue-950"
         }
       >
         <label>&mdash; About us</label>

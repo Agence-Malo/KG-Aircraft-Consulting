@@ -1,12 +1,17 @@
 "use client";
 import logo from "@/public/graphics/images/logo-white.png";
 import Image from "next/image";
-import { Tooltip } from "@nextui-org/react";
+import { useView } from "@/context/view";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const path = usePathname(),
+    { openView } = useView();
+
   return (
-    <footer className="w-full max-lg:px-5 h-[280px] flex flex-row items-center justify-around bg-blue-950 text-white">
-      <div className=" w-[1/3] flex flex-col items-center justify-center">
+    <footer className="containerize max-lg:px-5 h-[280px] flex flex-row items-center justify-around bg-blue-950 text-white">
+      <div className=" w-1/3 flex flex-col items-center justify-center">
         <Image
           src={logo}
           alt={"JetHouse logo"}
@@ -31,25 +36,34 @@ const Footer = () => {
           </svg>
         </a>
       </div>
-      <div className="w-[1/3] max-lg:hidden relative flex flex-col font-light items-center justify-center">
+      <div className="w-1/3 max-lg:hidden relative flex flex-col font-light items-center justify-center">
         <h1 className="text-2xl font-bold my-4">Quick Links </h1>
-        <a href={"#"} className={"text-white/70 font-semibold"}>
+        <Link
+          href={"/"}
+          className={`${path === "/" && "font-bold"} text-white`}
+        >
           Home
-        </a>
-        <a href={"#"} className={"text-white/70"}>
+        </Link>
+        <Link
+          href={"/about"}
+          className={`${path === "/about" && "font-bold"} text-white`}
+        >
           About Us
-        </a>
-        <a href={"#"} className={"text-white/70"}>
+        </Link>
+        <Link href={"/about/#team"} className={`text-white`}>
           Our Team
-        </a>
-        <a href={"#"} className={"text-white/70"}>
+        </Link>
+        <button
+          onClick={() => openView("contact")}
+          className={`${path === "/contact" && "font-bold"} text-white`}
+        >
           Contact
-        </a>
+        </button>
         <p className={" w-fit my-2"}>© 2024 All Rights Reserved. </p>
       </div>
-      <div className="w-[1/3] flex flex-col text-right justify-end">
+      <div className="w-1/3 flex flex-col text-right justify-end">
         <h1 className="text-2xl right-0 font-bold my-2">Get in touch</h1>
-        <p className={"text-right text-white/70"}>
+        <p className={"text-right text-white"}>
           Avenue 77 Business Centre,
           <br />
           Triq in-Negozju, Birkirkara

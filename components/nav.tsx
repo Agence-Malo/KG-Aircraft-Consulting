@@ -288,7 +288,7 @@ export const Navbar = ({ invert }: { invert: number }) => {
             <rect width="128" height="8" rx="4" />
           </svg>
         </button>
-        <Link href={"/"} className={"w-full absolute inset-x-0"}>
+        <Link href={"/"} className={"w-full absolute inset-x-0 -z-10"}>
           <FullLogo
             mono={!scrolled}
             className={`h-[4vh] md:h-[6vh] w-auto ${scrolled ? "" : "fill-white"} mx-auto`}

@@ -36,14 +36,14 @@ const Strip = () => {
   return (
     <section
       className={
-        "w-full h-[15vh] pb-[10vh] text-blue-950 bg-blue-50 font-semibold flex"
+        "w-full h-[15vh] pb-[10vh] text-blue-950 bg-black/5 font-semibold flex"
       }
     >
       <div className="embla my-auto" ref={emblaRef}>
         <div className="embla__container cursor-grab">
           {temperatures.map((temp, index) => (
             <div key={index} className={"embla__slide w-fit mx-4 self-center"}>
-              <p className={"text-6xl w-fit select-none"}>{temp}</p>
+              <h2 className={"w-fit select-none uppercase"}>{temp}</h2>
             </div>
           ))}
         </div>

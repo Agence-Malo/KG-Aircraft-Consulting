@@ -1,19 +1,13 @@
-"use client";
-import montage from "../public/graphics/images/Montage.webp";
-import Image from "next/image";
-import { blob } from "node:stream/consumers";
-import { Button } from "@nextui-org/react";
-
 const Expertise = () => {
   return (
     <div
       className={
-        "w-full h-fit flex flex-col items-center text-center px-[15%] text-blue-950"
+        "w-full h-fit flex flex-col items-center text-center text-blue-950 py-[12vh]"
       }
     >
       <div className={"w-[2px] h-[60px] bg-blue-950/70 my-[50px]"}></div>
-      <h2 className={"font-light text-xl mb-5"}>OUR EXPERTISE</h2>
-      <p className={"text-2xl max-lg:text-xl font-semibold"}>
+      <label className={"mb-5"}>Our expertise</label>
+      <h3 className={"max-lg:text-xl font-medium w-[92vw] lg:w-[76vw]"}>
         At JetHouse, our team has forged strong relationships with leading
         business jet manufacturers such as Dassault Falcon, Bombardier, and
         Gulfstream. We deeply understand these aircraft and have built an
@@ -21,30 +15,21 @@ const Expertise = () => {
         <br /> This specialisation enables us to guarantee precise technical
         management and flawless operational efficiency, which are essential for
         offering our clients an optimal flying experience.
-      </p>
+      </h3>
       <div className={"w-[2px] h-[60px] bg-blue-950/70 my-[50px]"}></div>
       <div
-        className={"relative flex flex-col items-center h-[350px] w-[100vw]"}
+        className={
+          "flex flex-col items-center w-[92vw] lg:w-[76vw] bg-mountains bg-cover bg-bottom py-[10vh] gap-[4vh]"
+        }
       >
-        <Image
-          src={montage}
-          alt={"Montage"}
-          className={"w-full -z-10 h-full"}
-        />
-        <h1 className={"absolute top-20 z-0 font-light text-white"}>
+        <h2 className={"top-20 z-0 text-white"}>
           Begin Your Journey <br /> With JetHouse
-        </h1>
-        <Button
-          radius={"none"}
-          variant={"bordered"}
-          className={
-            "border-2 h-[50px]  font-light absolute text-xl bottom-[80px]  text-white border-white"
-          }
-        >
+        </h2>
+        <button className={"glass-button glass-button-light"}>
           <a href={"/graphics/Brochure%20-%20JetHouse%20VF.pdf"} download>
             DOWNLOAD THE BROCHURE
           </a>
-        </Button>
+        </button>
       </div>
     </div>
   );

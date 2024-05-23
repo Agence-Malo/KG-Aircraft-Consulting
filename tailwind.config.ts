@@ -13,6 +13,7 @@ const config: Config = {
       backgroundImage: {
         "about-hero": "url('/graphics/images/about/hero.webp')",
         malta: "url('/graphics/images/about/malta.webp')",
+        mountains: "url('/graphics/images/Montage.webp')",
       },
     },
   },
