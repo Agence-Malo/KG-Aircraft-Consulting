@@ -24,7 +24,7 @@ const Hero = () => {
       />
       <motion.h1
         initial={{ y: "-6vh", opacity: 0, scale: 1.05 }}
-        animate={{ y: "-12vh", opacity: 1, scale: 1 }}
+        animate={{ y: "0", opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
         className={"text-white md:text-center text-left font-normal"}
       >

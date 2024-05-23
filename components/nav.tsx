@@ -156,27 +156,33 @@ const Nav = () => {
             "w-full flex flex-col justify-center items-start text-5xl gap-[2vh] font-light"
           }
         >
-          <Link href={"/"} className={`${path === "/" && "font-bold"}`}>
+          <Link
+            href={"/"}
+            className={`${path === "/" && "font-bold"} hover:font-bold [transition:_font-weight_0.2s_ease-in-out]`}
+          >
             Home
           </Link>
           <Link
             href={"/fleet"}
-            className={`${path === "/fleet" && "font-bold"}`}
+            className={`${path === "/fleet" && "font-bold"} hover:font-bold [transition:_font-weight_0.2s_ease-in-out]`}
           >
             Our Fleet
           </Link>
           <Link
             href={"/about"}
-            className={`${path === "/about" && "font-bold"}`}
+            className={`${path === "/about" && "font-bold"} hover:font-bold [transition:_font-weight_0.2s_ease-in-out]`}
           >
             About Us
           </Link>
-          <Link href={"/team"} className={`${path === "/team" && "font-bold"}`}>
+          <Link
+            href={"/team"}
+            className={`${path === "/team" && "font-bold"} hover:font-bold [transition:_font-weight_0.2s_ease-in-out]`}
+          >
             Our Team
           </Link>
           <button
             onClick={() => openView("contact")}
-            className={`${path === "/contact" && "font-bold"}`}
+            className={`${path === "/contact" && "font-bold"} hover:font-bold [transition:_font-weight_0.2s_ease-in-out]`}
           >
             Contact
           </button>
@@ -282,10 +288,10 @@ export const Navbar = ({ invert }: { invert: number }) => {
             <rect width="128" height="8" rx="4" />
           </svg>
         </button>
-        <Link href={"/"}>
+        <Link href={"/"} className={"w-full absolute inset-x-0"}>
           <FullLogo
-            mono={true}
-            className={`h-[6vh] w-auto ${scrolled ? "fill-black" : "fill-white"}`}
+            mono={!scrolled}
+            className={`h-[4vh] md:h-[6vh] w-auto ${scrolled ? "" : "fill-white"} mx-auto`}
           />
         </Link>
         <button
