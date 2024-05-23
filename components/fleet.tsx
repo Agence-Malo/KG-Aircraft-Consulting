@@ -5,6 +5,7 @@ import global6500 from "@/public/graphics/images/Global-6500.webp";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import Link from "next/link";
 
 const Fleet = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
@@ -36,7 +37,7 @@ const Fleet = () => {
           clients, whether aircraft owners or charter clients.
         </p>
         <div className={"embla"} ref={emblaRef}>
-          <div className="embla__container">
+          <Link href={"/fleet"} className="embla__container">
             <Image
               src={falcon7x}
               alt={"Falcon 7X"}
@@ -47,7 +48,7 @@ const Fleet = () => {
               alt={"Falcon 7X"}
               className={"embla__slide f100"}
             />
-          </div>
+          </Link>
         </div>
       </div>
     </section>

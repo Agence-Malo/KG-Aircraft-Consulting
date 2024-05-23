@@ -8,7 +8,7 @@
   }
 
   h2 {
-    @apply md:text-4xl text-3xl font-semibold;
+    @apply md:text-4xl text-3xl font-medium;
   }
 
   h3 {
@@ -16,7 +16,7 @@
   }
 
   h4 {
-    @apply md:text-2xl text-xl font-normal uppercase;
+    @apply md:text-2xl text-xl font-normal uppercase tracking-wider;
   }
 
   p {

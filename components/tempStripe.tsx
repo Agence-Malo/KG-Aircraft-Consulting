@@ -40,10 +40,10 @@ const Strip = () => {
       }
     >
       <div className="embla my-auto" ref={emblaRef}>
-        <div className="embla__container">
+        <div className="embla__container cursor-grab">
           {temperatures.map((temp, index) => (
             <div key={index} className={"embla__slide w-fit mx-4 self-center"}>
-              <p className={"text-6xl w-fit"}>{temp}</p>
+              <p className={"text-6xl w-fit select-none"}>{temp}</p>
             </div>
           ))}
         </div>

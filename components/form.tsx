@@ -18,7 +18,7 @@ const Form = () => {
   return (
     <section
       className={
-        "containerize lg:px-[12vw] bg-about-hero bg-fixed bg-center flex flex-col lg:flex-row justify-center items-center py-[8vh] gap-[4vh] lg:gap-[4vw]"
+        "containerize lg:px-[12vw] bg-about-hero bg-fixed bg-cover bg-bottom flex flex-col lg:flex-row justify-center items-center py-[8vh] gap-[4vh] lg:gap-[4vw]"
       }
     >
       <div
