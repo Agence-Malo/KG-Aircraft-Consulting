@@ -37,7 +37,7 @@ const About = () => {
         src={about}
         alt={"Herve Laitat"}
         className={
-          "w-full h-[100dvh] lg:h-[90dvh] lg:w-auto object-cover object-bottom"
+          "w-full h-[72dvh] lg:h-[72dvh] lg:w-auto object-cover object-bottom"
         }
         ref={scope}
       />

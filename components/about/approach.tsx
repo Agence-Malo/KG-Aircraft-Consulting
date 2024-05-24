@@ -38,11 +38,11 @@ const Approach = () => {
         alt={
           "Jet cabin featuring a double-bed with drinks placed on a plateau and a pair of headphones."
         }
-        className={"h-full lg:h-auto lg:w-[32vw] w-auto"}
+        className={"h-full lg:h-auto lg:w-[28vw] w-auto"}
       />
       <div
         className={
-          "w-full lg:w-[34vw] h-max flex flex-col justify-center items-start gap-[2vh]"
+          "w-full lg:w-[34vw] h-max flex flex-col justify-center items-start gap-[2vh] text-blue-950"
         }
       >
         <label>&mdash; Our approach</label>

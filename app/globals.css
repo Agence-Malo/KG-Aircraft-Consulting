@@ -38,7 +38,7 @@
   }
 
   .glass-button {
-    @apply uppercase text-sm border-[0.1vh] lg:px-[1vw] px-[4vw] py-[1.5vh] tracking-wider hover:bg-blue-950/50 hover:border-blue-950 backdrop-blur-2xl bg-white/10 rounded-none hover:text-white;
+    @apply uppercase text-sm border-[0.1vh] lg:px-[1vw] px-[4vw] py-[1.5vh] tracking-wider hover:bg-blue-900/50 hover:border-blue-950 backdrop-blur-2xl bg-white/10 rounded-none hover:text-white;
     transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out;
   }
 
@@ -47,7 +47,7 @@
   }
 
   .glass-button-dark {
-    @apply text-black border-black/25;
+    @apply text-blue-950 border-blue-950/25;
   }
 }
 
@@ -61,7 +61,9 @@
   }
 
   .connect-link label {
-    @apply text-xs cursor-pointer;
+    @apply cursor-pointer;
+    font-size: 0.6rem;
+    line-height: 0.75rem
   }
 }
 .embla {

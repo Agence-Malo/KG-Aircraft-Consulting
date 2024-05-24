@@ -7,7 +7,7 @@ const Expertise = () => {
     >
       <div className={"w-[2px] h-[60px] bg-blue-950/70 my-[50px]"}></div>
       <label className={"mb-5"}>Our expertise</label>
-      <h3 className={"max-lg:text-xl font-medium w-[92vw] lg:w-[76vw]"}>
+      <h3 className={"max-lg:text-xl font-semibold w-[92vw] lg:w-[76vw]"}>
         At JetHouse, our team has forged strong relationships with leading
         business jet manufacturers such as Dassault Falcon, Bombardier, and
         Gulfstream. We deeply understand these aircraft and have built an
@@ -19,7 +19,7 @@ const Expertise = () => {
       <div className={"w-[2px] h-[60px] bg-blue-950/70 my-[50px]"}></div>
       <div
         className={
-          "flex flex-col items-center w-[92vw] lg:w-[76vw] bg-mountains bg-cover bg-bottom py-[10vh] gap-[4vh]"
+          "flex flex-col items-center w-[92vw] lg:w-[76vw] bg-mountains bg-cover bg-bottom py-[10vh] gap-[4vh] mt-[8vh]"
         }
       >
         <h2 className={"top-20 z-0 text-white"}>

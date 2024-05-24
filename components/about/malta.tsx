@@ -7,7 +7,7 @@ const Malta = () => {
     >
       <div
         className={
-          "containerize lg:px-[28vw] h-full flex flex-col justify-center items-center bg-blue-950/75 py-[8vh] lg:py-[12vh] gap-[2vh]"
+          "containerize lg:px-[28vw] h-full flex flex-col justify-center items-center bg-blue-950/75 py-[8vh] lg:py-[18vh] gap-[2vh]"
         }
       >
         <label className={"uppercase"}>Why malta</label>

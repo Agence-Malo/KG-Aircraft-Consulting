@@ -6,9 +6,13 @@ const Hero = () => {
       }
     >
       <div
-        className={"w-full h-full bg-black/25 flex justify-center items-end"}
+        className={
+          "w-full h-full bg-black/25 flex justify-center items-end py-[4vh]"
+        }
       >
-        <h2 className={"uppercase text-white"}>Dassault Falcon 7X</h2>
+        <h1 className={"uppercase text-white text-center"}>
+          Dassault Falcon 7X
+        </h1>
       </div>
     </section>
   );

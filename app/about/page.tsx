@@ -2,12 +2,17 @@ import { Navbar } from "@/components/nav";
 import Hero from "@/components/about/hero";
 import Who from "@/components/about/who";
 import dynamic from "next/dynamic";
+import { Metadata } from "next";
 
 const View = dynamic(() => import("@/components/view"));
 const Board = dynamic(() => import("@/components/about/board"));
 const Malta = dynamic(() => import("@/components/about/malta"));
 const Approach = dynamic(() => import("@/components/about/approach"));
 const Footer = dynamic(() => import("@/components/footer"));
+
+export const metadata: Metadata = {
+  title: "About Us",
+};
 
 const About = () => {
   return (

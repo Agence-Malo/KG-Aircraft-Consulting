@@ -1,23 +1,33 @@
 "use client";
-import { AnimatePresence, useScroll, motion } from "framer-motion";
+import { AnimatePresence, useScroll, motion, useSpring } from "framer-motion";
 
 const SlideBar = () => {
   const { scrollYProgress } = useScroll();
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   return (
-    <div
-      className={
-        "fixed z-0 right-20 bottom-[40%] max-lg:right-2 w-[30px] h-[200px] opacity-80"
-      }
-    >
-      <AnimatePresence>
+    <div className={"fixed z-0 right-[4vw] inset-y-[40%] w-[0.3vh] h-[20vh]"}>
+      <div
+        className={
+          "h-full bg-black/25 flex flex-col justify-start items-center"
+        }
+      >
+        <div className={"w-full h-[15%] bg-white mix-blend-difference"} />
         <motion.div
-          className={"w-[2px] mx-auto h-[80%] mt-5 bg-blue-950"}
+          className={
+            "w-full mx-auto h-full bg-white flex flex-col justify-start items-center"
+          }
           style={{
             originY: 0,
-            scaleY: scrollYProgress,
+            scaleY: scaleY,
           }}
-        ></motion.div>
-      </AnimatePresence>
+        />
+        <div className={""} />
+      </div>
     </div>
   );
 };

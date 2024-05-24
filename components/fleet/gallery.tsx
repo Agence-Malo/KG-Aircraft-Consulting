@@ -14,7 +14,7 @@ import fal11 from "@/public/graphics/images/fleet/falcon/11.jpg";
 import fal12 from "@/public/graphics/images/fleet/falcon/12.jpg";
 import fal13 from "@/public/graphics/images/fleet/falcon/13.jpg";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const images = [
   fal1,
@@ -36,7 +36,8 @@ const photos = [...images, ...images, ...images];
 
 const Gallery = () => {
   const [translate, setTranslate] = useState<number>(images.length * -100),
-    [transition, setTransition] = useState<number>(200);
+    [transition, setTransition] = useState<number>(200),
+    [paused, pause] = useState<boolean>(false);
 
   const rotate = (forwards: boolean) => {
     const delta = forwards ? -100 : 100;
@@ -48,17 +49,27 @@ const Gallery = () => {
     }
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!paused) rotate(true);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [rotate, paused]);
+
   return (
     <section
       className={
-        "containerize flex flex-col justify-center items-center gap-[2vh] py-[8vh]"
+        "containerize flex flex-col justify-center items-center gap-[2vh] py-[16vh]"
       }
     >
       <div className={"w-full flex justify-between items-center"}>
         <button
           onClick={(e) => {
             e.preventDefault();
+            pause(true);
             rotate(false);
+            setTimeout(() => pause(false), 5000);
           }}
           className={"w-[2vw] lg:block hidden"}
         >
@@ -111,7 +122,9 @@ const Gallery = () => {
         <button
           onClick={(e) => {
             e.preventDefault();
+            pause(true);
             rotate(true);
+            setTimeout(() => pause(false), 5000);
           }}
           className={"w-[2vw] lg:block hidden"}
         >

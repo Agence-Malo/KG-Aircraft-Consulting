@@ -12,7 +12,7 @@ const Opened = () => {
       x="0px"
       y="0px"
       viewBox="0 0 64 64"
-      className={"size-[2.5rem] fill-blue-950"}
+      className={"size-[1.75rem] fill-blue-950"}
     >
       <path d="M 32 12 C 30.896 12 30 12.896 30 14 L 30 30 L 14 30 C 12.896 30 12 30.896 12 32 C 12 33.104 12.896 34 14 34 L 30 34 L 30 50 C 30 51.104 30.896 52 32 52 C 33.104 52 34 51.104 34 50 L 34 34 L 50 34 C 51.104 34 52 33.104 52 32 C 52 30.896 51.104 30 50 30 L 34 30 L 34 14 C 34 12.896 33.104 12 32 12 z"></path>
     </svg>
@@ -26,7 +26,7 @@ const Closed = () => {
       x="0px"
       y="0px"
       viewBox="0 0 64 64"
-      className={"size-[2.5rem] fill-blue-950"}
+      className={"size-[1.75rem] fill-blue-950"}
     >
       <path d="M50,34H14c-1.104,0-2-0.896-2-2s0.896-2,2-2h36c1.104,0,2,0.896,2,2S51.104,34,50,34z"></path>
     </svg>
@@ -55,7 +55,7 @@ const WhyJethouse = () => {
   }, [isInView]);
 
   return (
-    <div className="flex justify-between items-start gap-[8vw] py-[10vh] lg:flex-row flex-col bg-black/5 text-blue-950 containerize">
+    <div className="flex justify-between items-start gap-[4vw] py-[10vh] lg:flex-row flex-col bg-black/5 text-blue-950 containerize">
       <div className={"lg:w-[48vw] w-full"}>
         <label>&mdash; Why Jethouse</label>
         <h2>
@@ -71,9 +71,9 @@ const WhyJethouse = () => {
             indicator={({ isOpen }) => (isOpen ? <Opened /> : <Closed />)}
             aria-label="Our Experimented Team"
             title={
-              <h3 className="font-medium text-blue-950">
+              <h4 className="font-medium text-blue-950 normal-case">
                 Our Experienced Team
-              </h3>
+              </h4>
             }
           >
             <p>
@@ -89,7 +89,9 @@ const WhyJethouse = () => {
             aria-label="Our Technology"
             indicator={({ isOpen }) => (isOpen ? <Opened /> : <Closed />)}
             title={
-              <h3 className="font-medium text-blue-950">Our Technology</h3>
+              <h4 className="font-medium text-blue-950 normal-case">
+                Our Technology
+              </h4>
             }
           >
             <p>
@@ -105,7 +107,9 @@ const WhyJethouse = () => {
             aria-label="Beyond the Ordinary"
             indicator={({ isOpen }) => (isOpen ? <Opened /> : <Closed />)}
             title={
-              <h3 className="font-medium text-blue-950">Beyond the Ordinary</h3>
+              <h4 className="font-medium text-blue-950 normal-case">
+                Beyond the Ordinary
+              </h4>
             }
           >
             <p>
@@ -120,9 +124,9 @@ const WhyJethouse = () => {
             aria-label="Our Founding Aircraft"
             indicator={({ isOpen }) => (isOpen ? <Opened /> : <Closed />)}
             title={
-              <h3 className="font-medium text-blue-950">
+              <h4 className="font-medium text-blue-950 normal-case">
                 Our Founding Aircraft
-              </h3>
+              </h4>
             }
           >
             <p>
@@ -134,7 +138,7 @@ const WhyJethouse = () => {
         </Accordion>
       </div>
       <Image
-        className={"lg:h-full lg:w-auto w-full h-auto"}
+        className={"lg:h-[64dvh] lg:w-auto w-full h-auto"}
         src={image}
         alt={"Falcon 6X"}
         ref={scope}

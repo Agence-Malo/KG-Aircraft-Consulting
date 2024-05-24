@@ -167,17 +167,21 @@ const Footer = () => {
       >
         <label
           className={
-            "md:w-1/3 w-full flex md:justify-start justify-center items-center"
+            "md:w-1/3 w-full flex md:justify-start justify-center items-center normal-case"
           }
         >
           Credits
         </label>
-        <label className={"md:w-1/3 w-full flex justify-center items-center"}>
+        <label
+          className={
+            "md:w-1/3 w-full flex justify-center items-center normal-case"
+          }
+        >
           © 2024 All Rights Reserved.
         </label>
         <label
           className={
-            "md:w-1/3 w-full flex md:justify-end justify-center items-center"
+            "md:w-1/3 w-full flex md:justify-end justify-center items-center normal-case"
           }
         >
           Privacy Policy

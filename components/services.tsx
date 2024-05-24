@@ -47,7 +47,7 @@ const Banner = ({
           setService(id as "management" | "charter" | "consulting");
         }}
         className={
-          "w-full h-full flex flex-col justify-center items-center px-[28%] gap-[4vh] md:gap-[2vh] bg-black/50 hover:bg-black/25 [transition:_background_1000ms_ease-in-out]"
+          "w-full h-full flex flex-col justify-center items-center px-[28%] gap-[4vh] md:gap-[2vh] bg-blue-950/50 hover:bg-blue-950/25 [transition:_background_1000ms_ease-in-out]"
         }
       >
         <h3>{heading}</h3>

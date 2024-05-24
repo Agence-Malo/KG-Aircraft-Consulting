@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import day from "@/public/graphics/images/fleet/Cabin Layout.webp";
 import night from "@/public/graphics/images/fleet/Cabin Layout 2.webp";
@@ -58,7 +57,7 @@ const Specs = () => {
   return (
     <section
       className={
-        "containerize flex flex-col justify-center items-center text-center mt-[2vh] gap-[4vh]"
+        "containerize flex flex-col justify-center items-center text-center mt-[2vh] gap-[4vh] text-blue-950"
       }
     >
       <p>
@@ -131,24 +130,12 @@ const Specs = () => {
           label={"on board"}
         />
       </div>
-      <a href={"/docs/facts.pdf"} target={"_blank"}>
-        <Button
-          endContent={
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              className={"h-[1.25rem] fill-white"}
-              viewBox="0 0 72 72"
-            >
-              <path d="M 36 9 C 33.791 9 32 10.791 32 13 L 32 36.359375 L 28.835938 33.179688 C 27.276937 31.611688 24.744688 31.604063 23.179688 33.164062 C 21.612687 34.721062 21.606063 37.255313 23.164062 38.820312 L 33.164062 48.871094 C 33.915062 49.626094 34.936 50.050781 36 50.050781 C 37.064 50.050781 38.084938 49.626094 38.835938 48.871094 L 48.835938 38.820312 C 50.392938 37.255313 50.386313 34.722062 48.820312 33.164062 C 47.256313 31.605062 44.725062 31.615687 43.164062 33.179688 L 40 36.359375 L 40 13 C 40 10.791 38.209 9 36 9 z M 12 41 C 9.791 41 8 42.791 8 45 L 8 52 C 8 56.963 12.037 61 17 61 L 55 61 C 59.963 61 64 56.963 64 52 L 64 45 C 64 42.791 62.209 41 60 41 C 57.791 41 56 42.791 56 45 L 56 52 C 56 52.552 55.552 53 55 53 L 17 53 C 16.448 53 16 52.552 16 52 L 16 45 C 16 42.791 14.209 41 12 41 z"></path>
-            </svg>
-          }
-          variant={"shadow"}
-          className={"bg-blue-950 text-white rounded-full"}
-        >
-          <label className={"cursor-pointer"}>Download fact sheet</label>
-        </Button>
+      <a
+        href={"/docs/facts.pdf"}
+        target={"_blank"}
+        className={"glass-button glass-button-dark z-0"}
+      >
+        Download fact sheet
       </a>
       <div className={"w-full flex flex-col justify-between items-start"}>
         <div
@@ -156,13 +143,24 @@ const Specs = () => {
             "w-full flex justify-between items-baseline text-blue-950 gap-[8vw] py-[8vh]"
           }
         >
-          <label className={"w-1/2 text-left"}>&mdash; information</label>
-          <label className={"w-1/2 text-left"}>&mdash; cabin layout</label>
+          <label className={"w-1/2 text-left hidden md:block"}>
+            &mdash; information
+          </label>
+          <label className={"w-1/2 text-left hidden md:block"}>
+            &mdash; cabin layout
+          </label>
         </div>
-        <div className={"w-full flex justify-between items-center gap-[8vw]"}>
+        <div
+          className={
+            "w-full flex flex-col md:flex-row justify-between items-center gap-[8vw]"
+          }
+        >
+          <label className={"w-full text-left md:hidden"}>
+            &mdash; information
+          </label>
           <div
             className={
-              "w-1/2 grid lg:grid-cols-2 grid-cols-1 gap-y-[2vh] gap-x-[4vh]"
+              "md:w-1/2 w-full grid lg:grid-cols-2 grid-cols-1 gap-y-[2vh] gap-x-[4vh]"
             }
           >
             <Information
@@ -258,9 +256,12 @@ const Specs = () => {
           </div>
           <div
             className={
-              "w-1/2 flex flex-col justify-center items-center text-blue-950"
+              "md:w-1/2 w-full flex flex-col gap-[2vh] md:gap-0 justify-center items-center text-blue-950"
             }
           >
+            <label className={"w-full text-left md:hidden"}>
+              &mdash; cabin layout
+            </label>
             <p>Day: 13 seats</p>
             <Image
               src={day}

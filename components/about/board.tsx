@@ -1,6 +1,5 @@
 import Image, { StaticImageData } from "next/image";
 import Herve from "@/public/graphics/images/about/herve.webp";
-import Nicolas from "@/public/graphics/images/about/nicolas.webp";
 import Tina from "@/public/graphics/images/about/tina.webp";
 
 const Profile = ({
@@ -11,7 +10,7 @@ const Profile = ({
 }: {
   name: string;
   position: string;
-  img: StaticImageData;
+  img?: StaticImageData;
   description: string;
 }) => {
   return (
@@ -26,11 +25,11 @@ const Profile = ({
         }
       >
         <Image
-          src={img}
-          alt={`${name}'s photo`}
-          className={
-            "size-[48vw] lg:size-[16vw] object-cover object-top rounded-full"
-          }
+          src={img ? img : ""}
+          width={img ? 0 : 120}
+          height={img ? 0 : 120}
+          alt={img ? `${name}'s photo` : ""}
+          className={`size-[48vw] lg:size-[16vw] object-cover object-top rounded-full ${!img && "bg-black/25"}`}
         />
         <h3 className={"font-medium"}>{name}</h3>
         <label className={"normal-case italic"}>{position}</label>
@@ -45,17 +44,17 @@ const Board = () => {
     <section
       id={"board"}
       className={
-        "containerize lg:px-[12vw] py-[8vh] h-max flex justify-center items-start flex-col gap-[4vh]"
+        "containerize lg:px-[12vw] py-[8vh] h-max flex justify-center items-start flex-col gap-[4vh] text-blue-950"
       }
     >
       <div
         className={"flex flex-col w-full justify-center items-start gap-[2vh]"}
       >
         <label className={"uppercase"}>&mdash; Meet our board</label>
-        <h1>
+        <h2>
           The Essence Of Two
           <br className={"lg:block hidden"} /> Decades Of Dedication
-        </h1>
+        </h2>
         <p>
           JetHouse Ltd. is a Maltese operator founded by 3 Belgian aviation
           veterans. JetHouse begins with a management team of 8 professionals,
@@ -81,7 +80,6 @@ const Board = () => {
         <Profile
           name={"Nicolas Willemot"}
           position={"CFO of JetHouse"}
-          img={Nicolas}
           description={
             "Former CFO and co-founder of Abelag Group, bringing over 35 years of experience in business aviation."
           }

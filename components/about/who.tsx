@@ -15,18 +15,17 @@ const Who = () => {
       />
       <div
         className={
-          "w-full lg:w-[32vw] h-max flex flex-col justify-start items-start gap-[2vh]"
+          "w-full lg:w-[32vw] h-max flex flex-col justify-start items-start gap-[2vh] text-blue-950"
         }
       >
-        <h4>&mdash; Who we are</h4>
+        <label>&mdash; Who we are</label>
         <h2>Your Boutique Aviation Operator Crafted With Soul</h2>
         <p className={"text-justify"}>
-          <span className={"font-bold"}>JetHouse</span> is not just another
-          business aviation operator. We are a team of experienced and
-          passionate business aviation professionals with a single objective:
-          “Focus, and never deviate, from what business aviation clients expect
-          from an operator.” At JetHouse, we want to restore the true meaning of
-          what a boutique operation is.
+          JetHouse is not just another business aviation operator. We are a team
+          of experienced and passionate business aviation professionals with a
+          single objective: “Focus, and never deviate, from what business
+          aviation clients expect from an operator.” At JetHouse, we want to
+          restore the true meaning of what a boutique operation is.
         </p>
       </div>
     </section>
