@@ -11,7 +11,7 @@ const Who = () => {
       <Image
         src={plane}
         alt={"Parked jet inside a hangar."}
-        className={"w-full lg:w-[32vw] h-auto"}
+        className={"w-full lg:w-[32vw] h-auto fade-animation"}
       />
       <div
         className={

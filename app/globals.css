@@ -122,3 +122,21 @@
 .animated-fade {
   animation: fadeIn 0.5s ease-out forwards; /* Adjust duration and easing to taste */
 }
+
+.fade-animation {
+  animation: fade 1s ease-in-out;
+  animation-delay: 2s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateX(10vw);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

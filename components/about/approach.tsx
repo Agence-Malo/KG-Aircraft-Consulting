@@ -38,7 +38,9 @@ const Approach = () => {
         alt={
           "Jet cabin featuring a double-bed with drinks placed on a plateau and a pair of headphones."
         }
-        className={"h-full lg:h-auto lg:w-[28vw] w-auto"}
+        className={
+          "h-[56dvh] lg:h-auto lg:w-[28vw] w-full object-cover object-center"
+        }
       />
       <div
         className={
