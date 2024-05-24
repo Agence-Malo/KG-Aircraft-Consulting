@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       className={
-        "w-full h-[100dvh] flex flex-col justify-end items-center gap-[18vh]"
+        "w-full h-[100dvh] flex flex-col justify-end items-center md:gap-[18vh] gap-[10vh]"
       }
     >
       <video
@@ -24,7 +24,7 @@ const Hero = () => {
         animate={{ y: "0", opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
         className={
-          "text-white md:text-center text-left font-normal containerize"
+          "text-white md:text-center text-center font-normal containerize"
         }
       >
         Not Just Another
