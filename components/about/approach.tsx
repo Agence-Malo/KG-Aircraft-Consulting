@@ -1,7 +1,31 @@
+"use client";
+
 import Image from "next/image";
 import cabin from "@/public/graphics/images/about/cabin.webp";
+import { useAnimate, useInView } from "framer-motion";
+import { useEffect } from "react";
 
 const Approach = () => {
+  const [scope, animate] = useAnimate();
+  const isInView = useInView(scope);
+
+  useEffect(() => {
+    animate(
+      scope.current,
+      { x: "-10vw", opacity: 0 },
+      { duration: 1, ease: "easeInOut" },
+    );
+  }, []);
+
+  useEffect(() => {
+    if (isInView)
+      animate(
+        scope.current,
+        { x: 0, opacity: 1, delay: 1 },
+        { duration: 1, ease: "easeInOut" },
+      );
+  }, [isInView]);
+
   return (
     <section
       className={
@@ -9,11 +33,12 @@ const Approach = () => {
       }
     >
       <Image
+        ref={scope}
         src={cabin}
         alt={
           "Jet cabin featuring a double-bed with drinks placed on a plateau and a pair of headphones."
         }
-        className={"h-full lg:h-auto lg:w-[32vw] w-auto rounded-2xl"}
+        className={"h-full lg:h-auto lg:w-[32vw] w-auto"}
       />
       <div
         className={

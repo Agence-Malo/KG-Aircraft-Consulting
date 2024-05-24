@@ -2,7 +2,7 @@ const Hero = () => {
   return (
     <section
       className={
-        "containerize lg:px-[30vw] py-[8vh] lg:py-[16vh] bg-about-hero bg-cover bg-center flex justify-center items-center flex-col text-center text-white"
+        "containerize lg:px-[30vw] py-[8vh] lg:py-[16vh] bg-about-hero bg-cover bg-bottom flex justify-center items-center flex-col text-center text-white"
       }
     >
       <h4>About us</h4>

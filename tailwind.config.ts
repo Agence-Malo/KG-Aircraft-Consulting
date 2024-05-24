@@ -14,6 +14,7 @@ const config: Config = {
         "about-hero": "url('/graphics/images/about/hero.webp')",
         malta: "url('/graphics/images/about/malta.webp')",
         mountains: "url('/graphics/images/Montage.webp')",
+        "falcon-temp": "url('/graphics/images/services/management.webp')",
       },
     },
   },

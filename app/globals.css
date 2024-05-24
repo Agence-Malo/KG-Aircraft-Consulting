@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --translate: 0;
+}
+
 @layer base {
   h1 {
     @apply md:text-6xl text-5xl font-bold;
@@ -54,6 +58,10 @@
 
   .connect-link {
     @apply flex justify-center items-center bg-white text-blue-950 md:px-[0.5vw] px-[2vw] py-[1vh];
+  }
+
+  .connect-link label {
+    @apply text-xs cursor-pointer;
   }
 }
 .embla {

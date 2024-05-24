@@ -1,9 +1,9 @@
 "use client";
-import logo from "@/public/graphics/images/logo-white.png";
-import Image from "next/image";
+
 import { useView } from "@/context/view";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { FullLogo } from "@/public/graphics/images/logo";
 
 const Footer = () => {
   const path = usePathname(),
@@ -16,17 +16,14 @@ const Footer = () => {
           "w-full flex md:flex-row flex-col gap-[2vh] md:gap-0 justify-between items-center"
         }
       >
-        <div
+        <Link
+          href={"/"}
           className={
             "md:w-1/3 w-full flex md:justify-start justify-center items-start"
           }
         >
-          <Image
-            src={logo}
-            alt={"JetHouse logo"}
-            className={"h-[6vh] w-auto"}
-          />
-        </div>
+          <FullLogo mono={true} className={"fill-white h-[6vh] w-auto"} />
+        </Link>
         <p
           className={
             "text-white text-center md:hidden w-full flex justify-center items-center"
@@ -70,7 +67,7 @@ const Footer = () => {
           >
             About Us
           </Link>
-          <Link href={"/about/#team"} className={`text-white`}>
+          <Link href={"/about/#board"} className={`text-white`}>
             Our Team
           </Link>
           <button
@@ -104,7 +101,7 @@ const Footer = () => {
           "w-full flex md:flex-row flex-col justify-between items-start"
         }
       >
-        <div className="w-1/3 flex flex-col items-start justify-center">
+        <div className="w-1/3 flex flex-col items-start justify-center gap-[1vh]">
           <p
             className={
               "text-white text-left hidden w-full md:flex justify-start items-center"
@@ -141,7 +138,7 @@ const Footer = () => {
           >
             About Us
           </Link>
-          <Link href={"/about/#team"} className={`text-white`}>
+          <Link href={"/about/#board"} className={`text-white`}>
             Our Team
           </Link>
           <button

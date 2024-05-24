@@ -7,7 +7,6 @@ const View = dynamic(() => import("@/components/view"));
 const Board = dynamic(() => import("@/components/about/board"));
 const Malta = dynamic(() => import("@/components/about/malta"));
 const Approach = dynamic(() => import("@/components/about/approach"));
-const Form = dynamic(() => import("@/components/form"));
 const Footer = dynamic(() => import("@/components/footer"));
 
 const About = () => {
@@ -20,7 +19,6 @@ const About = () => {
       <Board />
       <Malta />
       <Approach />
-      <Form />
       <Footer />
     </main>
   );

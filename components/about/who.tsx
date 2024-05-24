@@ -11,7 +11,7 @@ const Who = () => {
       <Image
         src={plane}
         alt={"Parked jet inside a hangar."}
-        className={"w-full lg:w-[32vw] h-auto rounded-2xl"}
+        className={"w-full lg:w-[32vw] h-auto"}
       />
       <div
         className={
@@ -19,7 +19,7 @@ const Who = () => {
         }
       >
         <h4>&mdash; Who we are</h4>
-        <h1>Your Boutique Aviation Operator Crafted With Soul</h1>
+        <h2>Your Boutique Aviation Operator Crafted With Soul</h2>
         <p className={"text-justify"}>
           <span className={"font-bold"}>JetHouse</span> is not just another
           business aviation operator. We are a team of experienced and

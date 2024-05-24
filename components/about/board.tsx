@@ -43,6 +43,7 @@ const Profile = ({
 const Board = () => {
   return (
     <section
+      id={"board"}
       className={
         "containerize lg:px-[12vw] py-[8vh] h-max flex justify-center items-start flex-col gap-[4vh]"
       }

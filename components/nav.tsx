@@ -175,7 +175,7 @@ const Nav = () => {
             About Us
           </Link>
           <Link
-            href={"/team"}
+            href={"/about/#board"}
             className={`${path === "/team" && "font-bold"} hover:font-bold [transition:_font-weight_0.2s_ease-in-out]`}
           >
             Our Team
