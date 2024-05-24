@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <section
-      className={"containerize h-screen flex justify-center items-center over"}
+      className={"containerize h-[100dvh] flex justify-center items-center"}
     >
       <video
         className={"w-full h-full object-cover object-center absolute -z-20"}
