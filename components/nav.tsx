@@ -262,46 +262,51 @@ export const Navbar = ({ invert }: { invert: number }) => {
         transition={{ duration: 1.5, ease: "easeOut" }}
         className={`fixed z-30 containerize pt-[2vh] flex justify-between items-center`}
       >
-        <button
-          onClick={() => openView("nav")}
-          className={`flex justify-center items-center flex-col lg:w-[2vw] w-[6vw] group gap-[0.5vh] lg:hover:gap-[0.75vh] transition-[gap] duration-200 ease-in-out ${scrolled ? "fill-black" : "fill-white"}`}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 128 8"
-            className={"burger-bar"}
+        <div className={"w-1/3 flex justify-start items-center"}>
+          <button
+            onClick={() => openView("nav")}
+            className={`flex justify-center items-center flex-col lg:w-[2vw] w-[6vw] group gap-[0.5vh] lg:hover:gap-[0.75vh] transition-[gap] duration-200 ease-in-out ${scrolled ? "fill-black" : "fill-white"}`}
           >
-            <rect width="128" height="8" rx="4" />
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 128 8"
-            className={"burger-bar"}
-          >
-            <rect width="128" height="8" rx="4" />
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 128 8"
-            className={"burger-bar"}
-          >
-            <rect width="128" height="8" rx="4" />
-          </svg>
-        </button>
-        <Link href={"/"} className={"w-full absolute inset-x-0 -z-10"}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 128 8"
+              className={"burger-bar"}
+            >
+              <rect width="128" height="8" rx="4" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 128 8"
+              className={"burger-bar"}
+            >
+              <rect width="128" height="8" rx="4" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 128 8"
+              className={"burger-bar"}
+            >
+              <rect width="128" height="8" rx="4" />
+            </svg>
+          </button>
+        </div>
+
+        <Link href={"/"} className={"w-1/3 flex justify-center items-center"}>
           <FullLogo
             mono={!scrolled}
             className={`h-[4vh] md:h-[6vh] w-auto ${scrolled ? "" : "fill-white"} mx-auto`}
           />
         </Link>
-        <button
-          type={"button"}
-          onClick={() => openView("contact")}
-          className={`glass-button hover:backdrop-blur-2xl ${scrolled ? "glass-button-dark" : "glass-button-light"}`}
-        >
-          <span className={"lg:hidden block uppercase"}>Contact</span>
-          <span className={"hidden lg:block"}>Get in touch</span>
-        </button>
+        <div className={"w-1/3 flex justify-end items-center"}>
+          <button
+            type={"button"}
+            onClick={() => openView("contact")}
+            className={`glass-button hover:backdrop-blur-2xl ${scrolled ? "glass-button-dark" : "glass-button-light"}`}
+          >
+            <span className={"lg:hidden block uppercase"}>Contact</span>
+            <span className={"hidden lg:block"}>Get in touch</span>
+          </button>
+        </div>
       </motion.section>
     </>
   );

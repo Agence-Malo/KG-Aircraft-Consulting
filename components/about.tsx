@@ -1,12 +1,36 @@
+"use client";
+
 import about from "@/public/graphics/images/about.webp";
 import Image from "next/image";
 import Link from "next/link";
+import { useAnimate, useInView } from "framer-motion";
+import { useEffect } from "react";
 
 const About = () => {
+  const [scope, animate] = useAnimate();
+  const isInView = useInView(scope);
+
+  useEffect(() => {
+    animate(
+      scope.current,
+      { x: "-10vw", opacity: 0 },
+      { duration: 1, ease: "easeInOut" },
+    );
+  }, []);
+
+  useEffect(() => {
+    if (isInView)
+      animate(
+        scope.current,
+        { x: 0, opacity: 1 },
+        { duration: 1, ease: "easeInOut" },
+      );
+  }, [isInView]);
+
   return (
     <section
       className={
-        "w-full lg:containerize h-screen flex flex-col lg:flex-row justify-between items-start gap-[4vh] lg:gap-[8vw]"
+        "containerize flex flex-col lg:flex-row justify-between items-start gap-[4vh] lg:gap-[8vw]"
       }
     >
       <Image
@@ -15,6 +39,7 @@ const About = () => {
         className={
           "w-full h-[100dvh] lg:h-[90dvh] lg:w-auto object-cover object-bottom"
         }
+        ref={scope}
       />
       <div
         className={

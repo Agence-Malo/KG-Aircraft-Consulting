@@ -2,6 +2,8 @@
 import Image from "next/image";
 import image from "@/public/graphics/images/Falcon6X.webp";
 import { Accordion, AccordionItem } from "@nextui-org/react";
+import { useAnimate, useInView } from "framer-motion";
+import { useEffect } from "react";
 
 const Opened = () => {
   return (
@@ -32,6 +34,26 @@ const Closed = () => {
 };
 
 const WhyJethouse = () => {
+  const [scope, animate] = useAnimate();
+  const isInView = useInView(scope);
+
+  useEffect(() => {
+    animate(
+      scope.current,
+      { y: "10vw", opacity: 0 },
+      { duration: 1, ease: "easeInOut" },
+    );
+  }, []);
+
+  useEffect(() => {
+    if (isInView)
+      animate(
+        scope.current,
+        { y: 0, opacity: 1 },
+        { duration: 1, ease: "easeInOut" },
+      );
+  }, [isInView]);
+
   return (
     <div className="flex justify-between items-start gap-[8vw] py-[10vh] lg:flex-row flex-col bg-black/5 text-blue-950 containerize">
       <div className={"lg:w-[48vw] w-full"}>
@@ -115,6 +137,7 @@ const WhyJethouse = () => {
         className={"lg:h-full lg:w-auto w-full h-auto"}
         src={image}
         alt={"Falcon 6X"}
+        ref={scope}
       />
     </div>
   );
