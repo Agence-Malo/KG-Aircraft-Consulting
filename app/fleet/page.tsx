@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 
 const View = dynamic(() => import("@/components/view"));
 const Gallery = dynamic(() => import("@/components/fleet/gallery"));
+const Footer = dynamic(() => import("@/components/footer"));
 
 const Fleet = () => {
   return (
@@ -14,6 +15,7 @@ const Fleet = () => {
       <Hero />
       <Specs />
       <Gallery />
+      <Footer />
     </main>
   );
 };
