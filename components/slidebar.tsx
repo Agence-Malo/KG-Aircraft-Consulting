@@ -1,7 +1,15 @@
 "use client";
-import { AnimatePresence, useScroll, motion, useSpring } from "framer-motion";
+import {
+  AnimatePresence,
+  useScroll,
+  motion,
+  useSpring,
+  useMotionValueEvent,
+} from "framer-motion";
+import { useState } from "react";
 
 const SlideBar = () => {
+  const [progress, setProgress] = useState(0);
   const { scrollYProgress } = useScroll();
   const scaleY = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -9,25 +17,34 @@ const SlideBar = () => {
     restDelta: 0.001,
   });
 
+  useMotionValueEvent(scaleY, "change", (latest) => {
+    setProgress(latest * 100);
+  });
+
   return (
     <div className={"fixed z-0 right-[4vw] inset-y-[40%] w-[0.3vh] h-[20vh]"}>
+      <div className={"w-full h-[15%] bg-white/30 backdrop-invert"} />
       <div
         className={
-          "h-full bg-black/25 flex flex-col justify-start items-center"
+          "bg-white/30 backdrop-invert w-full mx-auto h-full flex flex-col justify-start items-center"
         }
-      >
-        <div className={"w-full h-[15%] bg-white mix-blend-difference"} />
-        <motion.div
-          className={
-            "w-full mx-auto h-full bg-white flex flex-col justify-start items-center"
-          }
-          style={{
-            originY: 0,
-            scaleY: scaleY,
-          }}
-        />
-        <div className={""} />
-      </div>
+        style={{
+          height: `${progress}%`,
+        }}
+      />
+      <div
+        className={
+          "w-full h-[2%] bg-white/30 backdrop-invert my-[2vh] rounded-full"
+        }
+      />
+      <div
+        className={
+          "w-full bg-black/25 flex flex-col justify-start items-center"
+        }
+        style={{
+          height: `${100 - progress}%`,
+        }}
+      />
     </div>
   );
 };

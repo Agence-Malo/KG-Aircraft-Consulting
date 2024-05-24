@@ -11,7 +11,7 @@ const Strip = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
     AutoScroll({
       loop: true,
-      speed: 2,
+      speed: 1,
       align: "start",
     }),
   ]);

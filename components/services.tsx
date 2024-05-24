@@ -344,7 +344,7 @@ const Services = () => {
       </AnimatePresence>
       <div
         className={
-          "containerize flex flex-col justify-center items-center py-[16vh]"
+          "containerize flex flex-col justify-center items-center py-[16vh] text-blue-950"
         }
       >
         <label>

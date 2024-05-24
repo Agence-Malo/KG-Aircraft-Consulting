@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 const Hero = () => {
   return (
     <section
@@ -18,12 +22,17 @@ const Hero = () => {
           "bg-gradient-to-b from-transparent to-white absolute bottom-0 w-full h-[32vh] -z-10"
         }
       />
-      <h1 className={"text-white md:text-center text-left font-normal"}>
+      <motion.h1
+        initial={{ y: "-6vh", opacity: 0, scale: 1.05 }}
+        animate={{ y: "0", opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        className={"text-white md:text-center text-left font-normal"}
+      >
         Not Just Another
         <br className={"md:block hidden"} />
         <span className={"md:hidden"}> </span>
         <span className={"font-bold"}>Business Aviation Operator</span>
-      </h1>
+      </motion.h1>
     </section>
   );
 };

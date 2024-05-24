@@ -257,11 +257,7 @@ export const Navbar = ({ invert }: { invert: number }) => {
       <div
         className={`fixed top-0 w-full h-[12vh] bg-gradient-to-b from-white ${scrolled ? "opacity-100" : "opacity-0"} transition-opacity duration-200 ease-in-out`}
       ></div>
-      <motion.section
-        key={"bar"}
-        initial={{ top: "-100%" }}
-        animate={{ top: "0" }}
-        transition={{ duration: 1, ease: "easeOut" }}
+      <section
         className={`fixed z-30 containerize pt-[2vh] flex justify-between items-center`}
       >
         <div className={"w-1/3 flex justify-start items-center"}>
@@ -309,7 +305,7 @@ export const Navbar = ({ invert }: { invert: number }) => {
             <span className={"hidden lg:block"}>Get in touch</span>
           </button>
         </div>
-      </motion.section>
+      </section>
     </>
   );
 };
