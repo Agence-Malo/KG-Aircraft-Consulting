@@ -68,7 +68,7 @@ const Contact = () => {
       exit={{ y: "100%" }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className={
-        "fixed lg:bottom-0 lg:top-auto top-0 left-0 z-30 bg-blue-950 lg:h-[86vh] h-[100dvh] overflow-y-auto w-full flex flex-col justify-start items-center lg:px-[2vw] px-[4vw] py-[2vh] lg:gap-[2vh] text-white"
+        "fixed lg:bottom-0 lg:top-auto top-0 left-0 z-30 bg-blue-950 lg:h-[86vh] lg:min-h-[86vh] min-h-[100vh] max-h-full lg:overflow-y-hidden overflow-y-auto w-full flex flex-col justify-start items-center lg:px-[2vw] px-[4vw] py-[2vh] lg:gap-[2vh] text-white"
       }
     >
       <div
@@ -110,15 +110,6 @@ const Contact = () => {
             To Start a conversation about how JetHouse can serve your business
             aviation needs, please reach out to us
           </p>
-          <Connect />
-        </div>
-        <div
-          className={
-            "md:hidden w-full flex flex-col justify-center items-center gap-[2vh]"
-          }
-        >
-          <div className={"w-full h-[0.25vh] bg-white"} />
-          <Social />
         </div>
         <form
           action={async (formData) =>
@@ -367,6 +358,21 @@ const Contact = () => {
             Send
           </Button>
         </form>
+        <div
+          className={
+            "md:hidden w-full flex flex-col justify-center items-start gap-[2vh]"
+          }
+        >
+          <Connect />
+        </div>
+        <div
+          className={
+            "md:hidden w-full flex flex-col justify-center items-center gap-[2vh]"
+          }
+        >
+          <div className={"w-full h-[0.25vh] bg-white"} />
+          <Social />
+        </div>
       </div>
     </motion.section>
   );

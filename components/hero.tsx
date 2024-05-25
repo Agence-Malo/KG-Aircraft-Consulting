@@ -17,7 +17,7 @@ const Hero = () => {
         playsInline
         loop
       >
-        <source src={"../graphics/videos/aerial.mp4"} type={"video/mp4"} />
+        <source src={"../graphics/videos/aerial.webm"} type={"video/webm"} />
       </video>
       <motion.h1
         initial={{ y: "-6vh", opacity: 0, scale: 1.05 }}

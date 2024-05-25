@@ -1,11 +1,5 @@
 "use client";
-import {
-  AnimatePresence,
-  useScroll,
-  motion,
-  useSpring,
-  useMotionValueEvent,
-} from "framer-motion";
+import { useScroll, useSpring, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 
 const SlideBar = () => {
@@ -22,7 +16,7 @@ const SlideBar = () => {
   });
 
   return (
-    <div className={"fixed z-0 right-[4vw] inset-y-[40%] w-[0.3vh] h-[20vh]"}>
+    <div className={"fixed z-10 right-[4vw] inset-y-[40%] w-[0.3vh] h-[20vh]"}>
       <div className={"w-full h-[15%] bg-white/30 backdrop-invert"} />
       <div
         className={

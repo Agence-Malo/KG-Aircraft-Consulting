@@ -8,7 +8,7 @@ import management from "@/public/graphics/images/services/management.webp";
 import charter from "@/public/graphics/images/services/charter.webp";
 import consulting from "@/public/graphics/images/services/consulting.webp";
 import Image, { StaticImageData } from "next/image";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, useInView } from "framer-motion";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
@@ -64,6 +64,8 @@ const Banner = ({
 };
 
 const Services = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const [service, setService] = useState<
     "management" | "charter" | "consulting" | null
   >(null);
@@ -347,17 +349,22 @@ const Services = () => {
           "containerize flex flex-col justify-center items-center py-[16vh] text-blue-950"
         }
       >
-        <label>
+        <label
+          className={`${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 ease-in-out`}
+        >
           Our services
           <br />
           &mdash;
         </label>
-        <h2 className={"md:w-[48vw]"}>
+        <h2
+          className={`md:w-[48vw] ${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 ease-in-out`}
+        >
           Boutique At JetHouse Means That Our Experience Is At The Service Of
           The Aircraft Owner.
         </h2>
       </div>
       <div
+        ref={ref}
         className={
           "flex lg:flex-row flex-col justify-between items-center w-full"
         }

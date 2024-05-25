@@ -10,7 +10,7 @@ const Footer = () => {
     { openView } = useView();
 
   return (
-    <footer className="containerize max-lg:px-5 flex flex-col md:gap-[1vh] gap-[2vh] items-center justify-center bg-blue-950 text-white py-[6vh]">
+    <footer className="containerize max-lg:px-5 flex flex-col md:gap-[1vh] gap-[2vh] items-center justify-center bg-blue-950 text-white pt-[6vh]">
       <div
         className={
           "w-full flex md:flex-row flex-col gap-[2vh] md:gap-0 justify-between items-center"
@@ -46,8 +46,8 @@ const Footer = () => {
             <path d="M40.227,12C51.145,12,52,12.854,52,23.773v16.453C52,51.145,51.145,52,40.227,52H23.773C12.855,52,12,51.145,12,40.227	V23.773C12,12.854,12.855,12,23.773,12H40.227z M25.029,43V26.728h-5.057V43H25.029z M22.501,24.401	c1.625,0,2.947-1.322,2.947-2.949c0-1.625-1.322-2.947-2.947-2.947c-1.629,0-2.949,1.32-2.949,2.947S20.87,24.401,22.501,24.401z M44,43v-8.925c0-4.382-0.946-7.752-6.067-7.752c-2.46,0-4.109,1.349-4.785,2.628H33.08v-2.223h-4.851V43h5.054v-8.05	c0-2.122,0.405-4.178,3.036-4.178c2.594,0,2.628,2.427,2.628,4.315V43H44z"></path>
           </svg>
         </a>
-        <div className={"w-5/6 h-[0.25] md:hidden bg-blue-50/50"} />
-        <h1 className="text-2xl font-bold my-4 w-1/3 flex justify-center items-center">
+        <div className={"w-5/6 h-[0.25vh] md:hidden bg-blue-50/50"} />
+        <h1 className="text-2xl font-bold my-4 md:w-1/3 w-full flex justify-center items-center">
           Quick Links
         </h1>
         <div
@@ -67,8 +67,8 @@ const Footer = () => {
           >
             About Us
           </Link>
-          <Link href={"/about/#board"} className={`text-white`}>
-            Our Team
+          <Link href={"/fleet"} className={`text-white`}>
+            Our Fleet
           </Link>
           <button
             onClick={() => openView("contact")}
@@ -77,8 +77,8 @@ const Footer = () => {
             Contact
           </button>
         </div>
-        <div className={"w-5/6 h-[0.25] md:hidden bg-blue-50/50"} />
-        <h1 className="text-2xl font-bold my-2 w-1/3 flex justify-center md:justify-end items-center">
+        <div className={"w-5/6 h-[0.25vh] md:hidden bg-blue-50/50"} />
+        <h1 className="text-2xl font-bold my-2 md:w-1/3 w-full flex justify-center md:justify-end items-center">
           Get in touch
         </h1>
         <p className={"text-justify text-white md:hidden"}>
@@ -95,7 +95,7 @@ const Footer = () => {
           T: +32 476 26 42 68
         </a>
       </div>
-      <div className={"w-5/6 h-[0.25] md:hidden bg-blue-50/50"} />
+      <div className={"w-5/6 h-[0.25vh] md:hidden bg-blue-50/50"} />
       <div
         className={
           "w-full flex md:flex-row flex-col justify-between items-start"

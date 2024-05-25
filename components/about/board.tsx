@@ -1,6 +1,10 @@
+"use client";
+
 import Image, { StaticImageData } from "next/image";
 import Herve from "@/public/graphics/images/about/herve.webp";
 import Tina from "@/public/graphics/images/about/tina.webp";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 const Profile = ({
   name,
@@ -16,7 +20,7 @@ const Profile = ({
   return (
     <div
       className={
-        "w-full lg:w-1/3 flex flex-col justify-start items-center text-center gap-[2vh]"
+        "w-full flex flex-col justify-start items-center text-center gap-[2vh]"
       }
     >
       <div
@@ -40,6 +44,9 @@ const Profile = ({
 };
 
 const Board = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <section
       id={"board"}
@@ -48,14 +55,14 @@ const Board = () => {
       }
     >
       <div
-        className={"flex flex-col w-full justify-center items-start gap-[2vh]"}
+        className={`flex flex-col w-full justify-center items-start gap-[2vh] ${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 ease-in-out`}
       >
         <label className={"uppercase"}>&mdash; Meet our board</label>
         <h2>
           The Essence Of Two
           <br className={"lg:block hidden"} /> Decades Of Dedication
         </h2>
-        <p>
+        <p ref={ref}>
           JetHouse Ltd. is a Maltese operator founded by 3 Belgian aviation
           veterans. JetHouse begins with a management team of 8 professionals,
           boasting a collective aviation experience of nearly 175 years. The
@@ -69,29 +76,41 @@ const Board = () => {
           "w-full flex flex-col lg:flex-row justify-between items-center gap-[4vh]"
         }
       >
-        <Profile
-          img={Herve}
-          name={"Hervé Laitat"}
-          position={"CEO and founder of JetHouse"}
-          description={
-            "Former CEO and Accountable Manager of Abelag/Luxaviation, overseeing a fleet of 25 business jets."
-          }
-        />
-        <Profile
-          name={"Nicolas Willemot"}
-          position={"CFO of JetHouse"}
-          description={
-            "Former CFO and co-founder of Abelag Group, bringing over 35 years of experience in business aviation."
-          }
-        />
-        <Profile
-          name={"Tina Boeckx"}
-          position={"NPFO/NPCT"}
-          img={Tina}
-          description={
-            "Former NPFO of Abelag between 2011 and 2018, as well as an experienced pilot."
-          }
-        />
+        <span
+          className={`${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 lg:delay-[200ms] delay-[1000ms] ease-in-out w-full lg:w-1/3`}
+        >
+          <Profile
+            img={Herve}
+            name={"Hervé Laitat"}
+            position={"CEO and founder of JetHouse"}
+            description={
+              "Former CEO and Accountable Manager of Abelag/Luxaviation, overseeing a fleet of 25 business jets."
+            }
+          />
+        </span>
+        <span
+          className={`${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 lg:delay-[400ms] delay-[2000ms] ease-in-out w-full lg:w-1/3`}
+        >
+          <Profile
+            name={"Nicolas Willemot"}
+            position={"CFO of JetHouse"}
+            description={
+              "Former CFO and co-founder of Abelag Group, bringing over 35 years of experience in business aviation."
+            }
+          />
+        </span>
+        <span
+          className={`${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 lg:delay-[600ms] delay-[3000ms] ease-in-out w-full lg:w-1/3`}
+        >
+          <Profile
+            name={"Tina Boeckx"}
+            position={"NPFO/NPCT"}
+            img={Tina}
+            description={
+              "Former NPFO of Abelag between 2011 and 2018, as well as an experienced pilot."
+            }
+          />
+        </span>
       </div>
     </section>
   );

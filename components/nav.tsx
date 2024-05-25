@@ -159,24 +159,28 @@ const Nav = () => {
         >
           <Link
             href={"/"}
+            onClick={() => openView(null)}
             className={`${path === "/" && "font-bold"} hover:font-bold [transition:_font-weight_0.2s_ease-in-out]`}
           >
             Home
           </Link>
           <Link
             href={"/fleet"}
+            onClick={() => openView(null)}
             className={`${path === "/fleet" && "font-bold"} hover:font-bold [transition:_font-weight_0.2s_ease-in-out]`}
           >
             Our Fleet
           </Link>
           <Link
             href={"/about"}
+            onClick={() => openView(null)}
             className={`${path === "/about" && "font-bold"} hover:font-bold [transition:_font-weight_0.2s_ease-in-out]`}
           >
             About Us
           </Link>
           <Link
             href={"/about/#board"}
+            onClick={() => openView(null)}
             className={`${path === "/team" && "font-bold"} hover:font-bold [transition:_font-weight_0.2s_ease-in-out]`}
           >
             Our Team

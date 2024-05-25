@@ -3,35 +3,16 @@
 import about from "@/public/graphics/images/about.webp";
 import Image from "next/image";
 import Link from "next/link";
-import { useAnimate, useInView } from "framer-motion";
-import { useEffect } from "react";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const About = () => {
-  const [scope, animate] = useAnimate();
-  const isInView = useInView(scope);
-
-  useEffect(() => {
-    animate(
-      scope.current,
-      { x: "-10vw", opacity: 0 },
-      { duration: 1, ease: "easeInOut" },
-    );
-  }, []);
-
-  useEffect(() => {
-    if (isInView)
-      animate(
-        scope.current,
-        { x: 0, opacity: 1 },
-        { duration: 1, ease: "easeInOut" },
-      );
-  }, [isInView]);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <section
-      className={
-        "containerize flex flex-col lg:flex-row justify-between items-start gap-[4vh] lg:gap-[8vw]"
-      }
+      className={`containerize flex flex-col-reverse lg:flex-row justify-between items-start gap-[4vh] lg:gap-[8vw] ${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 ease-in-out`}
     >
       <Image
         src={about}
@@ -39,7 +20,6 @@ const About = () => {
         className={
           "w-full h-[72dvh] lg:h-[72dvh] lg:w-auto object-cover object-bottom"
         }
-        ref={scope}
       />
       <div
         className={
@@ -61,7 +41,11 @@ const About = () => {
           what business aviation clients expect from an operator.” At JetHouse,
           we want to restore the true meaning of what a boutique operation is.
         </p>
-        <Link href={"/about"} className={"glass-button glass-button-dark"}>
+        <Link
+          href={"/about"}
+          className={"glass-button glass-button-dark"}
+          ref={ref}
+        >
           Learn More
         </Link>
       </div>

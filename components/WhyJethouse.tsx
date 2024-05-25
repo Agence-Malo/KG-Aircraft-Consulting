@@ -3,7 +3,7 @@ import Image from "next/image";
 import image from "@/public/graphics/images/Falcon6X.webp";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import { useAnimate, useInView } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const Opened = () => {
   return (
@@ -34,31 +34,20 @@ const Closed = () => {
 };
 
 const WhyJethouse = () => {
-  const [scope, animate] = useAnimate();
-  const isInView = useInView(scope);
-
-  useEffect(() => {
-    animate(
-      scope.current,
-      { y: "10vw", opacity: 0 },
-      { duration: 1, ease: "easeInOut" },
-    );
-  }, []);
-
-  useEffect(() => {
-    if (isInView)
-      animate(
-        scope.current,
-        { y: 0, opacity: 1 },
-        { duration: 1, ease: "easeInOut" },
-      );
-  }, [isInView]);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <div className="flex justify-between items-start gap-[4vw] py-[10vh] lg:flex-row flex-col bg-black/5 text-blue-950 containerize">
       <div className={"lg:w-[48vw] w-full"}>
-        <label>&mdash; Why Jethouse</label>
-        <h2>
+        <label
+          className={`${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 ease-in-out`}
+        >
+          &mdash; Why Jethouse
+        </label>
+        <h2
+          className={`${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 ease-in-out`}
+        >
           The Passion To Deliver <br />A Good Service
         </h2>
         <Accordion
@@ -68,6 +57,7 @@ const WhyJethouse = () => {
         >
           <AccordionItem
             key="1"
+            className={`${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 delay-[200ms] ease-in-out`}
             indicator={({ isOpen }) => (isOpen ? <Opened /> : <Closed />)}
             aria-label="Our Experimented Team"
             title={
@@ -87,6 +77,7 @@ const WhyJethouse = () => {
           <AccordionItem
             key="2"
             aria-label="Our Technology"
+            className={`${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 delay-[400ms] ease-in-out`}
             indicator={({ isOpen }) => (isOpen ? <Opened /> : <Closed />)}
             title={
               <h4 className="font-medium text-blue-950 normal-case">
@@ -105,6 +96,7 @@ const WhyJethouse = () => {
           <AccordionItem
             key="3"
             aria-label="Beyond the Ordinary"
+            className={`${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 delay-[600ms] ease-in-out`}
             indicator={({ isOpen }) => (isOpen ? <Opened /> : <Closed />)}
             title={
               <h4 className="font-medium text-blue-950 normal-case">
@@ -122,6 +114,7 @@ const WhyJethouse = () => {
           <AccordionItem
             key="4"
             aria-label="Our Founding Aircraft"
+            className={`${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 delay-[800ms] ease-in-out`}
             indicator={({ isOpen }) => (isOpen ? <Opened /> : <Closed />)}
             title={
               <h4 className="font-medium text-blue-950 normal-case">
@@ -138,10 +131,10 @@ const WhyJethouse = () => {
         </Accordion>
       </div>
       <Image
-        className={"lg:h-[64dvh] lg:w-auto w-full h-auto"}
+        className={`lg:h-[64dvh] lg:w-auto w-full h-auto ${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 ease-in-out`}
         src={image}
         alt={"Falcon 6X"}
-        ref={scope}
+        ref={ref}
       />
     </div>
   );

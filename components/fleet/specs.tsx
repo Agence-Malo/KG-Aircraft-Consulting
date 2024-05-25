@@ -62,7 +62,7 @@ const Specs = () => {
     >
       <p>
         The Dassault Falcon 7X stands as a pinnacle of innovation and luxury in
-        the world of private aviation/
+        the world of private aviation
       </p>
       <div
         className={
