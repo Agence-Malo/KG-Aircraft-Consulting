@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       className={
-        "w-full h-screen flex flex-col justify-end items-center md:gap-[11vh] gap-[10vh]"
+        "w-full h-[100dvh] flex flex-col justify-end items-center md:gap-[11vh] gap-[10vh]"
       }
     >
       <video

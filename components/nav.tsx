@@ -247,7 +247,7 @@ export const Navbar = ({ invert }: { invert: number }) => {
     <>
       <div
         className={`fixed top-0 w-full h-[12vh] bg-gradient-to-b from-white ${scrolled ? "opacity-100" : "opacity-0"} transition-opacity duration-200 ease-in-out`}
-      ></div>
+      />
       <section
         className={`fixed z-30 containerize pt-[2vh] flex justify-between items-center`}
       >
