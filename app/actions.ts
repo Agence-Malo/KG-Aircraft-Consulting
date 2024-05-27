@@ -15,6 +15,7 @@ export const submit = async ({
   const rawFormData = {
     name: formData.get("name"),
     email: formData.get("email"),
+    tel: formData.get("tel"),
     message: formData.get("message"),
   };
 
@@ -22,17 +23,19 @@ export const submit = async ({
     !rawFormData.message ||
     typeof rawFormData.message !== "string" ||
     !rawFormData.email ||
-    typeof rawFormData.email !== "string"
+    typeof rawFormData.email !== "string" ||
+    !rawFormData.name ||
+    typeof rawFormData.name !== "string"
   ) {
     return { error: "Invalid message" };
   }
 
   await resend.emails.send({
-    from: "${rawFormData.name} <onboarding@resend.dev>",
-    to: "gregory442005@gmail.com",
+    from: `${rawFormData.name} <onboarding@resend.dev>`,
+    to: `${process.env.MAIL_TO}`,
     reply_to: rawFormData.email,
     subject: "Contact Request",
-    text: rawFormData.message,
+    text: `${rawFormData.message}\n\n${rawFormData.name}\n\n${rawFormData.email}\n${rawFormData.tel && typeof rawFormData.tel === "string" && rawFormData.tel.length > 0 ? dialCode + rawFormData.tel : "(No phone number provided)"}`,
   });
 };
 export const getWeatherData = async (cities: string[]) => {

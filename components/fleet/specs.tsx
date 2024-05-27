@@ -133,14 +133,14 @@ const Specs = () => {
       <a
         href={"/docs/facts.pdf"}
         target={"_blank"}
-        className={"glass-button glass-button-dark z-0"}
+        className={"glass-button glass-button-dark z-0 my-[8vh]"}
       >
         Download fact sheet
       </a>
       <div className={"w-full flex flex-col justify-between items-start"}>
         <div
           className={
-            "w-full flex justify-between items-baseline text-blue-950 gap-[8vw] py-[8vh]"
+            "w-full flex justify-between items-baseline text-blue-950 gap-[8vw] py-0"
           }
         >
           <label className={"w-1/2 text-left hidden md:block"}>

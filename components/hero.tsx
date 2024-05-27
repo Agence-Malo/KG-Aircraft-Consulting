@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       className={
-        "w-full h-[100dvh] flex flex-col justify-end items-center md:gap-[18vh] gap-[10vh]"
+        "w-full h-screen flex flex-col justify-end items-center md:gap-[11vh] gap-[10vh]"
       }
     >
       <video
@@ -27,10 +27,9 @@ const Hero = () => {
           "text-white md:text-center text-center font-normal containerize"
         }
       >
-        Not Just Another
-        <br className={"md:block hidden"} />
-        <span className={"md:hidden"}> </span>
-        <span className={"font-bold"}>Business Aviation Operator</span>
+        Not Just
+        <br />
+        <span className={"font-bold"}>Another Business Aviation Operator</span>
       </motion.h1>
       <div
         className={

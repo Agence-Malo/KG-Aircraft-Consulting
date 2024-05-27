@@ -129,8 +129,8 @@ export const Connect = () => {
       <Link href={"mailto:hello@jethouse.aero"} className={"connect-link"}>
         <label>hello@jethouse.aero</label>
       </Link>
-      <Link href={"tel:0032476264268"} className={"connect-link"}>
-        <label>+32 476 26 42 68</label>
+      <Link href={"tel:0035699397945"} className={"connect-link"}>
+        <label>+356 99397945</label>
       </Link>
     </div>
   );
@@ -146,7 +146,7 @@ const Nav = () => {
       animate={{ x: "0" }}
       exit={{ x: "-100%" }}
       transition={{ duration: 0.2, ease: "easeInOut" }}
-      className={`fixed left-0 top-0 z-40 min-h-[100dvh] max-h-full lg:w-[44vw] w-full lg:px-[2vw] px-[4vw] py-[2vh] bg-blue-950 text-white flex justify-between items-start flex-col overflow-x-hidden overflow-y-auto`}
+      className={`fixed left-0 top-0 z-40 min-h-[100dvh] max-h-max lg:w-[44vw] w-full lg:px-[2vw] px-[4vw] py-[2vh] bg-blue-950 text-white flex justify-between items-start flex-col overflow-x-hidden overflow-y-auto`}
     >
       <div className={"w-full flex flex-col justify-center items-start"}>
         <div className={"w-full flex justify-end items-center"}>
@@ -204,25 +204,12 @@ const Nav = () => {
             "lg:hidden flex flex-col justify-center items-start gap-[2vh] w-full"
           }
         >
-          <span className={"lg:block hidden"}>
-            <Social />
-          </span>
-          <Link href={"/"}>
-            <Image
-              src={logo}
-              alt={"JetHouse logo"}
-              className={"h-[6vh] w-auto"}
-            />
-          </Link>
-          <Connect />
+          <Social />
         </div>
         <div className={"w-full h-[0.25vh] bg-white"} />
-        <span className={"lg:hidden"}>
-          <Social />
-        </span>
         <div
           className={
-            "hidden lg:flex flex-col justify-center items-start gap-[4vh] w-full mb-[8vh]"
+            "flex flex-col justify-center items-start gap-[4vh] w-full mb-[8vh]"
           }
         >
           <Link href={"/"}>
@@ -260,7 +247,7 @@ export const Navbar = ({ invert }: { invert: number }) => {
     <>
       <div
         className={`fixed top-0 w-full h-[12vh] bg-gradient-to-b from-white ${scrolled ? "opacity-100" : "opacity-0"} transition-opacity duration-200 ease-in-out`}
-      ></div>
+      />
       <section
         className={`fixed z-30 containerize pt-[2vh] flex justify-between items-center`}
       >

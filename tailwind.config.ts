@@ -11,9 +11,13 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
+        management: "url('/graphics/images/services/management.webp')",
+        charter: "url('/graphics/images/services/charter.webp')",
+        consulting: "url('/graphics/images/services/consulting.webp')",
         "about-hero": "url('/graphics/images/about/hero.webp')",
         malta: "url('/graphics/images/about/malta.webp')",
         "falcon-temp": "url('/graphics/images/services/management.webp')",
+        pattern: "url('/graphics/images/pattern.svg')",
       },
     },
   },

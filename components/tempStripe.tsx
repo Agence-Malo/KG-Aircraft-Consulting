@@ -8,8 +8,9 @@ import { getWeatherData } from "@/app/actions";
 import AutoScroll from "embla-carousel-auto-scroll";
 
 const Strip = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     AutoScroll({
+      playOnInit: true,
       loop: true,
       speed: 1,
       align: "start",
@@ -39,8 +40,8 @@ const Strip = () => {
         "w-full h-[15vh] pb-[10vh] text-blue-950 bg-black/5 font-semibold flex"
       }
     >
-      <div className="embla my-auto" ref={emblaRef}>
-        <div className="embla__container cursor-grab">
+      <div className="w-full flex my-auto" ref={emblaRef}>
+        <div className="w-full cursor-grab flex justify-start items-baseline">
           {temperatures.map((temp, index) => (
             <div key={index} className={"embla__slide w-fit mx-4 self-center"}>
               <h2 className={"w-fit select-none uppercase"}>{temp}</h2>

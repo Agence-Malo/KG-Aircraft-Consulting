@@ -37,9 +37,9 @@ const About = () => {
         </h2>
         <p className={"lg:w-[75%] w-full text-justify"}>
           We are a team of experienced and passionate business aviation
-          professionals with a single objective: “Focus, and never deviate, from
-          what business aviation clients expect from an operator.” At JetHouse,
-          we want to restore the true meaning of what a boutique operation is.
+          professionals with a single objective: “Focus, and never deviate from
+          what our client expect from their operator.” At JetHouse, we want to
+          restore the true meaning of what a boutique operation is.
         </p>
         <Link
           href={"/about"}

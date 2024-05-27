@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { Fira_Sans } from "next/font/google";
@@ -14,6 +14,10 @@ const fira = Fira_Sans({
 export const metadata: Metadata = {
   title: "JetHouse",
   description: "Fly your way to the top",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#172554",
 };
 
 export default function RootLayout({
