@@ -162,19 +162,6 @@ const Services = () => {
                 }
               >
                 <p className={"md:w-[18vw] w-[48vw] font-light m-auto"}>
-                  recruitment,
-                  <br />
-                  training,
-                  <br />
-                  administration
-                </p>
-              </div>
-              <div
-                className={
-                  "w-fit h-full embla__slide mx-10 flex justify-center items-center bg-blue-950 rounded-2xl"
-                }
-              >
-                <p className={"md:w-[18vw] w-[48vw] font-light m-auto"}>
                   Financial, Fiscal, Legal <br /> & Administrative <br />{" "}
                   support
                 </p>
@@ -248,11 +235,15 @@ const Services = () => {
               </div>
               <div
                 className={
-                  "w-fit h-full embla__slide mx-10 flex justify-center items-center bg-blue-950 rounded-3xl"
+                  "w-fit h-full embla__slide mx-10 flex justify-center items-center bg-blue-950 rounded-2xl"
                 }
               >
                 <p className={"md:w-[18vw] w-[48vw] font-light m-auto"}>
-                  CAMO by <br /> JetHouse
+                  Crew Management
+                  <br />
+                  (recruitment, training,
+                  <br />
+                  administration)
                 </p>
               </div>
             </div>

@@ -78,7 +78,7 @@ const Footer = () => {
             "w-1/3 flex justify-center items-center normal-case text-center"
           }
         >
-          © 2024 All Rights Reserved.
+          © {new Date().getFullYear()} All Rights Reserved.
         </label>
         <label
           className={

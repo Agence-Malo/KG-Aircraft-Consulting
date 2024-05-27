@@ -27,9 +27,10 @@ const Hero = () => {
           "text-white md:text-center text-center font-normal containerize"
         }
       >
-        Not Just
+        Not Just Another
         <br />
-        <span className={"font-bold"}>Another Business Aviation Operator</span>
+        <span className={"md:hidden"}> </span>
+        <span className={"font-bold"}>Business Aviation Operator</span>
       </motion.h1>
       <div
         className={
