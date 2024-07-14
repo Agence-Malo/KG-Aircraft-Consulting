@@ -12,8 +12,8 @@ const fira = Fira_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "JetHouse",
-  description: "Fly your way to the top",
+  title: "Flite Watch",
+  description: "Soar to new heights with every flight",
 };
 
 export const viewport: Viewport = {

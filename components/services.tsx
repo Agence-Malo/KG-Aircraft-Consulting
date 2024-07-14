@@ -124,8 +124,8 @@ const Services = () => {
               We are a team of experienced and passionate business aviation
               professionals with a single objective: “Focus, and never deviate,
               from what business aviation clients expect from an operator.” At
-              JetHouse, we want to restore the true meaning of what a boutique
-              operation is.
+              Flite Watch, we want to restore the true meaning of what a
+              boutique operation is.
             </p>
           </div>
           <h1
@@ -298,8 +298,8 @@ const Services = () => {
             <p className={"block font-light"}>
               Our consulting services are informed by a deep well of industry
               knowledge and a network of connections, providing you with
-              unparalleled insights and opportunities. At JetHouse, we believe
-              informed decisions are the bedrock of successful aircraft
+              unparalleled insights and opportunities. At Flite Watch, we
+              believe informed decisions are the bedrock of successful aircraft
               ownership. Our consulting services range from sales and
               acquisitions of business aircraft to aircraft asset valuation and
               cabin modifications.
@@ -338,7 +338,7 @@ const Services = () => {
         <h2
           className={`md:w-[48vw] ${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 ease-in-out`}
         >
-          Boutique At JetHouse Means That Our Experience Is At The Service Of
+          Boutique At Flite Watch Means That Our Experience Is At The Service Of
           The Aircraft Owner.
         </h2>
       </div>

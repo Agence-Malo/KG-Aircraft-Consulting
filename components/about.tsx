@@ -16,9 +16,9 @@ const About = () => {
     >
       <Image
         src={about}
-        alt={"Herve Laitat"}
+        alt={"2 pilots in cockpit"}
         className={
-          "w-full h-[72dvh] lg:h-[72dvh] lg:w-auto object-cover object-bottom"
+          "w-full md:w-1/2 h-[72dvh] lg:h-[72dvh] object-cover object-left"
         }
       />
       <div
@@ -38,14 +38,10 @@ const About = () => {
         <p className={"lg:w-[75%] w-full text-justify"}>
           We are a team of experienced and passionate business aviation
           professionals with a single objective: “Focus, and never deviate from
-          what our client expect from their operator.” At JetHouse, we want to
-          restore the true meaning of what a boutique operation is.
+          what our client expect from their operator.” At Flite Watch, we want
+          to restore the true meaning of what a boutique operation is.
         </p>
-        <Link
-          href={"/about"}
-          className={"glass-button glass-button-dark"}
-          ref={ref}
-        >
+        <Link href={"#"} className={"glass-button glass-button-dark"} ref={ref}>
           Learn More
         </Link>
       </div>

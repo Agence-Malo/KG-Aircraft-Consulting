@@ -43,7 +43,7 @@ const WhyJethouse = () => {
         <label
           className={`${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 ease-in-out`}
         >
-          &mdash; Why Jethouse
+          &mdash; Why Flite Watch
         </label>
         <h2
           className={`${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 ease-in-out`}

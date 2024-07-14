@@ -118,8 +118,8 @@ const Contact = () => {
           >
             <h1>Get in Touch</h1>
             <p>
-              To Start a conversation about how JetHouse can serve your business
-              aviation needs, please reach out to us
+              To Start a conversation about how Flite Watch can serve your
+              business aviation needs, please reach out to us
             </p>
             <Connect />
           </div>
@@ -132,8 +132,8 @@ const Contact = () => {
         >
           <h1>Get in Touch</h1>
           <p>
-            To Start a conversation about how JetHouse can serve your business
-            aviation needs, please reach out to us
+            To Start a conversation about how Flite Watch can serve your
+            business aviation needs, please reach out to us
           </p>
         </div>
         {sent ? (

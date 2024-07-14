@@ -22,9 +22,9 @@ const Expertise = () => {
       <h3
         className={`max-lg:text-xl font-medium w-[92vw] lg:w-[76vw] ${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 ease-in-out`}
       >
-        &quot;At JetHouse, our team has forged strong relationships with leading
-        business jet manufacturers such as Dassault Falcon, Bombardier, and
-        Gulfstream. We deeply understand these aircraft and have built an
+        &quot;At Flite Watch, our team has forged strong relationships with
+        leading business jet manufacturers such as Dassault Falcon, Bombardier,
+        and Gulfstream. We deeply understand these aircraft and have built an
         extensive network with these manufacturers. <br />
         <br ref={ref} /> This specialisation enables us to guarantee precise
         technical management and flawless operational efficiency, which are
@@ -49,10 +49,10 @@ const Expertise = () => {
             />
           </video>
           <h2 className={"text-white mt-[10vh]"}>
-            Begin Your Journey <br /> With JetHouse
+            Begin Your Journey <br /> With Flite Watch
           </h2>
           <button className={"glass-button glass-button-light mb-[10vh]"}>
-            <a href={"/graphics/Brochure%20-%20JetHouse%20VF.pdf"} download>
+            <a href={"#"} download>
               DOWNLOAD THE BROCHURE
             </a>
           </button>

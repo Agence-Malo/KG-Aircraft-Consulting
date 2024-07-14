@@ -9,7 +9,7 @@ const Quote = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section className={"w-full h-screen bg-pattern bg-repeat bg-contain"}>
+    <section className={"w-full h-screen bg-pattern bg-repeat bg-[25%]"}>
       <div
         className={
           "containerize h-full flex flex-col justify-center items-center text-blue-950 gap-[4vh] bg-gradient-to-b from-white via-white/50 to-white"
@@ -26,11 +26,14 @@ const Quote = () => {
         <p
           className={`md:w-[48vw] text-justify ${isInView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 ease-in-out`}
         >
-          JetHouse is a fresh face in business aviation, holding a Maltese Air
-          Operator Certificate (AOC MT-82). JetHouse offers bespoke business
-          aircraft management, charter, and consulting services. We stand as the
-          prime choice when larger operators fall short of meeting the
-          discerning expectations of business aircraft owners.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+          vehicula, tellus nec gravida porttitor, arcu ex ornare est, eget
+          tristique ipsum libero sed felis. Praesent libero sapien, aliquam non
+          enim posuere, mollis placerat libero. Donec at felis eget nisl
+          ultrices tempus eu a lacus. Cras ultricies dignissim scelerisque.
+          Nullam eu enim ipsum. Suspendisse diam sem, ullamcorper et odio eget,
+          lobortis bibendum nibh. Duis accumsan semper aliquam. Aliquam sit amet
+          quam ac dolor porttitor mattis sed sed sapien.
         </p>
         <span ref={ref}>
           <IconLogo

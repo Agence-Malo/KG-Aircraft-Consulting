@@ -52,17 +52,15 @@ export const Social = () => {
         }
         showArrow={true}
       >
-        <a href={"https://maps.app.goo.gl/hnU6GhHkb2Lz5wmt8"} target={"_blank"}>
-          <label className={"normal-case"}>
-            <span className={"font-bold uppercase"}>Headquarter</span>
+        <a href={"https://maps.app.goo.gl/mJGoatuxip44KFaA9"} target={"_blank"}>
+          <label className={"normal-case cursor-pointer"}>
+            <span className={"font-bold uppercase"}>Headquarters</span>
             <br />
-            Avenue 77 Business Centre,
+            273 Av. Francis Tonner,
             <br />
-            Triq in-Negozju,
+            06150 Cannes,
             <br />
-            Birkirkara CBD 3010,
-            <br />
-            Malta
+            France
           </label>
         </a>
       </Tooltip>
@@ -85,7 +83,7 @@ export const Social = () => {
         showArrow={true}
       >
         <a
-          href={"https://www.linkedin.com/company/jethouse-ltd/"}
+          href={"https://www.linkedin.com/company/agence-malo/"}
           target={"_blank"}
         >
           <svg
@@ -111,7 +109,7 @@ export const Connect = () => {
       }
     >
       <Link
-        href={"https://wa.me/0032476264268"}
+        href={"https://wa.me/0033624805541"}
         target={"_blank"}
         className={"connect-link"}
       >
@@ -126,11 +124,11 @@ export const Connect = () => {
         </svg>
         <label>WhatsApp</label>
       </Link>
-      <Link href={"mailto:hello@jethouse.aero"} className={"connect-link"}>
-        <label>hello@jethouse.aero</label>
+      <Link href={"mailto:maxime@agencemalo.com"} className={"connect-link"}>
+        <label>maxime@agencemalo.com</label>
       </Link>
-      <Link href={"tel:0035699397945"} className={"connect-link"}>
-        <label>+356 99397945</label>
+      <Link href={"tel:0033624805541"} className={"connect-link"}>
+        <label>+33 (0) 6 24 80 55 41</label>
       </Link>
     </div>
   );
@@ -252,7 +250,7 @@ export const Navbar = ({ invert }: { invert: number }) => {
         className={`fixed z-30 containerize pt-[2vh] flex justify-between items-center`}
       >
         <div className={"w-1/3 flex justify-start items-center"}>
-          <button
+          {/*<button
             onClick={() => openView("nav")}
             className={`flex justify-center items-center flex-col lg:w-[2vw] w-[6vw] group gap-[0.5vh] lg:hover:gap-[0.75vh] transition-[gap] duration-200 ease-in-out ${scrolled ? "fill-black" : "fill-white"}`}
           >
@@ -277,7 +275,7 @@ export const Navbar = ({ invert }: { invert: number }) => {
             >
               <rect width="128" height="8" rx="4" />
             </svg>
-          </button>
+          </button>*/}
         </div>
 
         <Link href={"/"} className={"w-1/3 flex justify-center items-center"}>

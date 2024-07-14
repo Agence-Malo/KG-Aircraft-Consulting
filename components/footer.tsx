@@ -35,7 +35,7 @@ const Footer = () => {
           showArrow={true}
         >
           <a
-            href={"https://www.linkedin.com/company/jethouse-ltd/"}
+            href={"https://www.linkedin.com/company/agence-malo/"}
             target={"_blank"}
           >
             <svg
@@ -64,13 +64,13 @@ const Footer = () => {
             Home
           </Link>
           <Link
-            href={"/about"}
+            href={"#"}
             className={`uppercase text-sm tracking-wider ${path === "/about" ? "font-bold" : "font-normal"}`}
           >
             About Us
           </Link>
           <Link
-            href={"/fleet"}
+            href={"#"}
             className={`uppercase text-sm tracking-wider ${path === "/fleet" ? "font-bold" : "font-normal"}`}
           >
             Our Fleet

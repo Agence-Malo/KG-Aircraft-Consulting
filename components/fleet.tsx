@@ -31,7 +31,7 @@ const Fleet = () => {
           aircraft to ensure a continuous high standard of service for all
           clients, whether aircraft owners or charter clients.
         </p>
-        <Link href={"/fleet"} ref={ref}>
+        <Link href={"#"} ref={ref}>
           <Image
             src={falcon7x}
             alt={"Falcon 7X"}
