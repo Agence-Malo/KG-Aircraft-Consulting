@@ -38,7 +38,7 @@
   }
 
   .glass-button {
-    @apply uppercase text-sm border-[0.1vh] lg:px-[1vw] px-[4vw] py-[1.5vh] tracking-wider hover:bg-blue-900/50 hover:border-blue-950 backdrop-blur-2xl bg-white/10 rounded-none hover:text-white;
+    @apply uppercase text-sm border-[0.1vh] lg:px-[1vw] px-[4vw] py-[1.5vh] tracking-wider hover:bg-neutral-900/50 hover:border-neutral-950 backdrop-blur-2xl bg-white/10 rounded-none hover:text-white;
     transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out;
   }
 
@@ -47,7 +47,7 @@
   }
 
   .glass-button-dark {
-    @apply text-blue-950 border-blue-950/25;
+    @apply text-neutral-950 border-neutral-950/25;
   }
 
   .embla {
@@ -191,4 +191,102 @@
         scale: 1;
         opacity: 1;
     }
+}
+
+@font-face {
+  font-family: "Century Gothic Paneuropean";
+  font-weight: 900; /* Black */
+  font-style: normal;
+  src: url("../public/typography/CenturyGothicPaneuropeanBlack.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Century Gothic Paneuropean";
+  font-weight: 900; /* Black */
+  font-style: italic;
+  src: url("../public/typography/CenturyGothicPaneuropeanBlackItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Century Gothic Paneuropean";
+  font-weight: 800; /* ExtraBold */
+    font-style: normal;
+    src: url("../public/typography/CenturyGothicPaneuropeanExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Century Gothic Paneuropean";
+  font-weight: 800; /* ExtraBold */
+  font-style: italic;
+  src: url("../public/typography/CenturyGothicPaneuropeanExtraBoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Century Gothic Paneuropean";
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  src: url("../public/typography/CenturyGothicPaneuropeanBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Century Gothic Paneuropean";
+  font-weight: 700; /* Bold */
+  font-style: italic;
+  src: url("../public/typography/CenturyGothicPaneuropeanBoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Century Gothic Paneuropean";
+  font-weight: 600; /* SemiBold */
+  font-style: normal;
+  src: url("../public/typography/CenturyGothicPaneuropeanSemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Century Gothic Paneuropean";
+  font-weight: 600; /* SemiBold */
+  font-style: italic;
+  src: url("../public/typography/CenturyGothicPaneuropeanSemiBoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Century Gothic Paneuropean";
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  src: url("../public/typography/CenturyGothicPaneuropeanRegular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Century Gothic Paneuropean";
+  font-weight: 400; /* Regular */
+  font-style: italic;
+  src: url("../public/typography/CenturyGothicPaneuropeanItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Century Gothic Paneuropean";
+  font-weight: 200; /* Light */
+  font-style: normal;
+  src: url("../public/typography/CenturyGothicPaneuropeanLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Century Gothic Paneuropean";
+  font-weight: 200; /* Light */
+  font-style: italic;
+  src: url("../public/typography/CenturyGothicPaneuropeanLightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Century Gothic Paneuropean";
+  font-weight: 100; /* Thin */
+  font-style: normal;
+  src: url("../public/typography/CenturyGothicPaneuropeanThin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Century Gothic Paneuropean";
+  font-weight: 100; /* Thin */
+  font-style: italic;
+  src: url("../public/typography/CenturyGothicPaneuropeanThinItalic.ttf") format("truetype");
 }

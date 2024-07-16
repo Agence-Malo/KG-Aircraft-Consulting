@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       className={
-        "w-full h-[100dvh] flex flex-col justify-end items-center md:gap-[11vh] gap-[10vh]"
+        "w-full h-screen flex flex-col justify-center items-center md:gap-[11vh] gap-[10vh]"
       }
     >
       <video
@@ -27,16 +27,13 @@ const Hero = () => {
           "text-white md:text-center text-center font-normal containerize"
         }
       >
-        Not Just Another
-        <br />
-        <span className={"md:hidden"}> </span>
-        <span className={"font-bold"}>Business Aviation Operator</span>
+        Precision Every Time
       </motion.h1>
-      <div
+      {/*<div
         className={
           "bg-gradient-to-b from-transparent to-white w-full h-[32vh] -z-10"
         }
-      />
+      />*/}
     </section>
   );
 };

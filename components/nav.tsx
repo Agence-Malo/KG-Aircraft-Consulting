@@ -64,7 +64,7 @@ export const Social = () => {
           </label>
         </a>
       </Tooltip>
-      <Tooltip
+      {/*<Tooltip
         placement={"top-start"}
         content={
           <div className={"flex justify-center items-center"}>
@@ -96,7 +96,7 @@ export const Social = () => {
             <path d="M40.227,12C51.145,12,52,12.854,52,23.773v16.453C52,51.145,51.145,52,40.227,52H23.773C12.855,52,12,51.145,12,40.227	V23.773C12,12.854,12.855,12,23.773,12H40.227z M25.029,43V26.728h-5.057V43H25.029z M22.501,24.401	c1.625,0,2.947-1.322,2.947-2.949c0-1.625-1.322-2.947-2.947-2.947c-1.629,0-2.949,1.32-2.949,2.947S20.87,24.401,22.501,24.401z M44,43v-8.925c0-4.382-0.946-7.752-6.067-7.752c-2.46,0-4.109,1.349-4.785,2.628H33.08v-2.223h-4.851V43h5.054v-8.05	c0-2.122,0.405-4.178,3.036-4.178c2.594,0,2.628,2.427,2.628,4.315V43H44z"></path>
           </svg>
         </a>
-      </Tooltip>
+      </Tooltip>*/}
     </div>
   );
 };
@@ -109,7 +109,7 @@ export const Connect = () => {
       }
     >
       <Link
-        href={"https://wa.me/0033624805541"}
+        href={"https://wa.me/00447585663531"}
         target={"_blank"}
         className={"connect-link"}
       >
@@ -124,11 +124,11 @@ export const Connect = () => {
         </svg>
         <label>WhatsApp</label>
       </Link>
-      <Link href={"mailto:maxime@agencemalo.com"} className={"connect-link"}>
-        <label>maxime@agencemalo.com</label>
+      <Link href={"mailto:hello@flitewatch.aero"} className={"connect-link"}>
+        <label>hello@flitewatch.aero</label>
       </Link>
-      <Link href={"tel:0033624805541"} className={"connect-link"}>
-        <label>+33 (0) 6 24 80 55 41</label>
+      <Link href={"tel:00447585663531"} className={"connect-link"}>
+        <label>+44 7585 663531</label>
       </Link>
     </div>
   );
@@ -281,7 +281,7 @@ export const Navbar = ({ invert }: { invert: number }) => {
         <Link href={"/"} className={"w-1/3 flex justify-center items-center"}>
           <FullLogo
             mono={!scrolled}
-            className={`h-[4vh] md:h-[6vh] w-auto ${scrolled ? "" : "fill-white"} mx-auto`}
+            className={`h-[4vh] md:h-[12vh] w-auto ${scrolled ? "" : "fill-white"} mx-auto`}
           />
         </Link>
         <div className={"w-1/3 flex justify-end items-center"}>

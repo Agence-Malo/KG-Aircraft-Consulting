@@ -19,14 +19,14 @@ const Home = () => {
         <Navbar invert={100} />
         <View />
         <Hero />
-        <Quote />
+        {/*<Quote />
         <About />
         <Services />
         <Fleet />
         <Stripe />
         <WhyJethouse />
         <Expertise />
-        <Footer />
+        <Footer />*/}
       </main>
     </>
   );

@@ -9,6 +9,9 @@ const config: Config = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      gothic: ['"Century Gothic Paneuropean"', "sans-serif"],
+    },
     extend: {
       backgroundImage: {
         management: "url('/graphics/images/services/management.webp')",
