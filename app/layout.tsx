@@ -8,6 +8,11 @@ import UIProvider from "@/context/UIProvider";
 export const metadata: Metadata = {
   title: "Flite Watch",
   description: "Soar to new heights with every flight",
+  authors: [
+    { name: "Agence Malo", url: "https://agencemalo.com" },
+    { name: "Gregory Buffard", url: "https://www.gregory-buffard.com" },
+  ],
+  keywords: ["flite watch", "boutique aviation", "private jet", "luxury"],
 };
 
 export const viewport: Viewport = {

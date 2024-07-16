@@ -56,11 +56,7 @@ export const Social = () => {
           <label className={"normal-case cursor-pointer"}>
             <span className={"font-bold uppercase"}>Headquarters</span>
             <br />
-            273 Av. Francis Tonner,
-            <br />
-            06150 Cannes,
-            <br />
-            France
+            Malta
           </label>
         </a>
       </Tooltip>
