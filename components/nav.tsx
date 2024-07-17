@@ -283,7 +283,7 @@ export const Navbar = ({ invert }: { invert: number }) => {
         <Link href={"/"} className={"w-1/3 flex justify-center items-center"}>
           <FullLogo
             mono={!scrolled}
-            className={`h-[4vh] md:h-[12vh] w-auto ${scrolled ? "" : "fill-white"} mx-auto`}
+            className={`h-[6vh] md:h-[12vh] w-auto ${scrolled ? "" : "fill-white"} mx-auto`}
           />
         </Link>
         <div className={"w-1/3 flex justify-end items-center"}>

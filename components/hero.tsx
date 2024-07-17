@@ -6,12 +6,12 @@ const Hero = () => {
   return (
     <section
       className={
-        "w-full h-[90vh] max-h-[90vh] min-h-[90vh] flex justify-center items-center"
+        "w-full h-[90vh] md:h-screen max-h-[90vh] md:max-h-screen min-h-[90vh] md:min-h-screen flex justify-center items-center"
       }
     >
       <video
         className={
-          "w-full h-[90vh] inset-0 object-cover object-center absolute -z-20"
+          "w-full h-[90vh] md:h-screen inset-0 object-cover object-center absolute -z-20"
         }
         autoPlay
         muted
@@ -27,7 +27,8 @@ const Hero = () => {
         transition={{ duration: 1.5, ease: "easeOut" }}
         className={"text-white md:text-center text-center containerize"}
       >
-        Precision Every Time
+        Precision <br className={"md:hidden"} />
+        Every Time
       </motion.h1>
       {/*<div
         className={

@@ -98,7 +98,7 @@ const Contact = () => {
     >
       <div
         className={
-          "w-full flex justify-end items-center absolute top-[2vh] right-[4vw]"
+          "w-full flex justify-end items-center absolute top-[2vh] right-[4vw] md:right-[2vw]"
         }
       >
         <Close />
