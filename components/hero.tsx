@@ -6,11 +6,13 @@ const Hero = () => {
   return (
     <section
       className={
-        "w-full h-screen flex flex-col justify-center items-center md:gap-[11vh] gap-[10vh]"
+        "w-full h-[90vh] max-h-[90vh] min-h-[90vh] flex justify-center items-center"
       }
     >
       <video
-        className={"w-full h-full object-cover object-center absolute -z-20"}
+        className={
+          "w-full h-[90vh] inset-0 object-cover object-center absolute -z-20"
+        }
         autoPlay
         muted
         preload={"none"}
@@ -23,9 +25,7 @@ const Hero = () => {
         initial={{ y: "-6vh", opacity: 0, scale: 1.05 }}
         animate={{ y: "0", opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className={
-          "text-white md:text-center text-center font-normal containerize"
-        }
+        className={"text-white md:text-center text-center containerize"}
       >
         Precision Every Time
       </motion.h1>

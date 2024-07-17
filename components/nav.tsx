@@ -52,9 +52,15 @@ export const Social = () => {
         }
         showArrow={true}
       >
-        <a href={"https://maps.app.goo.gl/mJGoatuxip44KFaA9"} target={"_blank"}>
+        <a href={"https://maps.app.goo.gl/5qU836EQ6UYXEi3X8"} target={"_blank"}>
           <label className={"normal-case cursor-pointer"}>
             <span className={"font-bold uppercase"}>Headquarters</span>
+            <br />
+            77 Triq Windsor,
+            <br />
+            Silema,
+            <br />
+            SLM1853,
             <br />
             Malta
           </label>
@@ -120,8 +126,8 @@ export const Connect = () => {
         </svg>
         <label>WhatsApp</label>
       </Link>
-      <Link href={"mailto:hello@flitewatch.aero"} className={"connect-link"}>
-        <label>hello@flitewatch.aero</label>
+      <Link href={"mailto:fly@flitewatch.aero"} className={"connect-link"}>
+        <label>fly@flitewatch.aero</label>
       </Link>
       <Link href={"tel:00447585663531"} className={"connect-link"}>
         <label>+44 7585 663531</label>
@@ -209,7 +215,7 @@ const Nav = () => {
           <Link href={"/"}>
             <Image
               src={logo}
-              alt={"JetHouse logo"}
+              alt={"FliteWatch logo"}
               className={"h-[6vh] w-auto"}
             />
           </Link>
@@ -243,7 +249,7 @@ export const Navbar = ({ invert }: { invert: number }) => {
         className={`fixed top-0 w-full h-[12vh] bg-gradient-to-b from-white ${scrolled ? "opacity-100" : "opacity-0"} transition-opacity duration-200 ease-in-out`}
       />
       <section
-        className={`fixed z-30 containerize pt-[2vh] flex justify-between items-center`}
+        className={`fixed z-30 containerize top-[2vh] flex justify-between items-center`}
       >
         <div className={"w-1/3 flex justify-start items-center"}>
           {/*<button

@@ -93,17 +93,19 @@ const Contact = () => {
       exit={{ y: "100%" }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className={
-        "fixed lg:bottom-0 lg:top-auto top-0 left-0 z-30 bg-neutral-950 lg:h-[84vh] lg:min-h-[84vh] min-h-[100vh] max-h-full lg:overflow-y-hidden overflow-y-auto w-full flex flex-col justify-start items-center lg:px-[2vw] px-[4vw] pt-[2vh] md:pb-[8vh] lg:gap-[2vh] text-white"
+        "fixed lg:bottom-0 lg:top-auto top-0 left-0 z-30 bg-neutral-950 lg:h-[84vh] lg:min-h-[84vh] h-full lg:overflow-y-hidden overflow-y-auto w-full flex flex-col justify-start items-center lg:px-[2vw] px-[4vw] pt-[2vh] md:pb-[8vh] lg:gap-[2vh] text-white"
       }
     >
       <div
-        className={"w-full flex justify-end items-center sticky top-0 right-0"}
+        className={
+          "w-full flex justify-end items-center absolute top-[2vh] right-[4vw]"
+        }
       >
         <Close />
       </div>
       <div
         className={
-          "w-full h-full md:my-auto flex flex-col md:flex-row justify-center md:justify-between items-center gap-[4vh] md:px-[2vw]"
+          "w-full h-max md:my-auto flex flex-col md:flex-row justify-center md:justify-between items-center gap-[4vh] md:px-[2vw]"
         }
       >
         <div
