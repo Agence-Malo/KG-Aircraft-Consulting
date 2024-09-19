@@ -93,7 +93,7 @@ const Contact = () => {
       exit={{ y: "100%" }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className={
-        "fixed lg:bottom-0 lg:top-auto top-0 left-0 z-30 bg-neutral-950 lg:h-[84vh] lg:min-h-[84vh] h-full lg:overflow-y-hidden overflow-y-auto w-full flex flex-col justify-start items-center lg:px-[2vw] px-[4vw] pt-[2vh] md:pb-[8vh] lg:gap-[2vh] text-white"
+        "fixed lg:bottom-0 lg:top-auto top-0 left-0 z-30 bg-accent lg:h-[84vh] lg:min-h-[84vh] h-full lg:overflow-y-hidden overflow-y-auto w-full flex flex-col justify-start items-center lg:px-[2vw] px-[4vw] pt-[2vh] md:pb-[8vh] lg:gap-[2vh] text-white"
       }
     >
       <div
@@ -120,8 +120,8 @@ const Contact = () => {
           >
             <h1>Get in Touch</h1>
             <p>
-              To Start a conversation about how Flite Watch can serve your
-              business aviation needs, please reach out to us
+              Feel free to contact us to explore how KG Aircraft Consulting can
+              support your business aviation requirements.
             </p>
             <Connect />
           </div>
@@ -134,8 +134,8 @@ const Contact = () => {
         >
           <h1>Get in Touch</h1>
           <p>
-            To Start a conversation about how Flite Watch can serve your
-            business aviation needs, please reach out to us
+            Feel free to contact us to explore how KG Aircraft Consulting can
+            support your business aviation requirements.
           </p>
         </div>
         {sent ? (
@@ -260,7 +260,7 @@ const Contact = () => {
                       x="0px"
                       y="0px"
                       viewBox="0 0 72 72"
-                      className={`fill-black lg:size-[1vw] size-[2vh] ${changeCode ? "-rotate-180" : ""} transition-transform duration-200 ease-in-out`}
+                      className={`fill-accent lg:size-[1vw] size-[2vh] ${changeCode ? "-rotate-180" : ""} transition-transform duration-200 ease-in-out`}
                     >
                       <path d="M35.98,50.002c-1.046,0-2.093-0.395-2.863-1.185L13.595,28.809c-1.542-1.581-1.512-4.114,0.069-5.656	c1.582-1.542,4.113-1.512,5.657,0.069L35.98,40.296l16.698-17.113c1.544-1.582,4.076-1.612,5.657-0.069s1.611,4.075,0.069,5.656	L38.844,48.817C38.073,49.607,37.026,50.002,35.98,50.002z"></path>
                     </svg>
@@ -288,9 +288,7 @@ const Contact = () => {
                           <span className={"text-wrap text-left text-black"}>
                             {sel.name}
                           </span>
-                          <span className={"text-black/50"}>
-                            {sel.dial_code}
-                          </span>
+                          <span className={"text-accent"}>{sel.dial_code}</span>
                         </button>
                       ))}
                     </div>
@@ -317,108 +315,124 @@ const Contact = () => {
                 label: "uppercase",
               }}
             />
-            <Checkbox
-              isRequired={true}
-              isDisabled={pending}
-              classNames={{
-                base: "w-full flex justify-start items-baseline",
-                label: "text-sm",
-              }} /* A link for the privacy policy and ... must be added */
+            <div
+              className={
+                "w-full flex flex-col justify-start items-start gap-[2vh]"
+              }
             >
-              I agree to the{" "}
-              <Link
-                className={"text-sm text-black underline"}
-                onPress={() => setPrivacy(true)}
+              <Checkbox
+                isDisabled={pending}
+                classNames={{
+                  base: "w-full flex justify-start items-baseline",
+                  label: "text-sm",
+                }}
               >
-                privacy policy
-              </Link>
-              <Modal
-                isOpen={privacy}
-                onClose={() => setPrivacy(false)}
-                onOpenChange={onOpenChange}
-                backdrop={"blur"}
+                Send me alters and company updates
+              </Checkbox>
+              <Checkbox
+                isRequired={true}
+                isDisabled={pending}
+                classNames={{
+                  base: "w-full flex justify-start items-baseline",
+                  label: "text-sm",
+                }} /* A link for the privacy policy and ... must be added */
               >
-                <ModalContent>
-                  <>
-                    <ModalHeader>Privacy Policy</ModalHeader>
-                    <ModalBody>
-                      <p>
-                        Aequea adolescens viderer graece eleifend laudem
-                        accusata nunc saperet possim. Euaptent molestie
-                        ultricies inimicus impetus nam imperdiet posidonium
-                        praesent duis dictumst ridens tacimates porta. Loremleo
-                        discere utinam ante qualisque euripidis interesset
-                        alienum quam gravida eum accommodare mi utroque quod
-                        aliquet magna. Accusatamorbi tacimates sit sodales no
-                        tellus pulvinar. Vulputatefabellas quot saperet
-                        scelerisque graece deserunt sapien salutatus homero
-                        deserunt dicunt homero pericula proin libero singulis
-                        explicari mnesarchum. Quamdissentiunt ubique quaerendum
-                        animal tristique in blandit mea eam te audire
-                        scelerisque.
-                      </p>
-                    </ModalBody>
-                    <ModalFooter>
-                      <Button
-                        color={"danger"}
-                        variant={"flat"}
-                        onPress={() => setPrivacy(false)}
-                      >
-                        Close
-                      </Button>
-                    </ModalFooter>
-                  </>
-                </ModalContent>
-              </Modal>{" "}
-              &{" "}
-              <Link
-                className={"text-sm text-black underline"}
-                onPress={() => setTerms(true)}
-              >
-                terms and conditions
-              </Link>
-              <Modal
-                isOpen={terms}
-                onClose={() => setTerms(false)}
-                onOpenChange={onOpenChange}
-                backdrop={"blur"}
-              >
-                <ModalContent>
-                  <>
-                    <ModalHeader>Terms & Conditions</ModalHeader>
-                    <ModalBody>
-                      <p>
-                        Blandithabitasse sociosqu nisi aptent fabellas viderer
-                        voluptaria non verear idque saepe nibh phasellus solet.
-                        Mandamusdocendi magnis a cum veritus dicam simul solet
-                        mei habemus. Repudiandaedeseruisse scripta adolescens
-                        vestibulum dignissim consetetur legimus venenatis sale
-                        prompta donec docendi nec nunc posidonium quot partiendo
-                        penatibus. Suavitatenec porta dolor tale condimentum ad
-                        gloriatur dicant wisi hac iusto invidunt noster
-                        maiestatis sociis eripuit viris. Pulvinarwisi usu an
-                        elit verterem sapien tota fastidii delicata brute cras
-                        intellegat error congue eos necessitatibus dico posse.
-                      </p>
-                    </ModalBody>
-                    <ModalFooter>
-                      <Button
-                        color={"danger"}
-                        variant={"flat"}
-                        onPress={() => setTerms(false)}
-                      >
-                        Close
-                      </Button>
-                    </ModalFooter>
-                  </>
-                </ModalContent>
-              </Modal>
-            </Checkbox>
+                I agree to the{" "}
+                <Link
+                  className={"text-sm text-black underline"}
+                  onPress={() => setPrivacy(true)}
+                >
+                  privacy policy
+                </Link>
+                <Modal
+                  isOpen={privacy}
+                  onClose={() => setPrivacy(false)}
+                  onOpenChange={onOpenChange}
+                  backdrop={"blur"}
+                >
+                  <ModalContent>
+                    <>
+                      <ModalHeader>Privacy Policy</ModalHeader>
+                      <ModalBody>
+                        <p>
+                          Aequea adolescens viderer graece eleifend laudem
+                          accusata nunc saperet possim. Euaptent molestie
+                          ultricies inimicus impetus nam imperdiet posidonium
+                          praesent duis dictumst ridens tacimates porta.
+                          Loremleo discere utinam ante qualisque euripidis
+                          interesset alienum quam gravida eum accommodare mi
+                          utroque quod aliquet magna. Accusatamorbi tacimates
+                          sit sodales no tellus pulvinar. Vulputatefabellas quot
+                          saperet scelerisque graece deserunt sapien salutatus
+                          homero deserunt dicunt homero pericula proin libero
+                          singulis explicari mnesarchum. Quamdissentiunt ubique
+                          quaerendum animal tristique in blandit mea eam te
+                          audire scelerisque.
+                        </p>
+                      </ModalBody>
+                      <ModalFooter>
+                        <Button
+                          color={"danger"}
+                          variant={"flat"}
+                          onPress={() => setPrivacy(false)}
+                        >
+                          Close
+                        </Button>
+                      </ModalFooter>
+                    </>
+                  </ModalContent>
+                </Modal>{" "}
+                &{" "}
+                <Link
+                  className={"text-sm text-black underline"}
+                  onPress={() => setTerms(true)}
+                >
+                  terms and conditions
+                </Link>
+                <Modal
+                  isOpen={terms}
+                  onClose={() => setTerms(false)}
+                  onOpenChange={onOpenChange}
+                  backdrop={"blur"}
+                >
+                  <ModalContent>
+                    <>
+                      <ModalHeader>Terms & Conditions</ModalHeader>
+                      <ModalBody>
+                        <p>
+                          Blandithabitasse sociosqu nisi aptent fabellas viderer
+                          voluptaria non verear idque saepe nibh phasellus
+                          solet. Mandamusdocendi magnis a cum veritus dicam
+                          simul solet mei habemus. Repudiandaedeseruisse scripta
+                          adolescens vestibulum dignissim consetetur legimus
+                          venenatis sale prompta donec docendi nec nunc
+                          posidonium quot partiendo penatibus. Suavitatenec
+                          porta dolor tale condimentum ad gloriatur dicant wisi
+                          hac iusto invidunt noster maiestatis sociis eripuit
+                          viris. Pulvinarwisi usu an elit verterem sapien tota
+                          fastidii delicata brute cras intellegat error congue
+                          eos necessitatibus dico posse.
+                        </p>
+                      </ModalBody>
+                      <ModalFooter>
+                        <Button
+                          color={"danger"}
+                          variant={"flat"}
+                          onPress={() => setTerms(false)}
+                        >
+                          Close
+                        </Button>
+                      </ModalFooter>
+                    </>
+                  </ModalContent>
+                </Modal>
+              </Checkbox>
+            </div>
             <Button
               isDisabled={pending}
               type={"submit"}
               className={
-                "w-full rounded-none bg-black text-white hover:bg-neutral-950 py-[3vh]"
+                "w-full rounded-2xl bg-accent text-white hover:bg-accent/95 py-[3vh] uppercase text-base font-semibold"
               }
             >
               Send

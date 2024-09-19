@@ -4,15 +4,22 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { ViewProvider } from "@/context/view";
 import UIProvider from "@/context/UIProvider";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  weight: "variable",
+});
 
 export const metadata: Metadata = {
-  title: "Flite Watch",
+  title: "KG Aircraft Consulting",
   description: "Soar to new heights with every flight",
   authors: [
     { name: "Agence Malo", url: "https://agencemalo.com" },
     { name: "Gregory Buffard", url: "https://www.gregory-buffard.com" },
   ],
-  keywords: ["flite watch", "boutique aviation", "private jet", "luxury"],
+  keywords: ["aircraft", "consulting", "services", "flight", "pilot"],
 };
 
 export const viewport: Viewport = {
@@ -25,12 +32,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={"scroll-smooth bg-neutral-950"}>
+    <html
+      lang="en"
+      className={`scroll-smooth bg-neutral-950 ${montserrat.className}`}
+    >
       <SpeedInsights />
       <Analytics />
       <UIProvider>
         <ViewProvider>
-          <body className={"font-gothic"}>{children}</body>
+          <body>{children}</body>
         </ViewProvider>
       </UIProvider>
     </html>

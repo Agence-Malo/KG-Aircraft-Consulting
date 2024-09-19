@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section
       className={
-        "w-full h-[90vh] md:h-screen max-h-[90vh] md:max-h-screen min-h-[90vh] md:min-h-screen flex flex-col justify-center items-center"
+        "w-full h-[90vh] md:h-screen max-h-[90vh] md:max-h-screen min-h-[90vh] md:min-h-screen flex flex-col justify-center items-center gap-[2vh]"
       }
     >
       <video
@@ -27,16 +27,17 @@ const Hero = () => {
         animate={{ y: "0", opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
-        <FullLogo mono={true} className={"size-[16vh] fill-white"} />
+        <FullLogo mono={true} className={"w-[22vw] fill-white"} />
       </motion.span>
       <motion.h1
         initial={{ y: "6vh", opacity: 0, scale: 1.05 }}
         animate={{ y: "0", opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className={"text-white md:text-center text-center containerize"}
+        className={
+          "text-white md:text-center text-center containerize font-light"
+        }
       >
-        Precision <br className={"md:hidden"} />
-        Every Time
+        Website Coming Soon
       </motion.h1>
       {/*<div
         className={

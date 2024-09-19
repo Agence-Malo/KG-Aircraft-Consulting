@@ -14,12 +14,11 @@ const Stripe = dynamic(() => import("@/components/tempStripe"));
 
 const Home = () => {
   return (
-    <>
-      <main className="w-full flex flex-col items-center overflow-hidden justify-start">
-        <Navbar invert={100} />
-        <View />
-        <Hero />
-        {/*<Quote />
+    <main className="w-full flex flex-col items-center overflow-hidden justify-start">
+      <Navbar invert={100} />
+      <View />
+      <Hero />
+      {/*<Quote />
         <About />
         <Services />
         <Fleet />
@@ -27,8 +26,7 @@ const Home = () => {
         <WhyJethouse />
         <Expertise />
         <Footer />*/}
-      </main>
-    </>
+    </main>
   );
 };
 

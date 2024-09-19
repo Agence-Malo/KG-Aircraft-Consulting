@@ -56,13 +56,13 @@ export const Social = () => {
           <label className={"normal-case cursor-pointer"}>
             <span className={"font-bold uppercase"}>Headquarters</span>
             <br />
-            77 Triq Windsor,
+            Bâtiment 37, Hangar 4,
             <br />
-            Silema,
+            Avenue de l’Europe
             <br />
-            SLM1853,
+            93350 Le Bourget Cedex,
             <br />
-            Malta
+            France
           </label>
         </a>
       </Tooltip>
@@ -111,7 +111,7 @@ export const Connect = () => {
       }
     >
       <Link
-        href={"https://wa.me/00447585663531"}
+        href={"https://wa.me/+33620304540"}
         target={"_blank"}
         className={"connect-link"}
       >
@@ -126,11 +126,14 @@ export const Connect = () => {
         </svg>
         <label>WhatsApp</label>
       </Link>
-      <Link href={"mailto:fly@flitewatch.aero"} className={"connect-link"}>
-        <label>fly@flitewatch.aero</label>
+      <Link href={"tel:+33620304540"} className={"connect-link"}>
+        <label>+33 6 20 30 45 40</label>
       </Link>
-      <Link href={"tel:00447585663531"} className={"connect-link"}>
-        <label>+44 7585 663531</label>
+      <Link
+        href={"mailto:sales@kg-aircraft-consulting.com"}
+        className={"connect-link"}
+      >
+        <label>sales@kg-aircraft-consulting.com</label>
       </Link>
     </div>
   );

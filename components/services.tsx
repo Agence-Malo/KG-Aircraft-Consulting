@@ -71,9 +71,7 @@ const Services = () => {
   >(null);
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
     AutoScroll({
-      loop: true,
       speed: 1,
-      align: "start",
     }),
   ]);
   const Close = () => {

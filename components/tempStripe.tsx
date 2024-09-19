@@ -12,9 +12,7 @@ const Strip = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     AutoScroll({
       playOnInit: true,
-      loop: true,
       speed: 1,
-      align: "start",
     }),
   ]);
   const cities = [

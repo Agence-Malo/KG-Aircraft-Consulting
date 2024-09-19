@@ -1,5 +1,5 @@
 {
-  "name": "jethouse",
+  "name": "kg-aircraft-consulting",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -23,7 +23,7 @@
     "lottie-colorify": "^0.8.0",
     "lottie-react": "^2.4.0",
     "mongoose": "^8.4.0",
-    "next": "^14.2.5",
+    "next": "^14.2.12",
     "react": "^18",
     "react-dom": "^18",
     "resend": "^3.2.0",
