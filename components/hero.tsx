@@ -27,7 +27,10 @@ const Hero = () => {
         animate={{ y: "0", opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
-        <FullLogo mono={true} className={"w-[22vw] fill-white"} />
+        <FullLogo
+          mono={true}
+          className={"w-[48vw] md:w-[32vw] lg:w-[18vw] fill-white"}
+        />
       </motion.span>
       <motion.h1
         initial={{ y: "6vh", opacity: 0, scale: 1.05 }}

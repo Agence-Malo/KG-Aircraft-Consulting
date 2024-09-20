@@ -19,7 +19,7 @@ import Lottie from "lottie-react";
 import { replaceColor } from "lottie-colorify";
 import sentAnimation from "@/public/graphics/animations/sent.json";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
+import { submit } from "@/app/actions";
 
 const Contact = () => {
   const [sent, send] = useState<boolean>(false),
@@ -66,26 +66,6 @@ const Contact = () => {
     }
   };
 
-  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID!,
-        form.current!,
-        { publicKey: process.env.NEXT_PUBLIC_KEY },
-      )
-      .then(
-        () => {
-          send(true);
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        },
-      );
-  };
-
   return (
     <motion.section
       initial={{ y: "100%" }}
@@ -93,7 +73,7 @@ const Contact = () => {
       exit={{ y: "100%" }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className={
-        "fixed lg:bottom-0 lg:top-auto top-0 left-0 z-30 bg-accent lg:h-[84vh] lg:min-h-[84vh] h-full lg:overflow-y-hidden overflow-y-auto w-full flex flex-col justify-start items-center lg:px-[2vw] px-[4vw] pt-[2vh] md:pb-[8vh] lg:gap-[2vh] text-white"
+        "fixed lg:bottom-0 lg:top-auto top-0 left-0 z-30 bg-accent lg:h-[90vh] lg:min-h-[84vh] h-full lg:overflow-y-hidden overflow-y-auto w-full flex flex-col justify-start items-center lg:px-[2vw] px-[4vw] pt-[2vh] md:pt-[8vh] md:pb-[8vh] lg:gap-[2vh] text-white"
       }
     >
       <div
@@ -156,7 +136,7 @@ const Contact = () => {
                 loop={true}
                 animationData={replaceColor(
                   "#000000",
-                  "#172554",
+                  "#6C8254",
                   sentAnimation,
                 )}
               />
@@ -166,20 +146,19 @@ const Contact = () => {
         ) : (
           <form
             ref={form}
-            onSubmit={(e) => sendEmail}
-            /*action={async (formData) =>
+            action={async (formData) =>
               await submit({ formData: formData, dialCode: code }).then(() =>
                 send(true),
               )
-            }*/
+            }
             className={
-              "w-full h-full md:w-[56vh] flex flex-col justify-between items-start containerize md:px-[2vw] bg-white gap-[2vh] md:gap-[4vh] py-[2vh] md:py-[4vh]"
+              "w-full h-full md:w-[56vh] flex flex-col justify-between items-start containerize md:px-[2vw] bg-white gap-[2vh] md:gap-[4vh] py-[2vh] md:py-[2vh]"
             }
           >
             <Input
               label={"Name"}
               type={"text"}
-              name={"from_name"}
+              name={"name"}
               isDisabled={pending}
               isRequired={true}
               variant={"underlined"}

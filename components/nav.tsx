@@ -35,37 +35,17 @@ export const Social = () => {
     <div
       className={"flex flex-col justify-center items-start w-full gap-[2vh]"}
     >
-      <Tooltip
-        content={
-          <div className={"flex justify-center items-center"}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              viewBox="0 0 72 72"
-              className={"h-[1.25rem] w-auto -ml-[0.25rem]"}
-            >
-              <path d="M29.015 53.843l25.861-31.394C55.592 24.505 56 26.703 56 29c0 6.678-2.505 10.698-4.936 13.967-.868 1.167-1.774 2.28-2.733 3.457-3.245 3.984-7.331 9.044-8.328 15.535C39.831 63.075 38.611 65 36 65s-3.854-1.874-3.989-2.995C31.667 59.144 30.495 56.384 29.015 53.843zM37.833 36.749L26.68 50.289c-.993-1.368-2.007-2.639-2.935-3.779-.959-1.177-1.865-2.29-2.733-3.457-.525-.706-1.056-1.455-1.568-2.257l9.616-11.674C29.025 29.41 29 29.702 29 30c0 3.866 3.134 7 7 7C36.635 37 37.248 36.908 37.833 36.749zM33.813 23.353L44.18 10.768c3.621 1.631 6.664 4.307 8.758 7.645l-9.963 12.095C42.987 30.34 43 30.172 43 30c0-3.866-3.134-7-7-7C35.236 23 34.502 23.127 33.813 23.353zM27.26 24.92l-9.838 11.943C16.57 34.686 16 32.128 16 29c0-3.958 1.17-7.641 3.162-10.75L27.26 24.92zM29.842 21.785l-8.159-6.721C25.319 11.33 30.389 9 36 9c1.382 0 2.732.141 4.036.41L29.842 21.785z"></path>
-            </svg>
-            <label>View on Google Maps</label>
-          </div>
-        }
-        showArrow={true}
-      >
-        <a href={"https://maps.app.goo.gl/5qU836EQ6UYXEi3X8"} target={"_blank"}>
-          <label className={"normal-case cursor-pointer"}>
-            <span className={"font-bold uppercase"}>Headquarters</span>
-            <br />
-            Bâtiment 37, Hangar 4,
-            <br />
-            Avenue de l’Europe
-            <br />
-            93350 Le Bourget Cedex,
-            <br />
-            France
-          </label>
-        </a>
-      </Tooltip>
+      <label className={"normal-case"}>
+        <span className={"font-bold uppercase"}>Headquarters</span>
+        <br />
+        Bâtiment 37, Hangar 4,
+        <br />
+        Avenue de l’Europe
+        <br />
+        93350 Le Bourget Cedex,
+        <br />
+        France
+      </label>
       {/*<Tooltip
         placement={"top-start"}
         content={

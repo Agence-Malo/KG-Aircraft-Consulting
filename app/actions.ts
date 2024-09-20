@@ -3,7 +3,7 @@
 import { Resend } from "resend";
 import axios from "axios";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend("re_2YyygLRB_7yjGNrNKknromyf1v5TrKVUv");
 
 export const submit = async ({
   formData,
@@ -15,8 +15,8 @@ export const submit = async ({
   const rawFormData = {
     name: formData.get("name"),
     email: formData.get("email"),
-    tel: formData.get("tel"),
     message: formData.get("message"),
+    tel: formData.get("tel"),
   };
 
   if (
@@ -30,13 +30,17 @@ export const submit = async ({
     return { error: "Invalid message" };
   }
 
-  await resend.emails.send({
+  const { data, error } = await resend.emails.send({
     from: `${rawFormData.name} <onboarding@resend.dev>`,
     to: `${process.env.MAIL_TO}`,
     reply_to: rawFormData.email,
-    subject: "Contact Request",
-    text: `${rawFormData.message}\n\n${rawFormData.name}\n\n${rawFormData.email}\n${rawFormData.tel && typeof rawFormData.tel === "string" && rawFormData.tel.length > 0 ? dialCode + rawFormData.tel : "(No phone number provided)"}`,
+    subject: "Website Contact Request",
+    text: `From: ${rawFormData.name} (${rawFormData.email})\nTel.: ${rawFormData.tel && typeof rawFormData.tel === "string" && rawFormData.tel.length > 0 ? dialCode + rawFormData.tel : "(No phone number provided)"}\n\nMessage:\n${rawFormData.message}`,
   });
+
+  if (error) {
+    console.error(error);
+  }
 };
 
 export const getWeatherData = async (cities: string[]) => {
