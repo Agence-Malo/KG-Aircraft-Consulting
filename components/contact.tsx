@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Input,
   Textarea,
@@ -10,8 +10,12 @@ import {
   ModalFooter,
   Link,
   useDisclosure,
-  Button,
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
 } from "@nextui-org/react";
+import Button from "@/components/button";
 import { Close, Connect, Social } from "@/components/nav";
 import codes from "@/data/CountryCodes.json";
 import { useFormStatus } from "react-dom";
@@ -73,7 +77,7 @@ const Contact = () => {
       exit={{ y: "100%" }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className={
-        "fixed lg:bottom-0 lg:top-auto top-0 left-0 z-30 bg-accent lg:h-[90vh] lg:min-h-[84vh] h-full lg:overflow-y-hidden overflow-y-auto w-full flex flex-col justify-start items-center lg:px-[2vw] px-[4vw] pt-[2vh] md:pt-[8vh] md:pb-[8vh] lg:gap-[2vh] text-white"
+        "fixed lg:bottom-0 lg:top-auto top-0 left-0 z-30 bg-vitsippa-200 lg:h-[90vh] lg:min-h-[84vh] h-full lg:overflow-y-hidden overflow-y-auto w-full flex flex-col justify-start items-center lg:px-[2vw] px-[4vw] pt-[2vh] md:pt-[8vh] md:pb-[8vh] lg:gap-[2vh] text-black"
       }
     >
       <div
@@ -98,22 +102,21 @@ const Contact = () => {
               "w-full flex flex-col justify-center items-start gap-[2vh]"
             }
           >
-            <h1>Get in Touch</h1>
-            <p>
+            <h2>Get in Touch</h2>
+            <p className={"text-vitsippa-500"}>
               Feel free to contact us to explore how KG Aircraft Consulting can
               support your business aviation requirements.
             </p>
             <Connect />
           </div>
-          <Social />
         </div>
         <div
           className={
             "md:hidden w-full flex flex-col justify-center items-start gap-[2vh]"
           }
         >
-          <h1>Get in Touch</h1>
-          <p>
+          <h2>Get in Touch</h2>
+          <p className={"text-vitsippa-500"}>
             Feel free to contact us to explore how KG Aircraft Consulting can
             support your business aviation requirements.
           </p>
@@ -152,7 +155,7 @@ const Contact = () => {
               )
             }
             className={
-              "w-full h-full md:w-[56vh] flex flex-col justify-between items-start containerize md:px-[2vw] bg-white gap-[2vh] md:gap-[4vh] py-[2vh] md:py-[2vh]"
+              "w-full h-full md:w-[56vh] flex flex-col justify-between items-center containerize md:px-[2vw] bg-white gap-[2vh] md:gap-[4vh] py-[2vh] md:py-[2vh] rounded-xl"
             }
           >
             <Input
@@ -160,9 +163,10 @@ const Contact = () => {
               type={"text"}
               name={"name"}
               isDisabled={pending}
-              isRequired={true}
+              isRequired
               variant={"underlined"}
               isClearable={true}
+              required
               onInput={handleInput}
               classNames={{
                 inputWrapper: [
@@ -174,15 +178,16 @@ const Contact = () => {
                 ],
                 input: ["w-full", "bg-transparent", "text-black", "text-base"],
                 clearButton: ["text-black"],
-                label: "uppercase",
+                label: "uppercase text-vitsippa-400 text-sm",
               }}
             />
             <Input
+              isRequired
+              required
               label={"Email"}
               type={"email"}
               name={"email"}
               isDisabled={pending}
-              isRequired={true}
               variant={"underlined"}
               isClearable={true}
               onInput={handleInput}
@@ -196,7 +201,7 @@ const Contact = () => {
                 ],
                 input: ["w-full", "bg-transparent", "text-black", "text-base"],
                 clearButton: ["text-black"],
-                label: "uppercase",
+                label: "uppercase text-vitsippa-400 text-sm",
               }}
             />
             <Input
@@ -217,37 +222,65 @@ const Contact = () => {
                 ],
                 input: ["w-full", "bg-transparent", "text-black", "text-base"],
                 clearButton: ["text-black"],
-                label: "uppercase",
+                label: "uppercase text-vitsippa-400 text-sm",
               }}
               startContent={
-                <>
-                  <button
-                    disabled={pending}
-                    type={"button"}
-                    onBlur={() => setTimeout(() => setChangeCode(false), 200)}
-                    onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
-                      e.preventDefault();
-                      setTimeout(() => setChangeCode(!changeCode), 200);
-                    }}
-                    className={
-                      "flex justify-start items-center gap-[0.5vw] text-black"
-                    }
-                  >
-                    {code}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      viewBox="0 0 72 72"
-                      className={`fill-accent lg:size-[1vw] size-[2vh] ${changeCode ? "-rotate-180" : ""} transition-transform duration-200 ease-in-out`}
+                <Dropdown placement={"top-start"}>
+                  <DropdownTrigger>
+                    <button
+                      disabled={pending}
+                      type={"button"}
+                      onBlur={() => setTimeout(() => setChangeCode(false), 200)}
+                      onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                        e.preventDefault();
+                        setTimeout(() => setChangeCode(!changeCode), 200);
+                      }}
+                      className={
+                        "flex justify-start items-end gap-[0.5vw] text-vitsippa-400 font-bold text-base"
+                      }
                     >
-                      <path d="M35.98,50.002c-1.046,0-2.093-0.395-2.863-1.185L13.595,28.809c-1.542-1.581-1.512-4.114,0.069-5.656	c1.582-1.542,4.113-1.512,5.657,0.069L35.98,40.296l16.698-17.113c1.544-1.582,4.076-1.612,5.657-0.069s1.611,4.075,0.069,5.656	L38.844,48.817C38.073,49.607,37.026,50.002,35.98,50.002z"></path>
-                    </svg>
-                  </button>
-                  {changeCode && (
+                      {code}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 72 72"
+                        className={`fill-vitsippa-400 lg:size-[1vw] size-[2vh] ${changeCode ? "-rotate-180" : ""} transition-transform duration-200 ease-in-out translate-y-[0.15vh]`}
+                      >
+                        <path d="M35.98,50.002c-1.046,0-2.093-0.395-2.863-1.185L13.595,28.809c-1.542-1.581-1.512-4.114,0.069-5.656	c1.582-1.542,4.113-1.512,5.657,0.069L35.98,40.296l16.698-17.113c1.544-1.582,4.076-1.612,5.657-0.069s1.611,4.075,0.069,5.656	L38.844,48.817C38.073,49.607,37.026,50.002,35.98,50.002z"></path>
+                      </svg>
+                    </button>
+                  </DropdownTrigger>
+                  <DropdownMenu
+                    classNames={{
+                      base: "h-[18vh] overflow-y-auto",
+                    }}
+                  >
+                    {codes.map((sel, i) => (
+                      <DropdownItem
+                        key={i}
+                        onClick={() => {
+                          setChangeCode(false);
+                          setCode(sel.dial_code);
+                        }}
+                        classNames={{
+                          title: "text-base",
+                          description: "text-base",
+                        }}
+                        endContent={
+                          <span className={"text-vitsippa-200"}>
+                            {sel.name}
+                          </span>
+                        }
+                      >
+                        {sel.dial_code}
+                      </DropdownItem>
+                    ))}
+                  </DropdownMenu>
+                  {/*{changeCode && (
                     <div
                       className={
-                        "absolute translate-y-full flex flex-col justify-start items-start bg-white md:w-max w-full h-[18vh] overflow-y-auto drop-shadow-2xl gap-[1vh] px-[0.5vw] py-[0.5vw] rounded-[1vh] z-20"
+                        "absolute translate-y-full flex flex-col justify-start items-start bg-white md:w-max w-full h-[18vh] overflow-y-auto drop-shadow-2xl gap-[1vh] px-[0.5vw] py-[0.5vw] rounded-[1vh] z-20 left-0"
                       }
                       ref={menuRef}
                     >
@@ -271,17 +304,19 @@ const Contact = () => {
                         </button>
                       ))}
                     </div>
-                  )}
-                </>
+                  )}*/}
+                </Dropdown>
               }
             />
             <Textarea
               label={"Message"}
               name={"message"}
               isDisabled={pending}
-              isRequired={true}
+              isRequired
+              required
               variant={"underlined"}
               maxRows={3}
+              onInput={handleInput}
               classNames={{
                 inputWrapper: [
                   "w-full",
@@ -291,7 +326,7 @@ const Contact = () => {
                   "p-0",
                 ],
                 input: ["w-full", "bg-transparent", "text-black", "text-base"],
-                label: "uppercase",
+                label: "uppercase text-vitsippa-400 text-sm",
               }}
             />
             <div
@@ -302,23 +337,25 @@ const Contact = () => {
               <Checkbox
                 isDisabled={pending}
                 classNames={{
-                  base: "w-full flex justify-start items-baseline",
-                  label: "text-sm",
+                  base: "w-full flex justify-start items-center",
+                  label: "text-sm text-vitsippa-400",
                 }}
               >
                 Send me alters and company updates
               </Checkbox>
               <Checkbox
-                isRequired={true}
+                isRequired
+                required
                 isDisabled={pending}
+                onInput={handleInput}
                 classNames={{
-                  base: "w-full flex justify-start items-baseline",
-                  label: "text-sm",
+                  base: "w-full flex justify-start items-center",
+                  label: "text-sm text-vitsippa-400",
                 }} /* A link for the privacy policy and ... must be added */
               >
                 I agree to the{" "}
                 <Link
-                  className={"text-sm text-black underline"}
+                  className={"text-sm text-vitsippa-500 underline"}
                   onPress={() => setPrivacy(true)}
                 >
                   privacy policy
@@ -351,20 +388,19 @@ const Contact = () => {
                       </ModalBody>
                       <ModalFooter>
                         <Button
+                          label={"Close"}
                           color={"danger"}
                           variant={"flat"}
                           onPress={() => setPrivacy(false)}
-                        >
-                          Close
-                        </Button>
+                        />
                       </ModalFooter>
                     </>
                   </ModalContent>
                 </Modal>{" "}
                 &{" "}
                 <Link
-                  className={"text-sm text-black underline"}
-                  onPress={() => setTerms(true)}
+                  className={"text-sm text-vitsippa-500 underline"}
+                  onPress={(e) => setTerms(true)}
                 >
                   terms and conditions
                 </Link>
@@ -395,12 +431,11 @@ const Contact = () => {
                       </ModalBody>
                       <ModalFooter>
                         <Button
+                          label={"Close"}
                           color={"danger"}
                           variant={"flat"}
                           onPress={() => setTerms(false)}
-                        >
-                          Close
-                        </Button>
+                        />
                       </ModalFooter>
                     </>
                   </ModalContent>
@@ -408,23 +443,14 @@ const Contact = () => {
               </Checkbox>
             </div>
             <Button
+              label={"Send"}
               isDisabled={pending}
               type={"submit"}
-              className={
-                "w-full rounded-2xl bg-accent text-white hover:bg-accent/95 py-[3vh] uppercase text-base font-semibold"
-              }
-            >
-              Send
-            </Button>
+              variant={"solid"}
+              dark={true}
+            />
           </form>
         )}
-        <div
-          className={
-            "md:hidden w-full flex flex-col justify-center items-start gap-[2vh]"
-          }
-        >
-          <Connect />
-        </div>
         <div
           className={
             "md:hidden w-full flex flex-col justify-center items-center gap-[2vh]"

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0a",
+  themeColor: "#D6D0C3",
 };
 
 export default function RootLayout({
@@ -32,10 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`scroll-smooth bg-neutral-950 ${montserrat.className}`}
-    >
+    <html lang="en" className={`scroll-smooth ${montserrat.className}`}>
       <SpeedInsights />
       <Analytics />
       <UIProvider>

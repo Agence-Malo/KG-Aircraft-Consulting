@@ -1,4 +1,4 @@
-import Hero from "@/components/hero";
+import Hero from "@/components/index/hero";
 import { Navbar } from "@/components/nav";
 import dynamic from "next/dynamic";
 import WhyJethouse from "@/components/WhyJethouse";

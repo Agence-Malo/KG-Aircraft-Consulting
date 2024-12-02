@@ -9,6 +9,14 @@ const config: Config = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontSize: {
+      xs: "0.5rem",
+      sm: "0.625rem",
+      base: "0.6875rem",
+      lg: "1rem",
+      xl: "1.3125rem",
+      "2xl": "1.75rem",
+    },
     extend: {
       backgroundImage: {
         management: "url('/graphics/images/services/management.webp')",
@@ -20,70 +28,19 @@ const config: Config = {
         pattern: "url('/graphics/images/pattern.svg')",
       },
       colors: {
-        accent: "#6C8254",
+        axolotl: "#6C8254",
+        vitsippa: {
+          50: "#F5F4F0",
+          100: "#CFCFCD",
+          200: "#D6D0C3",
+          300: "#C3B6A4",
+          400: "#877E75",
+          500: "#3E3A38",
+        },
       },
     },
   },
   darkMode: "class",
-  plugins: [
-    nextui({
-      addCommonColors: true,
-      themes: {
-        light: {
-          colors: {
-            primary: "#6C8254",
-            default: {
-              DEFAULT: "#6C8254",
-              100: "#6C825480",
-              200: "#6C8254",
-              300: "#6C8254",
-              400: "#6C8254",
-              500: "#6C8254",
-              600: "#6C8254",
-              700: "#6C8254",
-              800: "#6C8254",
-              900: "#6C8254",
-            },
-            focus: {
-              DEFAULT: "#6C8254",
-              100: "#6C8254",
-              200: "#6C8254",
-              300: "#6C8254",
-              400: "#6C8254",
-              500: "#6C8254",
-              600: "#6C8254",
-              700: "#6C8254",
-              800: "#6C8254",
-              900: "#6C8254",
-            },
-            background: {
-              DEFAULT: "#6C8254",
-              100: "#6C8254",
-              200: "#6C8254",
-              300: "#6C8254",
-              400: "#6C8254",
-              500: "#6C8254",
-              600: "#6C8254",
-              700: "#6C8254",
-              800: "#6C8254",
-              900: "#6C8254",
-            },
-            foreground: {
-              DEFAULT: "#000000",
-              100: "#6C825480",
-              200: "#6C8254",
-              300: "#6C8254",
-              400: "#6C8254",
-              500: "#6C8254",
-              600: "#6C8254",
-              700: "#6C8254",
-              800: "#6C8254",
-              900: "#6C8254",
-            },
-          },
-        },
-      },
-    }),
-  ],
+  plugins: [nextui()],
 };
 export default config;
