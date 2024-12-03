@@ -25,7 +25,7 @@ import sentAnimation from "@/public/animations/sent.json";
 import { motion } from "framer-motion";
 import { submit } from "@/app/actions";
 
-const Contact = () => {
+const Contact = ({ fixed }: { fixed?: boolean }) => {
   const [sent, send] = useState<boolean>(false),
     [changeCode, setChangeCode] = useState(false),
     [code, setCode] = useState<string>("+33"),
@@ -76,17 +76,17 @@ const Contact = () => {
       animate={{ y: 0 }}
       exit={{ y: "100%" }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className={
-        "fixed lg:bottom-0 lg:top-auto top-0 left-0 z-30 bg-vitsippa-200 lg:h-[90vh] lg:min-h-[84vh] h-full lg:overflow-y-hidden overflow-y-auto w-full flex flex-col justify-start items-center lg:px-[2vw] px-[4vw] pt-[2vh] md:pt-[8vh] md:pb-[8vh] lg:gap-[2vh] text-black"
-      }
+      className={`${!fixed && "fixed lg:bottom-0 lg:top-auto top-0 left-0 z-30"} bg-vitsippa-300 lg:h-[90vh] lg:min-h-[84vh] h-full lg:overflow-y-hidden overflow-y-auto w-full flex flex-col justify-start items-center lg:px-[2vw] px-[4vw] pt-[2vh] md:pt-[8vh] md:pb-[8vh] lg:gap-[2vh] text-black`}
     >
-      <div
-        className={
-          "w-full flex justify-end items-center absolute top-[2vh] right-[4vw] md:right-[2vw]"
-        }
-      >
-        <Close />
-      </div>
+      {!fixed && (
+        <div
+          className={
+            "w-full flex justify-end items-center absolute top-[2vh] right-[4vw] md:right-[2vw]"
+          }
+        >
+          <Close />
+        </div>
+      )}
       <div
         className={
           "w-full h-max md:my-auto flex flex-col md:flex-row justify-center md:justify-between items-center gap-[4vh] md:px-[2vw]"
@@ -103,7 +103,7 @@ const Contact = () => {
             }
           >
             <h2>Get in Touch</h2>
-            <p className={"text-vitsippa-500"}>
+            <p className={"text-vitsippa-600"}>
               Feel free to contact us to explore how KG Aircraft Consulting can
               support your business aviation requirements.
             </p>
@@ -116,7 +116,7 @@ const Contact = () => {
           }
         >
           <h2>Get in Touch</h2>
-          <p className={"text-vitsippa-500"}>
+          <p className={"text-vitsippa-600"}>
             Feel free to contact us to explore how KG Aircraft Consulting can
             support your business aviation requirements.
           </p>
@@ -178,7 +178,7 @@ const Contact = () => {
                 ],
                 input: ["w-full", "bg-transparent", "text-black", "text-base"],
                 clearButton: ["text-black"],
-                label: "uppercase text-vitsippa-400 text-sm",
+                label: "uppercase text-vitsippa-500 text-sm",
               }}
             />
             <Input
@@ -201,7 +201,7 @@ const Contact = () => {
                 ],
                 input: ["w-full", "bg-transparent", "text-black", "text-base"],
                 clearButton: ["text-black"],
-                label: "uppercase text-vitsippa-400 text-sm",
+                label: "uppercase text-vitsippa-500 text-sm",
               }}
             />
             <Input
@@ -222,7 +222,7 @@ const Contact = () => {
                 ],
                 input: ["w-full", "bg-transparent", "text-black", "text-base"],
                 clearButton: ["text-black"],
-                label: "uppercase text-vitsippa-400 text-sm",
+                label: "uppercase text-vitsippa-500 text-sm",
               }}
               startContent={
                 <Dropdown placement={"top-start"}>
@@ -236,7 +236,7 @@ const Contact = () => {
                         setTimeout(() => setChangeCode(!changeCode), 200);
                       }}
                       className={
-                        "flex justify-start items-end gap-[0.5vw] text-vitsippa-400 font-bold text-base"
+                        "flex justify-start items-end gap-[0.5vw] text-vitsippa-500 font-bold text-base"
                       }
                     >
                       {code}
@@ -245,7 +245,7 @@ const Contact = () => {
                         x="0px"
                         y="0px"
                         viewBox="0 0 72 72"
-                        className={`fill-vitsippa-400 lg:size-[1vw] size-[2vh] ${changeCode ? "-rotate-180" : ""} transition-transform duration-200 ease-in-out translate-y-[0.15vh]`}
+                        className={`fill-vitsippa-500 lg:size-[1vw] size-[2vh] ${changeCode ? "-rotate-180" : ""} transition-transform duration-200 ease-in-out translate-y-[0.15vh]`}
                       >
                         <path d="M35.98,50.002c-1.046,0-2.093-0.395-2.863-1.185L13.595,28.809c-1.542-1.581-1.512-4.114,0.069-5.656	c1.582-1.542,4.113-1.512,5.657,0.069L35.98,40.296l16.698-17.113c1.544-1.582,4.076-1.612,5.657-0.069s1.611,4.075,0.069,5.656	L38.844,48.817C38.073,49.607,37.026,50.002,35.98,50.002z"></path>
                       </svg>
@@ -268,7 +268,7 @@ const Contact = () => {
                           description: "text-base",
                         }}
                         endContent={
-                          <span className={"text-vitsippa-200"}>
+                          <span className={"text-vitsippa-300"}>
                             {sel.name}
                           </span>
                         }
@@ -326,7 +326,7 @@ const Contact = () => {
                   "p-0",
                 ],
                 input: ["w-full", "bg-transparent", "text-black", "text-base"],
-                label: "uppercase text-vitsippa-400 text-sm",
+                label: "uppercase text-vitsippa-500 text-sm",
               }}
             />
             <div
@@ -338,7 +338,7 @@ const Contact = () => {
                 isDisabled={pending}
                 classNames={{
                   base: "w-full flex justify-start items-center",
-                  label: "text-sm text-vitsippa-400",
+                  label: "text-sm text-vitsippa-500",
                 }}
               >
                 Send me alters and company updates
@@ -350,12 +350,12 @@ const Contact = () => {
                 onInput={handleInput}
                 classNames={{
                   base: "w-full flex justify-start items-center",
-                  label: "text-sm text-vitsippa-400",
+                  label: "text-sm text-vitsippa-500",
                 }} /* A link for the privacy policy and ... must be added */
               >
                 I agree to the{" "}
                 <Link
-                  className={"text-sm text-vitsippa-500 underline"}
+                  className={"text-sm text-vitsippa-600 underline"}
                   onPress={() => setPrivacy(true)}
                 >
                   privacy policy
@@ -399,7 +399,7 @@ const Contact = () => {
                 </Modal>{" "}
                 &{" "}
                 <Link
-                  className={"text-sm text-vitsippa-500 underline"}
+                  className={"text-sm text-vitsippa-600 underline"}
                   onPress={(e) => setTerms(true)}
                 >
                   terms and conditions

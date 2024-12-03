@@ -23,11 +23,12 @@ const config: Config = {
         coffee: "#8E6658",
         vitsippa: {
           50: "#F5F4F0",
-          100: "#CFCFCD",
-          200: "#D6D0C3",
-          300: "#C3B6A4",
-          400: "#877E75",
-          500: "#3E3A38",
+          100: "#ECECE8",
+          200: "#CFCFCD",
+          300: "#D6D0C3",
+          400: "#C3B6A4",
+          500: "#877E75",
+          600: "#3E3A38",
         },
       },
       animation: {

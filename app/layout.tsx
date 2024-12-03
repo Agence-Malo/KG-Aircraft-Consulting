@@ -3,7 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { ViewProvider } from "@/context/view";
-import UIProvider from "@/context/UIProvider";
+import NextUIProvider from "@/context/nextui";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
@@ -34,15 +34,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`scroll-smooth ${montserrat.className} bg-vitsippa-200`}
+      className={`scroll-smooth ${montserrat.className} bg-vitsippa-300`}
     >
       <SpeedInsights />
       <Analytics />
-      <UIProvider>
+      <NextUIProvider>
         <ViewProvider>
           <body>{children}</body>
         </ViewProvider>
-      </UIProvider>
+      </NextUIProvider>
     </html>
   );
 }

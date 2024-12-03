@@ -1,5 +1,9 @@
 "use client";
 
+import Image from "next/image";
+import charter from "@/public/images/index/services/Private JetCharter.webp";
+import corporate from "@/public/images/index/services/Corporate Well-Being Services.webp";
+
 import { useState } from "react";
 
 const Services = () => {
@@ -13,18 +17,19 @@ const Services = () => {
         title: "Aircraft Sales & Acquisitions",
         content:
           "Buying or selling an aircraft is a significant investment that requires expert guidance and a deep understanding of the market. At KG Aircraft Consulting, we simplify this complex process by leveraging our extensive network and close partnerships with leading manufacturers and key trading players worldwide.\n" +
-          "From identifying the right aircraft type to negotiating favorable terms, we ensure a seamless experience tailored to each client’s specific needs. Our collaboration with industry leaders guarantees that every recommendation aligns with the latest innovations and market insights, maximizing the value of every transaction.\n" +
-          "Whether you’re a first-time buyer or a seasoned owner, KGAC provides the expertise and strategic advice needed to navigate the complexities of aircraft sales and acquisitions with confidence.",
+          "From identifying the right aircraft type to negotiating favorable terms, we ensure a seamless experience tailored to each client’s specific needs. Our collaboration with industry leaders guarantees that every recommendation aligns with the latest innovations and market insights, maximizing the value of every transaction. Whether you’re a first-time buyer or a seasoned owner, KGAC provides the expertise and strategic advice needed to navigate the complexities of aircraft sales and acquisitions with confidence.",
       },
       {
         title: "Private Jet Charter",
         content:
           "Enjoy bespoke private jet charter services tailored to fit your specific travel needs. KG Aircraft Consulting offers access to an extensive fleet of aircraft, ensuring that every journey meets the highest standards of luxury, flexibility, and discretion. Our team coordinates each detail of your travel, providing a seamless experience so you can focus on what matters most.",
+        image: charter,
       },
       {
         title: "Corporate Well-Being Services",
         content:
           "Elevate your corporate culture with KGAC's well-being services, designed to enhance productivity and team satisfaction. From exclusive events to tailored concierge services, we provide high-end solutions that foster a positive work environment and reinforce loyalty. Our well-being services are crafted with the same attention to detail as our aviation consulting, ensuring a comprehensive approach to your company’s success.",
+        image: corporate,
       },
     ],
     [currentTab, setCurrentTab] = useState<(typeof tabs)[number]>(tabs[0]),
@@ -64,7 +69,7 @@ const Services = () => {
       >
         <div
           className={
-            "w-full flex justify-start items-baseline border-b-[0.15vh] border-vitsippa-500 py-[2vh]"
+            "w-full flex justify-start items-baseline border-b-[0.15vh] border-vitsippa-600 py-[2vh]"
           }
         >
           <h2>Services</h2>
@@ -86,7 +91,7 @@ const Services = () => {
                   ${
                     tab.title === currentTab.title
                       ? "text-coffee font-semibold"
-                      : "text-vitsippa-400 font-medium"
+                      : "text-vitsippa-500 font-medium"
                   } [transition:_color_0.2s_ease-in-out,_font-weight_0.2s_ease-in-out] flex flex-col justify-end items-center
                 `}
               >
@@ -101,14 +106,26 @@ const Services = () => {
         <div
           className={`w-full flex justify-end items-center gap-[4vw] pt-[4vw] ${fade ? "opacity-0" : "opacity-100"} transition-opacity duration-400 ease-in-out`}
         >
-          <p className={"text-vitsippa-400 text-justify w-[25vw]"}>
+          <p className={"text-vitsippa-500 text-justify w-[25vw]"}>
             {currentTab.content}
           </p>
-          <div
-            className={
-              "w-[32vw] h-[33vw] rounded-xl bg-gradient-to-tr from-blue-400 to-emerald-600"
-            }
-          />
+          {currentTab.image ? (
+            <Image
+              src={currentTab.image}
+              alt={currentTab.title}
+              width={currentTab.image.width}
+              height={currentTab.image.height}
+              className={
+                "w-[32vw] h-[33vw] rounded-xl object-cover object-center"
+              }
+            />
+          ) : (
+            <div
+              className={
+                "w-[32vw] h-[33vw] rounded-xl bg-gradient-to-tr from-blue-400 to-emerald-600"
+              }
+            />
+          )}
         </div>
         <div
           className={

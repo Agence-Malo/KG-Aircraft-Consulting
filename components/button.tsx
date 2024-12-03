@@ -42,11 +42,11 @@ const Button = ({
     type={type}
     variant={variant}
     radius={"full"}
-    className={`${!color && `bg-vitsippa-300/75 ${dark ? "text-black" : "text-white"}`} backdrop-blur-sm h-max px-[2vw] py-[0.75vh] cursor-pointer ${className}`}
+    className={`${!color && `bg-vitsippa-400/75 ${dark ? "text-black" : "text-white"}`} transition-colors duration-200 ease-in-out backdrop-blur-sm h-max px-[2vw] py-[0.75vh] cursor-pointer ${className}`}
     endContent={
       !color && (
         <div
-          className={`size-[0.5rem] ${dark ? "bg-black" : "bg-white"} rounded-full`}
+          className={`size-[0.5rem] ${dark ? "bg-black" : "bg-white"} rounded-full transition-colors duration-200 ease-in-out`}
         />
       )
     }

@@ -48,7 +48,7 @@ const About = () => (
             "w-full h-[28vw] flex flex-col justify-between items-center"
           }
         >
-          <p className={"text-vitsippa-400"}>
+          <p className={"text-vitsippa-500"}>
             By partnering with KG Aircraft Consulting, you are embracing a new
             vision of private aviation. One that seamlessly combines excellence,
             comfort, and a commitment to sustainability. We provide an

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Button from "@/components/button";
-import { FullLogo } from "@/public/images/logo";
+import Logo from "@/components/logo";
 import { UrlObject } from "node:url";
 
 export const Close = () => {
@@ -96,20 +96,20 @@ export const Connect = () => {
   );
 };
 
+export const links: { href: string | UrlObject; label: string }[] = [
+  {
+    href: "/",
+    label: "Home",
+  },
+  {
+    href: "/about-us",
+    label: "About Us",
+  },
+];
+
 const Nav = () => {
   const path = usePathname(),
     { openView } = useView();
-
-  const links: { href: string | UrlObject; label: string }[] = [
-    {
-      href: "/",
-      label: "Home",
-    },
-    {
-      href: "/about-us",
-      label: "About Us",
-    },
-  ];
 
   return (
     <motion.nav
@@ -125,7 +125,7 @@ const Nav = () => {
         </div>
         <div
           className={
-            "w-full flex flex-col justify-center items-start text-5xl gap-[1vh] font-light text-vitsippa-300"
+            "w-full flex flex-col justify-center items-start text-5xl gap-[1vh] font-light text-vitsippa-400"
           }
         >
           {links.map((link) => (
@@ -160,7 +160,7 @@ const Nav = () => {
           }
         >
           <Link href={"/"}>
-            <FullLogo mono={true} className={"h-[6vh] w-auto"} />
+            <Logo mono={true} className={"h-[6vh] w-auto"} />
           </Link>
           <Connect />
         </div>
@@ -189,10 +189,10 @@ export const Navbar = ({ invert }: { invert: number }) => {
   return (
     <>
       <div
-        className={`fixed top-0 w-full h-[12vh] bg-gradient-to-b from-white ${scrolled ? "opacity-100" : "opacity-0"} transition-opacity duration-200 ease-in-out`}
+        className={`fixed top-0 w-full h-[12vh] bg-gradient-to-b from-white ${scrolled ? "opacity-100" : "opacity-0"} transition-opacity duration-200 ease-in-out z-10`}
       />
       <section
-        className={`fixed z-30 w-[92vw] px-[2vw] pb-[1.25vh] top-[2vh] flex justify-between items-center border-b-[0.15vh] border-white`}
+        className={`fixed z-30 w-[92vw] px-[2vw] pb-[1.25vh] top-[2vh] flex justify-between items-center border-b-[0.15vh] ${scrolled ? "border-black" : "border-white"} transition-colors duration-200 ease-in-out`}
       >
         <div className={"w-1/3 flex justify-start items-center"}>
           <button
@@ -225,7 +225,7 @@ export const Navbar = ({ invert }: { invert: number }) => {
 
         <div className={"w-1/3 flex justify-center items-center"}>
           <Link href={"/"}>
-            <FullLogo mono={true} className={"w-[16vh] py-[1vh]"} />
+            <Logo mono={!scrolled} className={"w-[16vh] py-[1vh]"} />
           </Link>
         </div>
 
@@ -236,6 +236,7 @@ export const Navbar = ({ invert }: { invert: number }) => {
               compact: "Contact",
             }}
             variant={"solid"}
+            dark={scrolled}
             onPress={() => openView("contact")}
           />
         </div>
