@@ -7,13 +7,13 @@ interface IActions {
 }
 
 export interface IContext extends IActions {
-  view: "nav" | "contact" | null;
+  view: "loading" | "nav" | "contact" | null;
 }
 
 const ViewContext = createContext<IContext | undefined>(undefined);
 
 export const ViewProvider = ({ children }: { children: React.ReactNode }) => {
-  const [view, openView] = useState<IContext["view"]>(null);
+  const [view, openView] = useState<IContext["view"]>("loading");
 
   const value = {
     view,

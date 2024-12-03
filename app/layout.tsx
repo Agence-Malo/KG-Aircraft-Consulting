@@ -32,7 +32,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth ${montserrat.className}`}>
+    <html
+      lang="en"
+      className={`scroll-smooth ${montserrat.className} bg-vitsippa-200`}
+    >
       <SpeedInsights />
       <Analytics />
       <UIProvider>

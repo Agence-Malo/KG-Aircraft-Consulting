@@ -16,7 +16,7 @@
   }
 
   h3 {
-    @apply text-lg font-light cursor-default;
+    @apply text-lg font-normal cursor-default text-vitsippa-500;
   }
 
   h4 {
@@ -38,7 +38,7 @@
 
 @layer utilities {
   .containerize {
-    @apply w-full md:px-[4vw];
+    @apply w-full px-[4vw];
   }
 
   .embla {
@@ -102,7 +102,7 @@
   }
 
   .connect-link {
-    @apply flex justify-center items-center bg-white text-black md:px-[0.5vw] px-[2vw] py-[1vh] text-xs;
+    @apply flex justify-center items-center bg-white text-black md:px-[0.5vw] px-[2vw] py-[1vh] text-xs rounded-md;
   }
 }
 
