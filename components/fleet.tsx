@@ -1,6 +1,6 @@
 "use client";
-import fleet from "@/public/graphics/images/fleet.webp";
-import falcon7x from "@/public/graphics/images/Falcon-7X-JetHouse.webp";
+import fleet from "@/public/images/fleet.webp";
+import falcon7x from "@/public/images/Falcon-7X-JetHouse.webp";
 import Image from "next/image";
 import { useRef } from "react";
 import { useInView } from "framer-motion";

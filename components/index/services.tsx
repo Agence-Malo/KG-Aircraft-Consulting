@@ -45,8 +45,8 @@ const Services = () => {
   };
 
   return (
-    <section className={"w-full flex flex-col justify-center items-center"}>
-      <div
+    <div className={"w-full flex flex-col justify-center items-center"}>
+      <section
         className={
           "w-full flex flex-col justify-center items-center gap-[2vh] px-[51vh] my-[16vh] text-center"
         }
@@ -58,8 +58,8 @@ const Services = () => {
           solutions that empower aircraft owners and operators to achieve
           operational excellence while embracing environmental responsibility.
         </h3>
-      </div>
-      <div
+      </section>
+      <section
         className={"containerize flex flex-col justify-center items-baseline"}
       >
         <div
@@ -87,10 +87,13 @@ const Services = () => {
                     tab.title === currentTab.title
                       ? "text-coffee font-semibold"
                       : "text-vitsippa-400 font-medium"
-                  } [transition:_color_0.2s_ease-in-out,_font-weight_0.2s_ease-in-out]
+                  } [transition:_color_0.2s_ease-in-out,_font-weight_0.2s_ease-in-out] flex flex-col justify-end items-center
                 `}
               >
                 {tab.title}
+                <span className={"font-semibold h-0 invisible"}>
+                  {tab.title}
+                </span>
               </button>
             ))}
           </div>
@@ -103,7 +106,7 @@ const Services = () => {
           </p>
           <div
             className={
-              "w-[32vw] h-[33vw] rounded-2xl bg-gradient-to-tr from-blue-400 to-emerald-600"
+              "w-[32vw] h-[33vw] rounded-xl bg-gradient-to-tr from-blue-400 to-emerald-600"
             }
           />
         </div>
@@ -147,8 +150,8 @@ const Services = () => {
             </svg>
           </button>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import plane from "@/public/graphics/images/about/hangar.webp";
+import plane from "@/public/images/about/hangar.webp";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 

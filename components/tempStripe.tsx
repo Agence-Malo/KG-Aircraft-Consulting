@@ -2,7 +2,7 @@
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
-import falcon7x from "@/public/graphics/images/Falcon-7X-JetHouse.webp";
+import falcon7x from "@/public/images/Falcon-7X-JetHouse.webp";
 import { useEffect, useState } from "react";
 import { getWeatherData } from "@/app/actions";
 import AutoScroll from "embla-carousel-auto-scroll";

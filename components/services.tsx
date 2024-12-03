@@ -3,10 +3,10 @@
 import React, { useRef, useState } from "react";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import { flatten } from "lottie-colorify";
-import arrow from "@/public/graphics/images/services/arrow.json";
-import management from "@/public/graphics/images/services/management.webp";
-import charter from "@/public/graphics/images/services/charter.webp";
-import consulting from "@/public/graphics/images/services/consulting.webp";
+import arrow from "@/public/images/services/arrow.json";
+import management from "@/public/images/services/management.webp";
+import charter from "@/public/images/services/charter.webp";
+import consulting from "@/public/images/services/consulting.webp";
 import Image, { StaticImageData } from "next/image";
 import { AnimatePresence, useInView } from "framer-motion";
 import { motion } from "framer-motion";

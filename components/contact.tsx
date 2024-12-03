@@ -21,7 +21,7 @@ import codes from "@/data/CountryCodes.json";
 import { useFormStatus } from "react-dom";
 import Lottie from "lottie-react";
 import { replaceColor } from "lottie-colorify";
-import sentAnimation from "@/public/graphics/animations/sent.json";
+import sentAnimation from "@/public/animations/sent.json";
 import { motion } from "framer-motion";
 import { submit } from "@/app/actions";
 
@@ -447,7 +447,7 @@ const Contact = () => {
               isDisabled={pending}
               type={"submit"}
               variant={"solid"}
-              dark={true}
+              dark
             />
           </form>
         )}

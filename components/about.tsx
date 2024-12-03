@@ -1,6 +1,6 @@
 "use client";
 
-import about from "@/public/graphics/images/about.webp";
+import about from "@/public/images/about.webp";
 import Image from "next/image";
 import Link from "next/link";
 import { useInView } from "framer-motion";

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Button from "@/components/button";
-import { FullLogo } from "@/public/graphics/images/logo";
+import { FullLogo } from "@/public/images/logo";
 import { UrlObject } from "node:url";
 
 export const Close = () => {

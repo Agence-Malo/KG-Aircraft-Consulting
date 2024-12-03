@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import cabin from "@/public/graphics/images/about/cabin.webp";
+import cabin from "@/public/images/about/cabin.webp";
 import { useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 

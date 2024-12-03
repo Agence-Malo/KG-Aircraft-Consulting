@@ -15,7 +15,7 @@ const Hero = () => {
         playsInline
         loop
       >
-        <source src={"../graphics/videos/aerial.webm"} type={"video/webm"} />
+        <source src={"../videos/aerial.webm"} type={"video/webm"} />
       </video>
       <h1 className={"text-white containerize py-[6vh]"}>
         Personalized Consulting for Aircraft Owners & Operators

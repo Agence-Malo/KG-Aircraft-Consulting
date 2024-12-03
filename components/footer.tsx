@@ -3,7 +3,7 @@
 import { useView } from "@/context/view";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FullLogo } from "@/public/graphics/images/logo";
+import { FullLogo } from "@/public/images/logo";
 import { Tooltip } from "@nextui-org/react";
 
 const Footer = () => {

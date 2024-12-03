@@ -1,6 +1,6 @@
 "use client";
 
-import { IconLogo } from "@/public/graphics/images/logo";
+import { IconLogo } from "@/public/images/logo";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 

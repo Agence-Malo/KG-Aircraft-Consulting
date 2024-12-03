@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import day from "@/public/graphics/images/fleet/Cabin Layout.webp";
-import night from "@/public/graphics/images/fleet/Cabin Layout 2.webp";
+import day from "@/public/images/fleet/Cabin Layout.webp";
+import night from "@/public/images/fleet/Cabin Layout 2.webp";
 
 const Spec = ({
   icon,

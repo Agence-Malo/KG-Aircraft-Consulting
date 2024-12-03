@@ -4,6 +4,7 @@ const View = dynamic(() => import("@/components/view"));
 import { Navbar } from "@/components/nav";
 import Hero from "@/components/index/hero";
 const Services = dynamic(() => import("@/components/index/services"));
+const About = dynamic(() => import("@/components/index/about"));
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <View />
       <Hero />
       <Services />
+      <About />
     </main>
   );
 };

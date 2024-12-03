@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import image from "@/public/graphics/images/Falcon6X.webp";
+import image from "@/public/images/Falcon6X.webp";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import { useAnimate, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
