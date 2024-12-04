@@ -13,10 +13,14 @@ const About = () => (
     }
   >
     <Section title={"About Us"}>
-      <div className={"w-full flex justify-between items-start"}>
+      <div
+        className={
+          "w-full flex justify-between items-start flex-col lg:flex-row gap-[6vh] lg:gap-0"
+        }
+      >
         <article
           className={
-            "w-[32vw] flex flex-col justify-start items-start gap-[4vh]"
+            "w-full lg:w-[32vw] flex flex-col justify-start items-start gap-[4vh]"
           }
         >
           <h3 className={"text-justify"}>
@@ -45,7 +49,7 @@ const About = () => (
       <div className={"section-content"}>
         <article
           className={
-            "w-full h-[28vw] flex flex-col justify-between items-center"
+            "w-full h-max gap-[6vh] lg:gap-0 lg:h-[32vw] flex flex-col justify-between items-center"
           }
         >
           <p className={"text-vitsippa-500"}>

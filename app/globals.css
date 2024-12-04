@@ -60,10 +60,10 @@
   }
 
   .section-content {
-    @apply w-full flex justify-between items-start gap-[4vw];
+    @apply w-full flex justify-between items-start flex-col lg:flex-row gap-[6vh] lg:gap-[4vw];
   }
 
   .section-image {
-    @apply w-[40vw] h-[28vw] object-cover object-center rounded-xl;
+    @apply w-full lg:w-[44vw] h-[32vh] md:h-[64vh] lg:h-[32vw] object-cover object-right rounded-xl;
   }
 }

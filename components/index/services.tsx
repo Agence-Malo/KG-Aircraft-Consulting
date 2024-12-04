@@ -53,7 +53,7 @@ const Services = () => {
     <div className={"w-full flex flex-col justify-center items-center"}>
       <section
         className={
-          "w-full flex flex-col justify-center items-center gap-[2vh] px-[51vh] my-[16vh] text-center"
+          "w-full px-[4vw] lg:px-[24.75vw] flex flex-col justify-center items-center gap-[2vh] my-[16vh] text-center"
         }
       >
         <h2>Business Aviation for a Sustainable Future</h2>
@@ -69,12 +69,14 @@ const Services = () => {
       >
         <div
           className={
-            "w-full flex justify-start items-baseline border-b-[0.15vh] border-vitsippa-600 py-[2vh]"
+            "w-full flex justify-start items-baseline flex-wrap lg:flex-nowrap border-b-[0.15vh] border-vitsippa-600 py-[2vh]"
           }
         >
-          <h2>Services</h2>
+          <h2 className={"w-1/3"}>Services</h2>
           <div
-            className={"w-full flex justify-center items-baseline gap-[6vh]"}
+            className={
+              "w-full lg:w-2/3 flex justify-start items-baseline gap-[6vh] overflow-y-hidden overflow-x-auto lg:overflow-x-hidden"
+            }
           >
             {tabs.map((tab) => (
               <button
@@ -92,8 +94,8 @@ const Services = () => {
                     tab.title === currentTab.title
                       ? "text-coffee font-semibold"
                       : "text-vitsippa-500 font-medium"
-                  } [transition:_color_0.2s_ease-in-out,_font-weight_0.2s_ease-in-out] flex flex-col justify-end items-center
-                `}
+                  } [transition:_color_0.2s_ease-in-out,_font-weight_0.2s_ease-in-out] flex flex-col justify-end items-center text-nowrap
+                py-[2vh] lg:py-0`}
               >
                 {tab.title}
                 <span className={"font-semibold h-0 invisible"}>
@@ -104,32 +106,38 @@ const Services = () => {
           </div>
         </div>
         <div
-          className={`w-full flex justify-end items-center gap-[4vw] pt-[4vw] ${fade ? "opacity-0" : "opacity-100"} transition-opacity duration-400 ease-in-out`}
+          className={`w-full flex justify-end items-center py-[6vh] lg:pb-0 lg:pt-[4vw] ${fade ? "opacity-0" : "opacity-100"} transition-opacity duration-400 ease-in-out`}
         >
-          <p className={"text-vitsippa-500 text-justify w-[25vw]"}>
-            {currentTab.content}
-          </p>
-          {currentTab.image ? (
-            <Image
-              src={currentTab.image}
-              alt={currentTab.title}
-              width={currentTab.image.width}
-              height={currentTab.image.height}
-              className={
-                "w-[32vw] h-[33vw] rounded-xl object-cover object-center"
-              }
-            />
-          ) : (
-            <div
-              className={
-                "w-[32vw] h-[33vw] rounded-xl bg-gradient-to-tr from-blue-400 to-emerald-600"
-              }
-            />
-          )}
+          <article
+            className={
+              "w-full lg:w-2/3 flex justify-center items-center flex-col lg:flex-row gap-[6vh] md:gap-[4vw]"
+            }
+          >
+            <p className={"text-vitsippa-500 text-justify w-full lg:w-1/2"}>
+              {currentTab.content}
+            </p>
+            {currentTab.image ? (
+              <Image
+                src={currentTab.image}
+                alt={currentTab.title}
+                width={currentTab.image.width}
+                height={currentTab.image.height}
+                className={
+                  "w-full lg:w-1/2 h-[36vh] lg:h-[33vw] rounded-xl object-cover object-center"
+                }
+              />
+            ) : (
+              <div
+                className={
+                  "w-full lg:w-1/2 h-[36vh] lg:h-[33vw] rounded-xl bg-gradient-to-tr from-blue-400 to-emerald-600"
+                }
+              />
+            )}
+          </article>
         </div>
         <div
           className={
-            "w-full flex justify-start items-center gap-[0.5vw] pb-[4vw]"
+            "w-full flex justify-start items-center gap-[2vh] md:gap-[0.5vw] pb-[4vw]"
           }
         >
           <button

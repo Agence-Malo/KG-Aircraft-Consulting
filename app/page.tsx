@@ -10,7 +10,7 @@ const Footer = dynamic(() => import("@/components/footer"));
 const Home = () => {
   return (
     <main className="w-full flex flex-col items-center overflow-hidden justify-start">
-      <Navbar invert={850} />
+      <Navbar invert={500} />
       <View />
       <Hero />
       <Services />

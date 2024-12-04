@@ -76,7 +76,7 @@ const Contact = ({ fixed }: { fixed?: boolean }) => {
       animate={{ y: 0 }}
       exit={{ y: "100%" }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className={`${!fixed && "fixed lg:bottom-0 lg:top-auto top-0 left-0 z-30"} bg-vitsippa-300 lg:h-[90vh] lg:min-h-[84vh] h-full lg:overflow-y-hidden overflow-y-auto w-full flex flex-col justify-start items-center lg:px-[2vw] px-[4vw] pt-[2vh] md:pt-[8vh] md:pb-[8vh] lg:gap-[2vh] text-black`}
+      className={`${!fixed && "fixed lg:bottom-0 lg:top-auto top-0 left-0 z-30 overflow-y-auto"} bg-vitsippa-300 lg:h-[90vh] lg:min-h-[84vh] h-full lg:overflow-y-hidden w-full flex flex-col justify-start items-center lg:px-[2vw] px-[4vw] py-[6vh] md:pt-[8vh] md:pb-[8vh] lg:gap-[2vh] text-black`}
     >
       {!fixed && (
         <div
@@ -89,7 +89,7 @@ const Contact = ({ fixed }: { fixed?: boolean }) => {
       )}
       <div
         className={
-          "w-full h-max md:my-auto flex flex-col md:flex-row justify-center md:justify-between items-center gap-[4vh] md:px-[2vw]"
+          "w-full h-max md:my-auto flex flex-col md:flex-row justify-center md:justify-between items-center gap-[6vh] lg:gap-[4vh] md:px-[2vw]"
         }
       >
         <div
@@ -155,7 +155,7 @@ const Contact = ({ fixed }: { fixed?: boolean }) => {
               )
             }
             className={
-              "w-full h-full md:w-[56vh] flex flex-col justify-between items-center containerize md:px-[2vw] bg-white gap-[2vh] md:gap-[4vh] py-[2vh] md:py-[2vh] rounded-xl"
+              "w-full h-full md:w-[56vh] flex flex-col justify-between items-center containerize md:px-[2vw] bg-white gap-[4vh] py-[2vh] md:py-[2vh] rounded-xl z-0"
             }
           >
             <Input
@@ -331,7 +331,7 @@ const Contact = ({ fixed }: { fixed?: boolean }) => {
             />
             <div
               className={
-                "w-full flex flex-col justify-start items-start gap-[2vh]"
+                "w-full flex flex-col justify-start items-start gap-[4vh] lg:gap-[2vh]"
               }
             >
               <Checkbox
@@ -341,7 +341,7 @@ const Contact = ({ fixed }: { fixed?: boolean }) => {
                   label: "text-sm text-vitsippa-500",
                 }}
               >
-                Send me alters and company updates
+                Send me alerts and company updates
               </Checkbox>
               <Checkbox
                 isRequired
@@ -453,10 +453,10 @@ const Contact = ({ fixed }: { fixed?: boolean }) => {
         )}
         <div
           className={
-            "md:hidden w-full flex flex-col justify-center items-center gap-[2vh]"
+            "md:hidden w-full flex flex-col justify-center items-center gap-[6vh] lg:gap-[2vh]"
           }
         >
-          <div className={"w-full h-[0.25vh] bg-white"} />
+          <div className={"w-full h-[0.15vh] bg-black"} />
           <Social />
         </div>
       </div>

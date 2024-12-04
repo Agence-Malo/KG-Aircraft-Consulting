@@ -45,7 +45,10 @@ export const Social = () => {
         <br />
         France
       </small>
-      <a href={""} target={"_blank"}>
+      <a
+        href={"https://www.linkedin.com/company/kg-aircraft-consulting/"}
+        target={"_blank"}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           x="0px"

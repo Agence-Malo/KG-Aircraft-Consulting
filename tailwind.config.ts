@@ -33,12 +33,17 @@ const config: Config = {
       },
       animation: {
         "loading-svg": "loading-svg 1s ease-in-out backwards 2s",
+        "loading-svg-md": "loading-svg-md 1s ease-in-out backwards 2s",
         "loading-logo": "loading-logo 1s ease-in-out backwards",
         "loading-title": "loading-logo 1s ease-in-out 0.5s backwards",
         "loading-bar": "loading-bar 1.5s ease-in-out backwards",
       },
       keyframes: {
         "loading-svg": {
+          "0%": { width: "32vh", transform: "translateY(425%)" },
+          "100%": { width: "16vh", transform: "translateY(3vh)" },
+        },
+        "loading-svg-md": {
           "0%": { width: "48vh", transform: "translateY(250%)" },
           "100%": { width: "16vh", transform: "translateY(3vh)" },
         },

@@ -36,7 +36,7 @@ const Section = ({
     className={`containerize flex flex-col justify-center items-baseline py-[4vw] mb-[4vw] ${classNames?.section}`}
   >
     <div
-      className={`w-full flex justify-start items-baseline border-b-[0.15vh] border-vitsippa-600 py-[2vh] mb-[4vw] ${classNames?.div}`}
+      className={`w-full flex justify-start items-baseline border-b-[0.15vh] border-vitsippa-600 py-[2vh] mb-[4vw] whitespace-break-spaces ${classNames?.div}`}
     >
       <h2 className={classNames?.title}>{title}</h2>
     </div>
