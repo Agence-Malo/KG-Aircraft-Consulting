@@ -17,7 +17,7 @@ import {
 } from "@nextui-org/react";
 import Button from "@/components/button";
 import { Close, Connect, Social } from "@/components/nav";
-import codes from "@/data/CountryCodes.json";
+import codes from "@/public/data/CountryCodes.json";
 import { useFormStatus } from "react-dom";
 import Lottie from "lottie-react";
 import { replaceColor } from "lottie-colorify";

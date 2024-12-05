@@ -1,19 +1,25 @@
 export const Paragraph = ({
   title,
   content,
+  classNames,
 }: {
   title: string;
   content: string;
-}) => {
-  return (
-    <div
-      className={"w-full flex flex-col justify-center items-start gap-[2vh]"}
-    >
-      <h2>{title}</h2>
-      <p className={"text-vitsippa-500"}>{content}</p>
-    </div>
-  );
-};
+  classNames?: {
+    div?: string;
+    h2?: string;
+    p?: string;
+  };
+}) => (
+  <div
+    className={`w-full flex flex-col justify-center items-start gap-[2vh] ${classNames?.div}`}
+  >
+    <h2 className={classNames?.h2}>{title}</h2>
+    <p className={`text-vitsippa-500 whitespace-pre-wrap ${classNames?.p}`}>
+      {content}
+    </p>
+  </div>
+);
 
 export const Divider = () => (
   <div className={"w-full h-[0.15vh] bg-vitsippa-200"} />

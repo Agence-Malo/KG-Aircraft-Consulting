@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import operator from "@/public/images/index/services/Operator Audits.webp";
+import sales from "@/public/images/index/services/Aircraft Sales & Acquisitions.webp";
 import charter from "@/public/images/index/services/Private JetCharter.webp";
 import corporate from "@/public/images/index/services/Corporate Well-Being Services.webp";
 
@@ -12,12 +14,14 @@ const Services = () => {
         title: "Operator Audits",
         content:
           "Selecting the right operator is crucial to ensure both safety and operational efficiency. We perform thorough audits of potential or current operators to verify that they meet your unique standards and regulatory requirements. Our audits cover every aspect, from operational capabilities to financial transparency, giving you confidence in the partners you choose.",
+        image: operator,
       },
       {
         title: "Aircraft Sales & Acquisitions",
         content:
           "Buying or selling an aircraft is a significant investment that requires expert guidance and a deep understanding of the market. At KG Aircraft Consulting, we simplify this complex process by leveraging our extensive network and close partnerships with leading manufacturers and key trading players worldwide.\n" +
           "From identifying the right aircraft type to negotiating favorable terms, we ensure a seamless experience tailored to each client’s specific needs. Our collaboration with industry leaders guarantees that every recommendation aligns with the latest innovations and market insights, maximizing the value of every transaction. Whether you’re a first-time buyer or a seasoned owner, KGAC provides the expertise and strategic advice needed to navigate the complexities of aircraft sales and acquisitions with confidence.",
+        image: sales,
       },
       {
         title: "Private Jet Charter",
@@ -28,7 +32,7 @@ const Services = () => {
       {
         title: "Corporate Well-Being Services",
         content:
-          "Elevate your corporate culture with KGAC's well-being services, designed to enhance productivity and team satisfaction. From exclusive events to tailored concierge services, we provide high-end solutions that foster a positive work environment and reinforce loyalty. Our well-being services are crafted with the same attention to detail as our aviation consulting, ensuring a comprehensive approach to your company’s success.",
+          "The business aviation sector is demanding, often exposing employees like pilots, crews, and executives to stress, irregular schedules, and high performance expectations. KGAC offers tailored well-being solutions that combine physical coaching, such as mobility training and muscle relaxation, with psychological support like stress management, mental resilience coaching, and mindfulness practices. These programs are designed to enhance safety, performance, and overall team satisfaction, integrating seamlessly into your company culture with management support and innovative delivery methods, including virtual sessions and team seminars.",
         image: corporate,
       },
     ],
@@ -53,7 +57,7 @@ const Services = () => {
     <div className={"w-full flex flex-col justify-center items-center"}>
       <section
         className={
-          "w-full px-[4vw] lg:px-[24.75vw] flex flex-col justify-center items-center gap-[2vh] my-[16vh] text-center"
+          "w-full px-[4vw] lg:px-[22vw] flex flex-col justify-center items-center gap-[2vh] my-[16vh] text-center"
         }
       >
         <h2>Business Aviation for a Sustainable Future</h2>
@@ -69,13 +73,13 @@ const Services = () => {
       >
         <div
           className={
-            "w-full flex justify-start items-baseline flex-wrap lg:flex-nowrap border-b-[0.15vh] border-vitsippa-600 py-[2vh]"
+            "w-full flex justify-start items-baseline flex-wrap border-b-[0.15vh] border-vitsippa-600 py-[2vh]"
           }
         >
-          <h2 className={"w-1/3"}>Services</h2>
+          <h2 className={"w-1/4"}>Services</h2>
           <div
             className={
-              "w-full lg:w-2/3 flex justify-start items-baseline gap-[6vh] overflow-y-hidden overflow-x-auto lg:overflow-x-hidden"
+              "w-full lg:w-3/4 pr-[8vw] lg:pr-[4vw] [mask:_linear-gradient(to_right,_black_90%,_transparent_100%)] flex justify-start items-baseline gap-[6vh] overflow-y-hidden overflow-x-auto"
             }
           >
             {tabs.map((tab) => (
@@ -110,29 +114,21 @@ const Services = () => {
         >
           <article
             className={
-              "w-full lg:w-2/3 flex justify-center items-center flex-col lg:flex-row gap-[6vh] md:gap-[4vw]"
+              "w-full lg:w-3/4 flex justify-center items-center flex-col lg:flex-row gap-[6vh] md:gap-[4vw]"
             }
           >
             <p className={"text-vitsippa-500 text-justify w-full lg:w-1/2"}>
               {currentTab.content}
             </p>
-            {currentTab.image ? (
-              <Image
-                src={currentTab.image}
-                alt={currentTab.title}
-                width={currentTab.image.width}
-                height={currentTab.image.height}
-                className={
-                  "w-full lg:w-1/2 h-[36vh] lg:h-[33vw] rounded-xl object-cover object-center"
-                }
-              />
-            ) : (
-              <div
-                className={
-                  "w-full lg:w-1/2 h-[36vh] lg:h-[33vw] rounded-xl bg-gradient-to-tr from-blue-400 to-emerald-600"
-                }
-              />
-            )}
+            <Image
+              src={currentTab.image}
+              alt={currentTab.title}
+              width={currentTab.image.width}
+              height={currentTab.image.height}
+              className={
+                "w-full lg:w-1/2 h-[36vh] lg:h-[33vw] rounded-xl object-cover object-center"
+              }
+            />
           </article>
         </div>
         <div

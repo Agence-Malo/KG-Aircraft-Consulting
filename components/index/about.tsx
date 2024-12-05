@@ -1,9 +1,8 @@
 import Image from "next/image";
-import Karole from "@/public/images/index/Karole Gueremy.webp";
+import Karol from "@/public/images/index/Karol Gueremy.webp";
 import Falcon from "@/public/images/index/Falcon 6X.webp";
 
 import Section, { Paragraph, Divider } from "@/components/section";
-import Button from "@/components/button";
 import Link from "next/link";
 
 const About = () => (
@@ -13,14 +12,10 @@ const About = () => (
     }
   >
     <Section title={"About Us"}>
-      <div
-        className={
-          "w-full flex justify-between items-start flex-col lg:flex-row gap-[6vh] lg:gap-0"
-        }
-      >
+      <div className={"section-content"}>
         <article
           className={
-            "w-full lg:w-[32vw] flex flex-col justify-start items-start gap-[4vh]"
+            "w-full lg:w-[42vw] gap-[6vh] lg:h-[32vw] flex flex-col justify-start items-start"
           }
         >
           <h3 className={"text-justify"}>
@@ -32,27 +27,33 @@ const About = () => (
             and a client-first approach to elevate the standards of aviation
             consulting.
           </h3>
-          <Link href={"/about-us"}>
-            <Button label={"Learn More"} variant={"flat"} dark />
+          <Link
+            href={"/about-us"}
+            className={
+              "flex justify-center items-center gap-[0.6rem] bg-vitsippa-400/75 hover:bg-vitsippa-400/50 scale-100 focus:scale-90 transition-transform-colors duration-200 ease-in-out text-base px-[2vw] py-[0.75vh] rounded-full"
+            }
+          >
+            Learn More
+            <div
+              className={
+                "size-[0.5rem] bg-black rounded-full transition-colors duration-200 ease-in-out"
+              }
+            />
           </Link>
         </article>
         <Image
-          src={Karole}
+          src={Karol}
           alt={"Karole Gueremy"}
-          width={Karole.width}
-          height={Karole.height}
+          width={Karol.width}
+          height={Karol.height}
           className={"section-image"}
         />
       </div>
     </Section>
     <Section title={"Why choose KG Aircraft Consulting ?"}>
       <div className={"section-content"}>
-        <article
-          className={
-            "w-full h-max gap-[6vh] lg:gap-0 lg:h-[32vw] flex flex-col justify-between items-center"
-          }
-        >
-          <p className={"text-vitsippa-500"}>
+        <article className={"section-article"}>
+          <p className={"text-vitsippa-500 text-justify"}>
             By partnering with KG Aircraft Consulting, you are embracing a new
             vision of private aviation. One that seamlessly combines excellence,
             comfort, and a commitment to sustainability. We provide an
@@ -64,6 +65,7 @@ const About = () => (
             content={
               "Every flight we manage is designed to minimize its carbon footprint and adhere to the strictest environmental standards. From sustainable aviation fuels (SAF) to carbon offset programs, we ensure that your journeys align with a greener future without compromising on performance or luxury."
             }
+            classNames={{ p: "text-justify" }}
           />
           <Divider />
           <Paragraph
@@ -71,6 +73,7 @@ const About = () => (
             content={
               "We collaborate with leading aircraft manufacturers and global trading experts to bring you the most efficient and sustainable solutions. By utilizing advanced technologies and fuel-efficient jets, we guarantee a travel experience that is both high-performing and environmentally responsible."
             }
+            classNames={{ p: "text-justify" }}
           />
           <Divider />
         </article>

@@ -132,7 +132,11 @@ const Nav = () => {
           }
         >
           {links.map((link) => (
-            <Link key={link.label} href={link.href}>
+            <Link
+              key={link.label}
+              href={link.href}
+              onClick={() => openView(null)}
+            >
               <h1 className={`${path === link.href && "text-white"} nav-link`}>
                 {link.label}
               </h1>
