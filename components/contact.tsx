@@ -18,6 +18,7 @@ import {
 import Button from "@/components/button";
 import { Close, Connect, Social } from "@/components/nav";
 import codes from "@/public/data/CountryCodes.json";
+// @ts-ignore
 import { useFormStatus } from "react-dom";
 import Lottie from "lottie-react";
 import { replaceColor } from "lottie-colorify";
@@ -149,8 +150,11 @@ const Contact = ({ fixed }: { fixed?: boolean }) => {
         ) : (
           <form
             ref={form}
+            // @ts-ignore
             action={async (formData) =>
+                // @ts-ignore
               await submit({ formData: formData, dialCode: code }).then(() =>
+                  // @ts-ignore
                 send(true),
               )
             }
