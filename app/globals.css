@@ -3,71 +3,79 @@
 @tailwind utilities;
 
 :root {
-  --translate: 0;
+    --translate: 0;
 }
 
 @layer base {
-  h1 {
-    @apply text-2xl font-normal cursor-default;
-  }
+    h1 {
+        @apply text-2xl font-normal cursor-default;
+    }
 
-  h2 {
-    @apply text-xl font-normal cursor-default;
-  }
+    h2 {
+        @apply text-xl font-normal cursor-default;
+    }
 
-  h3 {
-    @apply text-lg font-normal cursor-default text-vitsippa-600;
-  }
+    h3 {
+        @apply text-lg font-normal cursor-default text-vitsippa-600;
+    }
 
-  h4 {
-    @apply text-base font-normal uppercase tracking-wider cursor-default;
-  }
+    h4 {
+        @apply text-base font-normal uppercase tracking-wider cursor-default;
+    }
 
-  p {
-    @apply text-base font-normal cursor-default;
-  }
+    p {
+        @apply text-base font-normal cursor-default;
+    }
 
-  small {
-    @apply text-sm font-normal tracking-wide cursor-default;
-  }
+    small {
+        @apply text-sm font-normal tracking-wide cursor-default;
+    }
 
-  label {
-    @apply text-sm font-normal tracking-wide cursor-default;
-  }
+    label {
+        @apply text-sm font-normal tracking-wide cursor-default;
+    }
 }
 
 @layer utilities {
-  .containerize {
-    @apply w-full px-[4vw];
-  }
+    .containerize {
+        @apply w-full px-[4vw];
+    }
 }
 
 @layer components {
-  .burger-bar {
-    @apply w-full [transition:_fill_200ms_ease-in-out];
-  }
+    .burger-bar {
+        @apply w-full [transition:_fill_200ms_ease-in-out];
+    }
 
-  .nav-link {
-    @apply hover:text-white/75 transition-colors duration-200 ease-in-out cursor-pointer;
-  }
+    .nav-link {
+        @apply hover:text-white/75 transition-colors duration-200 ease-in-out cursor-pointer;
+    }
 
-  .footer-link {
-    @apply uppercase text-sm tracking-wider text-white hover:text-white/75 transition-colors duration-200 ease-in-out cursor-pointer;
-  }
+    .footer-link {
+        @apply uppercase text-sm tracking-wider text-white hover:text-white/75 transition-colors duration-200 ease-in-out cursor-pointer;
+    }
 
-  .connect-link {
-    @apply flex justify-center items-center bg-white text-black md:px-[0.5vw] px-[2vw] py-[1vh] text-xs rounded-md;
-  }
+    .connect-link {
+        @apply flex justify-center items-center bg-white text-black md:px-[0.5vw] px-[2vw] py-[1vh] text-xs rounded-md;
+    }
 
-  .section-content {
-    @apply w-full flex justify-between items-start flex-col lg:flex-row gap-[6vh] lg:gap-0;
-  }
+    .section-content {
+        @apply w-full flex justify-between items-start flex-col lg:flex-row gap-[6vh] lg:gap-0;
+    }
 
-  .section-article {
-    @apply w-full lg:w-[42vw] h-max gap-[6vh] lg:gap-0 lg:h-[32vw] flex flex-col justify-between items-center;
-  }
+    .section-article {
+        @apply w-full lg:w-[42vw] h-max gap-[6vh] lg:gap-0 lg:h-[32vw] flex flex-col justify-between items-center;
+    }
 
-  .section-image {
-    @apply w-full lg:w-[46vw] h-[32vh] md:h-[64vh] lg:h-[32vw] object-cover object-right rounded-xl;
-  }
+    .section-image {
+        @apply w-full lg:w-[46vw] h-[32vh] md:h-[64vh] lg:h-[32vw] object-cover object-right rounded-xl;
+    }
+
+    .modal-body {
+        @apply flex flex-col justify-start items-start gap-[2vh];
+    }
+
+    .modal-section {
+        @apply flex flex-col justify-start items-start gap-[1vh];
+    }
 }

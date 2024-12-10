@@ -1,0 +1,57 @@
+{
+  "privacy": [
+    {
+      "title": "Introduction",
+      "content": "At KG Aircraft Consulting, we are committed to protecting your privacy and ensuring the security of your personal data in compliance with the General Data Protection Regulation (GDPR)."
+    },
+    {
+      "title": "Data Collection",
+      "content": "We may collect and process the following personal data: Name, email address, and contact details provided via contact forms or subscriptions. Usage data such as IP address, browser type, and pages visited."
+    },
+    {
+      "title": "Purpose of Data Processing",
+      "content": "The data we collect is used to: Respond to inquiries and provide requested services. Improve our website’s functionality and user experience. Send updates, newsletters, or promotional content (with your consent)."
+    },
+    {
+      "title": "Sharing of Data",
+      "content": "Your data will not be shared with third parties without your consent, except where required by law or necessary to fulfill our services."
+    },
+    {
+      "title": "Data Retention",
+      "content": "Your personal data will only be retained for as long as necessary to fulfill the purposes outlined in this policy or as required by law."
+    },
+    {
+      "title": "Your Rights",
+      "content": "Under GDPR, you have the right to: Access your personal data and request corrections or deletion. Withdraw your consent for data processing at any time. File a complaint with a data protection authority if you believe your rights have been violated."
+    },
+    {
+      "title": "Cookies",
+      "content": "Our website uses cookies to enhance your browsing experience. You can manage your cookie preferences through your browser settings."
+    },
+    {
+      "title": "Contact Information"
+    }
+  ],
+  "terms": [
+    {
+      "title": "Introduction",
+      "content": "Welcome to KG Aircraft Consulting. By accessing or using our website, you agree to comply with these terms and conditions. If you do not agree with any part of these terms, please refrain from using our services."
+    },
+    {
+      "title": "Use of Website",
+      "content": "All content provided on this website is for informational purposes only. Users are prohibited from copying, reproducing, or distributing any part of the website’s content without prior written consent from KG Aircraft Consulting."
+    },
+    {
+      "title": "Liability",
+      "content": "While we strive to ensure the accuracy of the information on this website, KG Aircraft Consulting cannot guarantee that the content is free from errors or omissions. KG Aircraft Consulting is not liable for any damages resulting from the use of this website, including, but not limited to, indirect or consequential damages."
+    },
+    {
+      "title": "Intellectual Property",
+      "content": "All content, logos, and trademarks on this website are the property of KG Aircraft Consulting unless otherwise stated. Unauthorized use of any intellectual property is strictly prohibited."
+    },
+    {
+      "title": "Governing Law",
+      "content": "These terms and conditions are governed by the laws of the European Union and the applicable laws of France. Any disputes will be resolved in the courts."
+    }
+  ]
+}

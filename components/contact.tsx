@@ -3,11 +3,6 @@ import {
   Input,
   Textarea,
   Checkbox,
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
   Link,
   useDisclosure,
   Dropdown,
@@ -18,13 +13,13 @@ import {
 import Button from "@/components/button";
 import { Close, Connect, Social } from "@/components/nav";
 import codes from "@/public/data/CountryCodes.json";
-// @ts-ignore
 import { useFormStatus } from "react-dom";
 import Lottie from "lottie-react";
 import { replaceColor } from "lottie-colorify";
 import sentAnimation from "@/public/animations/sent.json";
 import { motion } from "framer-motion";
 import { submit } from "@/app/actions";
+import { Privacy, Terms } from "@/components/modals";
 
 const Contact = ({ fixed }: { fixed?: boolean }) => {
   const [sent, send] = useState<boolean>(false),
@@ -34,7 +29,7 @@ const Contact = ({ fixed }: { fixed?: boolean }) => {
     { pending } = useFormStatus(),
     [privacy, setPrivacy] = useState(false),
     [terms, setTerms] = useState(false),
-    { onClose, onOpenChange } = useDisclosure(),
+    { onOpenChange } = useDisclosure(),
     form = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
@@ -150,11 +145,8 @@ const Contact = ({ fixed }: { fixed?: boolean }) => {
         ) : (
           <form
             ref={form}
-            // @ts-ignore
             action={async (formData) =>
-                // @ts-ignore
               await submit({ formData: formData, dialCode: code }).then(() =>
-                  // @ts-ignore
                 send(true),
               )
             }
@@ -281,34 +273,6 @@ const Contact = ({ fixed }: { fixed?: boolean }) => {
                       </DropdownItem>
                     ))}
                   </DropdownMenu>
-                  {/*{changeCode && (
-                    <div
-                      className={
-                        "absolute translate-y-full flex flex-col justify-start items-start bg-white md:w-max w-full h-[18vh] overflow-y-auto drop-shadow-2xl gap-[1vh] px-[0.5vw] py-[0.5vw] rounded-[1vh] z-20 left-0"
-                      }
-                      ref={menuRef}
-                    >
-                      {codes.map((sel, index) => (
-                        <button
-                          disabled={pending}
-                          key={index}
-                          type={"button"}
-                          onClick={() => {
-                            setCode(sel.dial_code);
-                            setChangeCode(false);
-                          }}
-                          className={
-                            "w-full flex justify-start items-baseline lg:gap-[0.5vw] gap-[1vh] hover:bg-black/10 transition-[background-color] duration-100 ease-in-out rounded-[0.5vh] lg:px-[1vw] px-[2vw] lg:py-[0.5vh] py-[2vw]"
-                          }
-                        >
-                          <span className={"text-wrap text-left text-black"}>
-                            {sel.name}
-                          </span>
-                          <span className={"text-accent"}>{sel.dial_code}</span>
-                        </button>
-                      ))}
-                    </div>
-                  )}*/}
                 </Dropdown>
               }
             />
@@ -355,7 +319,7 @@ const Contact = ({ fixed }: { fixed?: boolean }) => {
                 classNames={{
                   base: "w-full flex justify-start items-center",
                   label: "text-sm text-vitsippa-500",
-                }} /* A link for the privacy policy and ... must be added */
+                }}
               >
                 I agree to the{" "}
                 <Link
@@ -364,43 +328,11 @@ const Contact = ({ fixed }: { fixed?: boolean }) => {
                 >
                   privacy policy
                 </Link>
-                <Modal
+                <Privacy
                   isOpen={privacy}
                   onClose={() => setPrivacy(false)}
                   onOpenChange={onOpenChange}
-                  backdrop={"blur"}
-                >
-                  <ModalContent>
-                    <>
-                      <ModalHeader>Privacy Policy</ModalHeader>
-                      <ModalBody>
-                        <p>
-                          Aequea adolescens viderer graece eleifend laudem
-                          accusata nunc saperet possim. Euaptent molestie
-                          ultricies inimicus impetus nam imperdiet posidonium
-                          praesent duis dictumst ridens tacimates porta.
-                          Loremleo discere utinam ante qualisque euripidis
-                          interesset alienum quam gravida eum accommodare mi
-                          utroque quod aliquet magna. Accusatamorbi tacimates
-                          sit sodales no tellus pulvinar. Vulputatefabellas quot
-                          saperet scelerisque graece deserunt sapien salutatus
-                          homero deserunt dicunt homero pericula proin libero
-                          singulis explicari mnesarchum. Quamdissentiunt ubique
-                          quaerendum animal tristique in blandit mea eam te
-                          audire scelerisque.
-                        </p>
-                      </ModalBody>
-                      <ModalFooter>
-                        <Button
-                          label={"Close"}
-                          color={"danger"}
-                          variant={"flat"}
-                          onPress={() => setPrivacy(false)}
-                        />
-                      </ModalFooter>
-                    </>
-                  </ModalContent>
-                </Modal>{" "}
+                />{" "}
                 &{" "}
                 <Link
                   className={"text-sm text-vitsippa-600 underline"}
@@ -408,42 +340,11 @@ const Contact = ({ fixed }: { fixed?: boolean }) => {
                 >
                   terms and conditions
                 </Link>
-                <Modal
+                <Terms
                   isOpen={terms}
                   onClose={() => setTerms(false)}
                   onOpenChange={onOpenChange}
-                  backdrop={"blur"}
-                >
-                  <ModalContent>
-                    <>
-                      <ModalHeader>Terms & Conditions</ModalHeader>
-                      <ModalBody>
-                        <p>
-                          Blandithabitasse sociosqu nisi aptent fabellas viderer
-                          voluptaria non verear idque saepe nibh phasellus
-                          solet. Mandamusdocendi magnis a cum veritus dicam
-                          simul solet mei habemus. Repudiandaedeseruisse scripta
-                          adolescens vestibulum dignissim consetetur legimus
-                          venenatis sale prompta donec docendi nec nunc
-                          posidonium quot partiendo penatibus. Suavitatenec
-                          porta dolor tale condimentum ad gloriatur dicant wisi
-                          hac iusto invidunt noster maiestatis sociis eripuit
-                          viris. Pulvinarwisi usu an elit verterem sapien tota
-                          fastidii delicata brute cras intellegat error congue
-                          eos necessitatibus dico posse.
-                        </p>
-                      </ModalBody>
-                      <ModalFooter>
-                        <Button
-                          label={"Close"}
-                          color={"danger"}
-                          variant={"flat"}
-                          onPress={() => setTerms(false)}
-                        />
-                      </ModalFooter>
-                    </>
-                  </ModalContent>
-                </Modal>
+                />
               </Checkbox>
             </div>
             <Button

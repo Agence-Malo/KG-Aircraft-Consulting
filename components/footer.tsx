@@ -5,11 +5,18 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "@/components/logo";
 import { links } from "@/components/nav";
+import { useDisclosure } from "@nextui-org/react";
+import { useState } from "react";
 
 import Contact from "@/components/contact";
+import { Privacy, Terms } from "@/components/modals";
 
 const Footer = () => {
   const path = usePathname(),
+    [modal, setModal] = useState<null | "privacy policy" | "terms of use">(
+      null,
+    ),
+    { onOpenChange } = useDisclosure(),
     { openView } = useView();
 
   return (
@@ -68,8 +75,30 @@ const Footer = () => {
               "flex justify-end items-baseline md:gap-[2vw] gap-[4vw] flex-wrap"
             }
           >
-            <button className={"font-medium footer-link"}>terms</button>
-            <button className={"font-medium footer-link"}>privacy</button>
+            <button
+              type={"button"}
+              onClick={() => setModal("terms of use")}
+              className={"font-medium footer-link"}
+            >
+              terms
+            </button>
+            <Terms
+              isOpen={modal === "terms of use"}
+              onOpenChange={onOpenChange}
+              onClose={() => setModal(null)}
+            />
+            <button
+              type={"button"}
+              onClick={() => setModal("privacy policy")}
+              className={"font-medium footer-link"}
+            >
+              privacy
+            </button>
+            <Privacy
+              isOpen={modal === "privacy policy"}
+              onOpenChange={onOpenChange}
+              onClose={() => setModal(null)}
+            />
             <a
               href={"https://agencemalo.com/"}
               className={"font-medium footer-link"}

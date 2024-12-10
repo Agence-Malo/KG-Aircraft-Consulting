@@ -1,7 +1,5 @@
-import type { Metadata, Viewport } from "next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
+import type { Metadata, Viewport } from "next";
 import { ViewProvider } from "@/context/view";
 import NextUIProvider from "@/context/nextui";
 import { Montserrat } from "next/font/google";
@@ -36,8 +34,6 @@ export default function RootLayout({
       lang="en"
       className={`scroll-smooth ${montserrat.className} bg-vitsippa-300`}
     >
-      <SpeedInsights />
-      <Analytics />
       <NextUIProvider>
         <ViewProvider>
           <body>{children}</body>
