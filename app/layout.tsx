@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { ViewProvider } from "@/context/view";
 import NextUIProvider from "@/context/nextui";
 import { Montserrat } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -36,7 +37,10 @@ export default function RootLayout({
     >
       <NextUIProvider>
         <ViewProvider>
-          <body>{children}</body>
+          <body>
+            {children}
+            <Analytics />
+          </body>
         </ViewProvider>
       </NextUIProvider>
     </html>
