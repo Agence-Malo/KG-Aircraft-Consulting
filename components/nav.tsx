@@ -37,13 +37,15 @@ export const Social = () => {
       <small>
         <span className={"font-medium text-lg"}>Headquarters</span>
         <br />
-        Bâtiment 37, Hangar 4,
+        226 rue du Faubourg Saint-Honoré,
         <br />
-        Avenue de l’Europe
+        75008 Paris, France
         <br />
-        93350 Le Bourget Cedex,
+        <span className={"font-medium text-lg"}>Office</span>
         <br />
-        France
+        Bât 37, H4 - Avenue de l’Europe,
+        <br />
+        93350 Le Bourget Cedex, France
       </small>
       <a
         href={"https://www.linkedin.com/company/kg-aircraft-consulting/"}
